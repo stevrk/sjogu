@@ -13,7 +13,7 @@ class StudentPortalController extends Controller
     }
     public function dashboard()
     {
-        return view('portal.dashboard');
+        return view('portal.Dashboard');
     }
 
     public function courses()
