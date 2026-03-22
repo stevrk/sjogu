@@ -10,13 +10,15 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     nodejs \
-    npm
+    npm \
+    sqlite3 \
+    libsqlite3-dev
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite sqlite3
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
@@ -34,15 +36,20 @@ COPY . /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
-# Create storage and bootstrap cache directories if they don't exist
+# Create storage and bootstrap cache directories
 RUN mkdir -p /var/www/html/storage/framework/cache
 RUN mkdir -p /var/www/html/storage/framework/sessions
 RUN mkdir -p /var/www/html/storage/framework/views
 RUN mkdir -p /var/www/html/bootstrap/cache
 
-# Set permissions - THIS IS THE KEY FIX
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+# Create SQLite database directory and file
+RUN mkdir -p /var/www/html/database
+RUN touch /var/www/html/database/database.sqlite
+RUN chmod 777 /var/www/html/database/database.sqlite
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
 
 # Configure Apache to serve from public directory
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
