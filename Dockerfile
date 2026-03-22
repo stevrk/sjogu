@@ -7,18 +7,17 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libsqlite3-dev \
     zip \
     unzip \
     nodejs \
-    npm \
-    sqlite3 \
-    libsqlite3-dev
+    npm
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite sqlite3
+# Install PHP extensions (only needed ones, SQLite is built-in)
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
@@ -37,15 +36,15 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
 # Create storage and bootstrap cache directories
-RUN mkdir -p /var/www/html/storage/framework/cache
-RUN mkdir -p /var/www/html/storage/framework/sessions
-RUN mkdir -p /var/www/html/storage/framework/views
-RUN mkdir -p /var/www/html/bootstrap/cache
+RUN mkdir -p /var/www/html/storage/framework/cache \
+    /var/www/html/storage/framework/sessions \
+    /var/www/html/storage/framework/views \
+    /var/www/html/bootstrap/cache \
+    /var/www/html/database
 
-# Create SQLite database directory and file
-RUN mkdir -p /var/www/html/database
-RUN touch /var/www/html/database/database.sqlite
-RUN chmod 777 /var/www/html/database/database.sqlite
+# Create SQLite database file
+RUN touch /var/www/html/database/database.sqlite && \
+    chmod 777 /var/www/html/database/database.sqlite
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
