@@ -1,0 +1,8 @@
+vendor/
+node_modules/
+.git/
+.env
+.gitignore
+README.md
+storage/framework/
+storage/logs/
