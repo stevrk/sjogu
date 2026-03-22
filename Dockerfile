@@ -34,17 +34,26 @@ COPY . /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
-# Set permissions
+# Create storage and bootstrap cache directories if they don't exist
+RUN mkdir -p /var/www/html/storage/framework/cache
+RUN mkdir -p /var/www/html/storage/framework/sessions
+RUN mkdir -p /var/www/html/storage/framework/views
+RUN mkdir -p /var/www/html/bootstrap/cache
+
+# Set permissions - THIS IS THE KEY FIX
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Configure Apache to serve from public directory
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
-# Configure Apache to allow .htaccess
-RUN sed -i '/<Directory \/var\/www\/html\/public>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf || true
+# Create Apache config for Laravel
+RUN echo '<Directory /var/www/html/public>' >> /etc/apache2/apache2.conf
+RUN echo '    Options Indexes FollowSymLinks' >> /etc/apache2/apache2.conf
+RUN echo '    AllowOverride All' >> /etc/apache2/apache2.conf
+RUN echo '    Require all granted' >> /etc/apache2/apache2.conf
+RUN echo '</Directory>' >> /etc/apache2/apache2.conf
 
-# Expose port 80
 EXPOSE 80
 
 CMD ["apache2-foreground"]
