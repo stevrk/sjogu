@@ -114,7 +114,7 @@
         <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
             <i class="fas fa-user-graduate mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Student Portal
         </a>
-        <a href="#" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
+        <a href="{{ route('staff.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
             <i class="fas fa-chalkboard-user mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Staff Portal
         </a>
     </div>
