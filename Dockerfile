@@ -43,31 +43,33 @@ RUN mkdir -p /var/www/html/storage/framework/cache \
     /var/www/html/database
 
 # Create SQLite database file
-RUN touch /var/www/html/database/database.sqlite && \
-    chmod 777 /var/www/html/database/database.sqlite
+RUN touch /var/www/html/database/database.sqlite
 
-# Set permissions - FIX FOR 403 ERROR
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database /var/www/html/public
-RUN chmod -R 755 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html/storage
+RUN chmod -R 755 /var/www/html/bootstrap/cache
+RUN chmod -R 755 /var/www/html/database
 RUN chmod -R 755 /var/www/html/public
+RUN chmod 755 /var/www/html/public/index.php
 
 # Configure Apache to serve from public directory
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
-# Create Apache config for Laravel
-RUN echo '<Directory /var/www/html/public>' >> /etc/apache2/apache2.conf
-RUN echo '    Options Indexes FollowSymLinks' >> /etc/apache2/apache2.conf
-RUN echo '    AllowOverride All' >> /etc/apache2/apache2.conf
-RUN echo '    Require all granted' >> /etc/apache2/apache2.conf
-RUN echo '</Directory>' >> /etc/apache2/apache2.conf
+# Configure Apache for Laravel
+RUN echo "<Directory /var/www/html/public>" >> /etc/apache2/apache2.conf
+RUN echo "    Options Indexes FollowSymLinks" >> /etc/apache2/apache2.conf
+RUN echo "    AllowOverride All" >> /etc/apache2/apache2.conf
+RUN echo "    Require all granted" >> /etc/apache2/apache2.conf
+RUN echo "</Directory>" >> /etc/apache2/apache2.conf
 
-# Ensure the public directory has index.php
-RUN chmod 755 /var/www/html/public/index.php
+# Set ServerName to suppress warning
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Configure Apache to listen on Render's port
 ENV PORT 10000
-RUN sed -i "s/Listen 80/Listen ${PORT}/g" /etc/apache2/ports.conf
-RUN echo "ServerName localhost:${PORT}" >> /etc/apache2/apache2.conf
+RUN sed -i "s/Listen 80/Listen 10000/g" /etc/apache2/ports.conf
+RUN echo "Listen 10000" >> /etc/apache2/ports.conf
 
 EXPOSE 10000
 
