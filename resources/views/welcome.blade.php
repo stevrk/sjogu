@@ -125,6 +125,9 @@
                 <li><a href="#about" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">About</a></li>
                 <li><a href="#News" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">News</a></li>
                 <li><a href="#programs" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Programs</a></li>
+                <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
+                
+                <li><a href="#library" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Library</a></li>
                 
                 <!--<li>
                     <div class="block py-2 text-gray-800 font-medium">Media</div>
@@ -180,6 +183,8 @@
                 <li><a href="#about" class="nav-link hover:text-red-600 transition">About</a></li>
                 <li><a href="#News" class="nav-link hover:text-red-600 transition">News</a></li>
                 <li><a href="#programs" class="nav-link hover:text-red-600 transition">Programs</a></li>
+                 <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
+                <li><a href="#library" class="nav-link hover:text-red-600 transition">Library</a></li>
                 
                 <!--<li class="dropdown">
                     <a href="#" class="hover:text-red-600 transition inline-flex items-center gap-1">
@@ -1236,6 +1241,268 @@
         </div>
     </div>
 </section>
+<!-- STUDENT SECTION -->
+<section id="students" class="py-16 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">For Current Students</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Student <span class="text-red-600">Life</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Everything you need for a successful and enjoyable university experience
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+            <!-- Left: Picture -->
+            <div class="relative">
+                <img src="{{ asset('images/students_2.jpeg') }}" alt="Students on campus" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                <div class="absolute -bottom-5 -left-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold">3,000+</p>
+                    <p class="text-sm">Active Students</p>
+                </div>
+            </div>
+
+            <!-- Right: Quick Access -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Quick Access</h3>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <a href="{{ route('portal.login') }}" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-user-graduate text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Student Portal</p>
+                    </a>
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-calendar-alt text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Academic Calendar</p>
+                    </a>
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-book text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">E-Learning</p>
+                    </a>
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-credit-card text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Fee Payment</p>
+                    </a>
+                </div>
+                <div class="bg-white rounded-lg p-5 border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-headset text-red-600 text-xl"></i>
+                        <span class="font-semibold text-gray-800">Need Help?</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Contact Student Affairs Office: <strong>+265 123 456 789</strong></p>
+                    <p class="text-gray-600 text-sm mt-1">Email: <strong>students@sjogu.edu</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Main Sections: Accommodation, Student Council, Things to Do -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Accommodation -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-home text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Accommodation</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Comfortable and affordable on-campus housing with modern amenities. Safe and conducive environment for learning.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Single & Shared Rooms</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> 24/7 Security</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Common Areas & Study Rooms</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Affordable Rates</li>
+                    </ul>
+                    <a href="#" class="text-red-600 font-semibold text-sm hover:underline inline-flex items-center gap-1">
+                        Apply for Accomodation <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Student Council -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/students_council.jpg') }}" alt="Student Council" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-users text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Student Council</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Your voice matters! The Student Council represents student interests and organizes campus activities.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Representatives</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Monthly Meetings</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Event Planning</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Welfare</li>
+                    </ul>
+                    <a href="#" class="text-red-600 font-semibold text-sm hover:underline inline-flex items-center gap-1">
+                        Meet Your Representatives <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Things to Do -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/sports.jpg') }}" alt="Things to Do" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-calendar-week text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Things to Do</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Explore campus life beyond the classroom. Join clubs, attend events, and make lasting memories.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Sports & Recreation</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Cultural Events</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Clubs (20+)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Weekly Social Events</li>
+                    </ul>
+                    <a href="#" class="text-red-600 font-semibold text-sm hover:underline inline-flex items-center gap-1">
+                        View Activities <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Student Resources -->
+        <div class="grid md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-futbol text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Sports</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-music text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Music & Arts</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-handshake text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Volunteer Programs</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-church text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Spiritual Life</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LIBRARY SECTION -->
+<section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Knowledge Hub</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">University <span class="text-red-600">Library</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Your gateway to knowledge, research, and academic excellence
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left: Image -->
+            <div class="relative">
+                <img src="{{ asset('images/library.jpg') }}" alt="University Library" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                <div class="absolute -bottom-5 -right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold">50,000+</p>
+                    <p class="text-sm">Books & Resources</p>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Discover Our Library Resources</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    The St John of God University Library is a modern, well-equipped facility designed to support your academic journey. With thousands of books, journals, and digital resources, we provide a conducive environment for learning and research.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-book text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Print Books</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-laptop text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">E-Resources</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-journal-whills text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Journals</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-wifi text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Free Wi-Fi</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-clock text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Extended Hours</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-users text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Study Rooms</span>
+                    </div>
+                </div>
+
+                <a href="#" class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                    Explore Library Resources →
+                </a>
+            </div>
+        </div>
+
+        <!-- Library Services -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-search text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Online Catalog</h4>
+                <p class="text-gray-600 text-sm">Search our digital catalog for books, journals, and research materials</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-database text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Digital Archives</h4>
+                <p class="text-gray-600 text-sm">Access past exam papers, thesis, and institutional repositories</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chalkboard-user text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Research Support</h4>
+                <p class="text-gray-600 text-sm">Get help from our librarians for your research projects</p>
+            </div>
+        </div>
+
+        <!-- Library Hours -->
+        <div class="mt-12 bg-white rounded-lg shadow-md p-6">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Library Hours</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Monday - Friday</span>
+                    <span class="font-semibold text-gray-800">8:00 AM - 10:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Saturday</span>
+                    <span class="font-semibold text-gray-800">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Sunday</span>
+                    <span class="font-semibold text-gray-800">2:00 PM - 8:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Public Holidays</span>
+                    <span class="font-semibold text-gray-800">Closed</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-sm text-gray-500">
+                    <i class="fas fa-phone-alt mr-2"></i> Library Help Desk: +265 123 456 789
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 <!-- FOOTER WITH CONTACT INFO -->
 <footer id="contact" class="bg-gray-900 text-white">
     <div class="container mx-auto px-4 py-12">
