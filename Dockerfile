@@ -53,26 +53,31 @@ RUN chmod -R 755 /var/www/html/database
 RUN chmod -R 755 /var/www/html/public
 RUN chmod 755 /var/www/html/public/index.php
 
-# FIX: Configure Apache virtual host to serve from public directory
-RUN a2dissite 000-default.conf
-RUN echo '<VirtualHost *:10000>' > /etc/apache2/sites-available/laravel.conf
-RUN echo '    DocumentRoot /var/www/html/public' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '    <Directory /var/www/html/public>' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '        Options Indexes FollowSymLinks' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '        AllowOverride All' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '        Require all granted' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '    </Directory>' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '    ErrorLog ${APACHE_LOG_DIR}/error.log' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined' >> /etc/apache2/sites-available/laravel.conf
-RUN echo '</VirtualHost>' >> /etc/apache2/sites-available/laravel.conf
+# Configure Apache to listen on port 10000 (Render's port)
+RUN sed -i 's/Listen 80/Listen 10000/g' /etc/apache2/ports.conf
+
+# Remove default site and create new one for Laravel
+RUN rm -f /etc/apache2/sites-enabled/000-default.conf
+
+# Create a simple Laravel virtual host
+RUN cat > /etc/apache2/sites-available/laravel.conf <<EOF
+<VirtualHost *:10000>
+    ServerName localhost
+    DocumentRoot /var/www/html/public
+    
+    <Directory /var/www/html/public>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    
+    ErrorLog \${APACHE_LOG_DIR}/error.log
+    CustomLog \${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF
+
+# Enable the site
 RUN a2ensite laravel.conf
-
-# Configure Apache to listen on port 10000
-RUN sed -i "s/Listen 80/Listen 10000/g" /etc/apache2/ports.conf
-RUN echo "Listen 10000" >> /etc/apache2/ports.conf
-
-# Set ServerName to suppress warning
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 EXPOSE 10000
 
