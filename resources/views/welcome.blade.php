@@ -680,7 +680,7 @@
             </div>
             <!--card 7-->
                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/psychotherapy.jpg') }}" alt="Bachelor in Psychotherapy" class="w-full h-48 object-cover">
+                <img src="{{ asset('images/Psychotherapy.jpg') }}" alt="Bachelor in Psychotherapy" class="w-full h-48 object-cover">
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-800 mb-2">Bsc in Psychotherapy</h3>
                     <p class="text-gray-600 text-sm mb-3 line-clamp-2">Train to become a qualified psychotherapist specializing in mental health diagnosis, therapeutic counseling, and evidence-based interventions.</p>
