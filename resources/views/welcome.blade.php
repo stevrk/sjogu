@@ -125,7 +125,7 @@
                 <li><a href="#about" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">About</a></li>
                 <li><a href="#News" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">News</a></li>
                 <li><a href="#programs" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Programs</a></li>
-                <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
+                <li><a href="#students" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Students</a></li>
                 
                 <li><a href="#library" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Library</a></li>
                 
@@ -1298,7 +1298,7 @@
         <div class="grid md:grid-cols-3 gap-6 mb-12">
             <!-- Accommodation -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="{{ asset('images/accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
+                <img src="{{ asset('images/Accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
                         <i class="fas fa-home text-red-600 text-xl"></i>
