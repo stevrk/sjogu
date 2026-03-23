@@ -53,23 +53,26 @@ RUN chmod -R 755 /var/www/html/database
 RUN chmod -R 755 /var/www/html/public
 RUN chmod 755 /var/www/html/public/index.php
 
-# Configure Apache to serve from public directory
-RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+# FIX: Configure Apache virtual host to serve from public directory
+RUN a2dissite 000-default.conf
+RUN echo '<VirtualHost *:10000>' > /etc/apache2/sites-available/laravel.conf
+RUN echo '    DocumentRoot /var/www/html/public' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '    <Directory /var/www/html/public>' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '        Options Indexes FollowSymLinks' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '        AllowOverride All' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '        Require all granted' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '    </Directory>' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '    ErrorLog ${APACHE_LOG_DIR}/error.log' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined' >> /etc/apache2/sites-available/laravel.conf
+RUN echo '</VirtualHost>' >> /etc/apache2/sites-available/laravel.conf
+RUN a2ensite laravel.conf
 
-# Configure Apache for Laravel
-RUN echo "<Directory /var/www/html/public>" >> /etc/apache2/apache2.conf
-RUN echo "    Options Indexes FollowSymLinks" >> /etc/apache2/apache2.conf
-RUN echo "    AllowOverride All" >> /etc/apache2/apache2.conf
-RUN echo "    Require all granted" >> /etc/apache2/apache2.conf
-RUN echo "</Directory>" >> /etc/apache2/apache2.conf
+# Configure Apache to listen on port 10000
+RUN sed -i "s/Listen 80/Listen 10000/g" /etc/apache2/ports.conf
+RUN echo "Listen 10000" >> /etc/apache2/ports.conf
 
 # Set ServerName to suppress warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-
-# Configure Apache to listen on Render's port
-ENV PORT 10000
-RUN sed -i "s/Listen 80/Listen 10000/g" /etc/apache2/ports.conf
-RUN echo "Listen 10000" >> /etc/apache2/ports.conf
 
 EXPOSE 10000
 
