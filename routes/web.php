@@ -39,5 +39,11 @@ Route::prefix('portal')->group(function () {
     Route::get('/attendance', [StudentPortalController::class, 'attendance'])->name('portal.attendance');
     Route::get('/fees', [StudentPortalController::class, 'fees'])->name('portal.fees');
     Route::get('/profile', [StudentPortalController::class, 'profile'])->name('portal.profile');
-});
+    // Staff Portal Route
+   Route::get('/staff-login', function () {
+    return view('portal.staff_login');
+    })->name('staff.login');
+
+    Route::get('/staff-dashboard', [StudentPortalController::class, 'staffDashboard'])->name('staff.dashboard');
+    });
 

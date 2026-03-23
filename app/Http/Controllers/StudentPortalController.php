@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class StudentPortalController extends Controller
+{   public function staffDashboard()
 {
+    return view('portal.staff-dashboard');
+}
 
      public function login()
     {

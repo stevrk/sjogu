@@ -110,12 +110,15 @@
             
             <!-- Login Options in Mobile Menu -->
             <div class="mb-6 pb-6 border-b">
-                <div class="flex gap-4">
-                    <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-2 rounded-lg text-center font-medium hover:bg-red-700 hover:text-white transition">
-                        <i class="fas fa-user-graduate mr-2"></i>Portal Login
-                    </a>
-                </div>
-            </div>
+    <div class="flex gap-2 sm:gap-3 md:gap-4">
+        <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
+            <i class="fas fa-user-graduate mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Student Portal
+        </a>
+        <a href="#" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
+            <i class="fas fa-chalkboard-user mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Staff Portal
+        </a>
+    </div>
+</div>
             
             <ul class="space-y-4">
                 <li><a href="#Home" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Home</a></li>
@@ -146,14 +149,19 @@
             <span>Mon - Fri: 09:00 - 18:00</span>
         </div>
         <div class="flex items-center gap-4">
-            <div class="hidden md:flex items-center gap-4">
-                <a href="{{ route('portal.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
-                    <i class="fas fa-user-graduate"></i>
-                    <span>Portal Login</span>
-                </a>
-            </div>
-            <input type="text" placeholder="Search..." class="px-3 py-1 rounded text-black text-sm outline-none w-full md:w-auto">
-        </div>
+    <div class="hidden md:flex items-center gap-4">
+        <a href="{{ route('portal.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
+            <i class="fas fa-user-graduate"></i>
+            <span>Student Portal</span>
+        </a>
+        <span class="text-gray-300">|</span>
+        <a href="{{ route('staff.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
+            <i class="fas fa-chalkboard-user"></i>
+            <span>Staff Portal</span>
+        </a>
+    </div>
+    <input type="text" placeholder="Search..." class="px-3 py-1 rounded text-black text-sm outline-none w-full md:w-auto">
+</div>
     </div>
 
     <nav  class="bg-white px-4 md:px-6 py-4 flex justify-between items-center shadow sticky top-0 z-50">
@@ -665,6 +673,21 @@
                     </div>
                 </div>
             </div>
+            <!--card 7-->
+               <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                <img src="{{ asset('images/psychotherapy.jpg') }}" alt="Bachelor in Psychotherapy" class="w-full h-48 object-cover">
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Bsc in Psychotherapy</h3>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Train to become a qualified psychotherapist specializing in mental health diagnosis, therapeutic counseling, and evidence-based interventions.</p>
+                    <div class="flex items-center justify-between pt-3 border-t">
+                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
+                        <button onclick="openModal('modal7')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                            Read More →
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
         
@@ -885,6 +908,57 @@
                 <li>Health Program Manager</li>
                 <li>Community Health Specialist</li>
                 <li>Health Policy Analyst</li>
+            </ul>
+            
+            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
+        </div>
+    </div>
+</div>
+
+<!--card 7-->
+<!-- Modal 7 - Bachelor in Psychotherapy -->
+<div id="modal7" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
+            <h3 class="text-xl font-bold text-gray-800">Bsc in Psychotherapy</h3>
+            <button onclick="closeModal('modal7')" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <img src="{{ asset('images/psychotherapy.jpg') }}" alt="Psychotherapy" class="w-full h-64 object-cover rounded-lg mb-4">
+            
+            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
+            <p class="text-gray-600 mb-4">The Bachelor in Psychotherapy program provides comprehensive training in therapeutic techniques, mental health assessment, and evidence-based psychotherapy practices. Students gain practical skills in counseling, psychological assessment, and therapeutic interventions for various mental health conditions.</p>
+            
+            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
+            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
+            
+            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
+            <ul class="text-gray-600 mb-4 list-disc pl-5">
+                <li>Full MSCE with 6 credits including English, Psychology, and Biology</li>
+                <li>O-Level equivalent qualifications accepted</li>
+                <li>Strong interest in mental health and counseling</li>
+            </ul>
+            
+            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
+            <ul class="text-gray-600 mb-4 list-disc pl-5">
+                <li>Clinical Psychotherapist</li>
+                <li>Mental Health Counselor</li>
+                <li>School Psychologist</li>
+                <li>Rehabilitation Specialist</li>
+                <li>Private Practice Therapist</li>
+                <li>Mental Health Program Coordinator</li>
+            </ul>
+            
+            <h4 class="font-semibold text-gray-800 mb-2">Core Modules</h4>
+            <ul class="text-gray-600 mb-4 list-disc pl-5">
+                <li>Introduction to Psychotherapy</li>
+                <li>Cognitive Behavioral Therapy (CBT)</li>
+                <li>Psychodynamic Approaches</li>
+                <li>Trauma and Crisis Intervention</li>
+                <li>Ethics in Mental Health Practice</li>
+                <li>Clinical Supervision and Practice</li>
             </ul>
             
             <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
