@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions (only needed ones, SQLite is built-in)
+# Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd pdo_sqlite
 
 # Enable Apache mod_rewrite
@@ -60,6 +60,11 @@ RUN echo '    AllowOverride All' >> /etc/apache2/apache2.conf
 RUN echo '    Require all granted' >> /etc/apache2/apache2.conf
 RUN echo '</Directory>' >> /etc/apache2/apache2.conf
 
-EXPOSE 80
+# FIX: Configure Apache to listen on the port Render provides
+ENV PORT 10000
+RUN sed -i "s/Listen 80/Listen ${PORT}/g" /etc/apache2/ports.conf
+RUN echo "ServerName localhost:${PORT}" >> /etc/apache2/apache2.conf
+
+EXPOSE 10000
 
 CMD ["apache2-foreground"]
