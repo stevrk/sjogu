@@ -375,7 +375,7 @@
             <!-- COLUMN 3: News Article 2 -->
             <div class="md:col-span-3">
                 <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 h-full">
-                    <img src="{{ asset('images/news1.jpg') }}" alt="Research" class="w-full h-32 object-cover">
+                    <img src="{{ asset('images/research.jpeg') }}" alt="Research" class="w-full h-32 object-cover">
                     <div class="p-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
                             <span><i class="far fa-calendar-alt mr-1"></i> April 5, 2024</span>
@@ -504,7 +504,9 @@
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Our Mission</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    To provide quality healthcare education that fosters intellectual growth, spiritual development, and social responsibility, preparing students to become ethical leaders and compassionate servants of society.
+                To Provide Quality and Holistic Teaching,Learning and Research
+                <br>
+                In the manner of St John of God 
                 </p>
             </div>
 
@@ -513,9 +515,9 @@
                 <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <i class="fas fa-eye text-yellow-600 text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Our Vision</h3>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Our Philosophy</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    To be a leading Catholic university recognized globally for academic excellence, research innovation, and transformative impact on healthcare communities.
+                    The University Upholds the pholosophy of hopsitaller order of St John of God that promotes the Dignity individuals
                 </p>
             </div>
 
@@ -528,28 +530,32 @@
                 <div class="space-y-2">
                     <div class="flex items-center gap-2 justify-center">
                         <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
+                        <span class="text-gray-600 text-sm">Hospitality</span>
+                    </div>
+                    <div class="flex items-center gap-2 justify-center">
+                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
                         <span class="text-gray-600 text-sm">Compassion</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center">
                         <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Excellence</span>
+                        <span class="text-gray-600 text-sm">Respect</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center">
                         <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Integrity</span>
+                        <span class="text-gray-600 text-sm">Justice</span>
                     </div>
                     <div class="flex items-center gap-2 justify-center">
                         <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Community</span>
+                        <span class="text-gray-600 text-sm">Exellence</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section id="programs" class="py-16 px-4 md:px-16 bg-white">
+<!--<section id="programs" class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
-        <!-- Section Header -->
+        
         <div class="text-center mb-12">
             <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Academic Programs</p>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Courses & <span class="text-red-600">Programs</span></h2>
@@ -558,7 +564,7 @@
             </p>
         </div>
 
-        <!-- Entry Requirements - Simple Card -->
+        
         <div class="bg-gray-50 rounded-lg p-6 mb-12 border border-gray-200">
             <div class="flex items-center gap-3 mb-4">
                 <i class="fas fa-graduation-cap text-2xl text-red-600"></i>
@@ -582,17 +588,17 @@
             </div>
         </div>
 
-        <!-- Programs Grid -->
+       
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Program Card 1 -->
+            
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/news2.jpg') }}" alt="Clinical Medicine" class="w-full h-48 object-cover">
                 <div class="p-5">
-                    <!--<div class="flex gap-2 mb-3">
+                    <div class="flex gap-2 mb-3">
                         <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
                         <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Upgrading</span>
-                    </div>-->
+                    </div>
                     <h3 class="text-lg font-bold text-gray-800 mb-2">Diploma in Clinical Medicine</h3>
                     <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive training in clinical medicine preparing students for primary healthcare delivery.</p>
                     <div class="flex items-center justify-between pt-3 border-t">
@@ -604,7 +610,7 @@
                 </div>
             </div>
 
-            <!-- Program Card 2 -->
+            
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/midwifery.jpg') }}" alt="Nursing and Midwifery" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -619,7 +625,7 @@
                 </div>
             </div>
 
-            <!-- Program Card 3 -->
+            
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/mental.jpg') }}" alt="Mental Health" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -634,7 +640,7 @@
                 </div>
             </div>
 
-            <!-- Program Card 4 -->
+            
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/Psychiatric Nursing.jpg') }}" alt="Psychiatric Nursing" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -649,7 +655,7 @@
                 </div>
             </div>
 
-            <!-- Program Card 5 -->
+            
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/midwifery.jpg') }}" alt="Certificate Nursing" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -664,7 +670,7 @@
                 </div>
             </div>
 
-            <!-- Program Card 6 -->
+           
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -678,7 +684,7 @@
                     </div>
                 </div>
             </div>
-            <!--card 7-->
+           
                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <img src="{{ asset('images/Psychotherapy.jpg') }}" alt="Bachelor in Psychotherapy" class="w-full h-48 object-cover">
                 <div class="p-5">
@@ -696,6 +702,254 @@
         </div>
 
         
+    </div>
+</section>-->
+
+<!-- PROGRAMS SECTION -->
+<section id="programs" class="py-16 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+       <div class="text-center mb-12">
+    <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Academic Programs</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Courses & <span class="text-red-600">Programs</span></h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+        Explore our diverse range of healthcare programs across four departments: Clinical Medicine, Nursing, Psycho-Social Counselling, and Public Health
+    </p>
+</div>
+
+<!-- Entry Requirements -->
+<div class="bg-gray-50 rounded-lg p-6 mb-12 border border-gray-200">
+    <div class="flex items-center gap-3 mb-4">
+        <i class="fas fa-graduation-cap text-2xl text-red-600"></i>
+        <h3 class="text-xl font-bold text-gray-800">Entry Requirements Overview</h3>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <h4 class="font-semibold text-red-600 mb-2">Generic Programs</h4>
+            <ul class="space-y-1 text-gray-600 text-sm">
+                <li>• Full Malawi School Certificate of Education (MSCE) or equivalent with six (6) credits</li>
+                <li>• Credits must include: English, Mathematics, Biology, Physics, Chemistry</li>
+                <li>• For Psychotherapy: six (6) credits including English and Mathematics</li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold text-red-600 mb-2">Upgrading Programs</h4>
+            <ul class="space-y-1 text-gray-600 text-sm">
+                <li>• Diploma in relevant field from accredited institution</li>
+                <li>• Minimum two (2) years post-qualification clinical/work experience</li>
+                <li>• Current registration with professional regulatory body (Medical Council of Malawi / Nurses and Midwives Council of Malawi)</li>
+                <li>• Full MSCE with six (6) credits including English and relevant sciences</li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="mt-4 pt-3 border-t border-gray-200">
+        <p class="text-xs text-gray-500 italic">Note: Specific requirements vary by program. Please refer to individual program details for complete admission criteria.</p>
+    </div>-->
+</div>
+        
+
+        <!-- Department: Clinical Medicine -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-stethoscope text-red-600 text-lg"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Clinical Medicine</h3>
+            </div>
+            <div class="flex justify-center">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                    <!-- Diploma in Clinical Medicine (Generic) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/news2.jpg') }}" alt="Clinical Medicine" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">3 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Diploma in Clinical Medicine</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive training in clinical medicine preparing students for primary healthcare delivery.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 3 Years</span>
+                                <button onclick="openModal('modal1')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diploma in Clinical Medicine (Upgrading) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/news2.jpg') }}" alt="Clinical Medicine Upgrading" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Upgrading</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">2 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Diploma in Clinical Medicine (Upgrading)</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Upgrading program for qualified Medical Assistants with Certificate in Clinical Medicine.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 2 Years</span>
+                                <button onclick="openModal('modal8')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BSc Clinical Medicine - Mental Health (Upgrading) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/clinical medicine_mental.jpeg') }}" alt="Mental Health" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Upgrading</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">2 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Clinical Medicine (Mental Health) - Upgrading</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">For qualified Clinical Officers with Diploma in Clinical Medicine or Mental Health.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 2 Years</span>
+                                <button onclick="openModal('modal3')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department: Nursing -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-hand-holding-heart text-red-600 text-lg"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Nursing</h3>
+            </div>
+            <div class="flex justify-center">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                    <!-- BSc Nursing and Midwifery (Generic) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/Nursing_stud.jpeg') }}" alt="Nursing and Midwifery" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">4 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Nursing and Midwifery</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Professional nursing program combining theoretical knowledge with practical clinical skills.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 4 Years</span>
+                                <button onclick="openModal('modal2')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BSc Mental Health Psychiatric Nursing (Upgrading) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/Nursing_stud2.jpeg') }}" alt="Psychiatric Nursing" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Upgrading</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">2 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Mental Health Psychiatric Nursing - Upgrading</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">For Registered Nurses/Registered Nurse Midwives with University Diploma.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 2 Years</span>
+                                <button onclick="openModal('modal4')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department: Psycho-Social Counselling -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-brain text-red-600 text-lg"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Psycho-Social Counselling</h3>
+            </div>
+            <div class="flex justify-center">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                    <!-- BSc in Psychotherapy (Generic - 4 Year Exit with Diploma) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/Psychotherapy.jpg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">4 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Psychotherapy (Psychosocial Counselling)</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Two exit points: Diploma after 4 semesters, Bachelor's after 8 semesters.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 4 Years</span>
+                                <button onclick="openModal('modal7')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BSc in Psychotherapy (Upgrading) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/psychotherapy_stud.jpeg') }}" alt="Psychotherapy Upgrading" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Upgrading</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">2 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Psychotherapy - Upgrading</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">For qualified Counsellors with Diploma in Psychosocial Counselling.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 2 Years</span>
+                                <button onclick="openModal('modal9')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Department: Public Health -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-chart-line text-red-600 text-lg"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Public Health</h3>
+            </div>
+            <div class="flex justify-center">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                    <!-- BSc Public Health (Generic) -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">4 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Bachelor of Science in Public Health</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive program focusing on community health, epidemiology, and health promotion.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 4 Years</span>
+                                <button onclick="openModal('modal6')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- Modals -->
@@ -1340,7 +1594,7 @@
 
             <!-- Things to Do -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="{{ asset('images/sports.jpg') }}" alt="Things to Do" class="w-full h-48 object-cover">
+                <img src="{{ asset('images/sports.jpeg') }}" alt="Things to Do" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
                         <i class="fas fa-calendar-week text-red-600 text-xl"></i>
