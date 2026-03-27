@@ -418,6 +418,7 @@
     </div>
 </section>
 <!-- ABOUT SECTION -->
+<!-- ABOUT SECTION -->
 <section id="about" class="py-16 px-4 md:px-16 bg-red-700">
     <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
@@ -461,6 +462,7 @@
 
     </div>
 </section>
+
 <!-- FACTS, MISSION, VISION, VALUES SECTION - Background Image -->
 <section class="py-16 px-4 md:px-16 relative bg-cover bg-center bg-fixed" style="background-image: url('{{ asset('images/students_2.jpeg') }}');">
     <!-- Dark Overlay -->
@@ -504,7 +506,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Our Mission</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                To Provide Quality and Holistic Teaching,Learning and Research
+                To Provide Quality and Holistic Teaching, Learning and Research
                 <br>
                 In the manner of St John of God 
                 </p>
@@ -517,7 +519,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Our Philosophy</h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    The University Upholds the pholosophy of hopsitaller order of St John of God that promotes the Dignity individuals
+                    The University Upholds the philosophy of hospitalier order of St John of God that promotes the Dignity of individuals
                 </p>
             </div>
 
@@ -546,13 +548,81 @@
                     </div>
                     <div class="flex items-center gap-2 justify-center">
                         <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Exellence</span>
+                        <span class="text-gray-600 text-sm">Excellence</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- LEADERSHIP / EXECUTIVE STAFF SECTION -->
+<section class="py-16 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">University Leadership</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Executive <span class="text-red-600">Staff</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Meet the dedicated leaders guiding St John of God University towards excellence
+            </p>
+        </div>
+     <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <!-- Vice Chancellor - Top Leadership -->
+    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+        <div class="bg-red-600 px-6 py-4">
+            <h3 class="text-xl font-bold text-white">Vice Chancellor</h3>
+        </div>
+        <div class="p-6 text-center">
+            <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
+                <img src="{{ asset('images/VC.jpeg') }}" alt="Charles Masulani Mwale, PhD" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-gray-800">Charles Masulani Mwale, PhD</h4>
+            <p class="text-red-600 text-sm mb-3">Vice Chancellor</p>
+            <p class="text-gray-600 text-sm">Leading the university with vision and excellence in higher education.</p>
+        </div>
+    </div>
+
+    <!-- Dean of Faculty - Second in Hierarchy -->
+    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+        <div class="bg-red-600 px-6 py-4">
+            <h3 class="text-xl font-bold text-white">Dean of Faculty</h3>
+        </div>
+        <div class="p-6 text-center">
+            <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
+                <img src="{{ asset('images/Dean.jpeg') }}" alt="Chimwemwe Munthali" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-gray-800">Chimwemwe Munthali</h4>
+            <p class="text-red-600 text-sm mb-3">Dean of Faculty</p>
+            <p class="text-gray-600 text-sm">Overseeing academic programs and faculty development.</p>
+        </div>
+    </div>
+
+    <!-- Registrar - Third in Hierarchy -->
+    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+        <div class="bg-red-600 px-6 py-4">
+            <h3 class="text-xl font-bold text-white">Registrar</h3>
+        </div>
+        <div class="p-6 text-center">
+            <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
+                <img src="{{ asset('images/Registrar.jpeg') }}" alt="Chisomo Chithyoka" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-gray-800">Chisomo Chithyoka</h4>
+            <p class="text-red-600 text-sm mb-3">Registrar</p>
+            <p class="text-gray-600 text-sm">Managing student records, admissions, and academic administration.</p>
+        </div>
+    </div>
+</div>
+       
+
+        <!-- View All Staff Button -->
+        <div class="text-center mt-12">
+            <a href="#" class="inline-block border-2 border-red-600 text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-600 hover:text-white transition">
+                View All Staff →
+            </a>
+        </div>
+    </div>
+</section>
+
+
 <!--<section id="programs" class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
         
@@ -1630,14 +1700,14 @@
             </div>
             <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
                 <i class="fas fa-church text-red-600 text-2xl mb-2"></i>
-                <p class="font-medium text-gray-800 text-sm">Spiritual Life</p>
+                <p class="font-medium text-gray-800 text-sm">Chaplaincy</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- LIBRARY SECTION -->
-<section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
+<!--<section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
         <div class="text-center mb-12">
             <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Knowledge Hub</p>
@@ -1648,7 +1718,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Left: Image -->
+           
             <div class="relative">
                 <img src="{{ asset('images/library.jpg') }}" alt="University Library" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
                 <div class="absolute -bottom-5 -right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
@@ -1657,11 +1727,128 @@
                 </div>
             </div>
 
-            <!-- Right: Content -->
+            
             <div>
                 <h3 class="text-2xl font-bold text-gray-800 mb-4">Discover Our Library Resources</h3>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     The St John of God University Library is a modern, well-equipped facility designed to support your academic journey. With thousands of books, journals, and digital resources, we provide a conducive environment for learning and research.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-book text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Print Books</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-laptop text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">E-Resources</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-journal-whills text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Journals</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-wifi text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Free Wi-Fi</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-clock text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Extended Hours</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-users text-red-600 text-xl"></i>
+                        <span class="text-gray-700 text-sm">Study Rooms</span>
+                    </div>
+                </div>
+
+                <a href="#" class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                    Explore Library Resources →
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-search text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Online Catalog</h4>
+                <p class="text-gray-600 text-sm">Search our digital catalog for books, journals, and research materials</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-database text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Digital Archives</h4>
+                <p class="text-gray-600 text-sm">Access past exam papers, thesis, and institutional repositories</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chalkboard-user text-red-600 text-2xl"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-800 mb-2">Research Support</h4>
+                <p class="text-gray-600 text-sm">Get help from our librarians for your research projects</p>
+            </div>
+        </div>
+
+        
+        <div class="mt-12 bg-white rounded-lg shadow-md p-6">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Library Hours</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Monday - Friday</span>
+                    <span class="font-semibold text-gray-800">8:00 AM - 10:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Saturday</span>
+                    <span class="font-semibold text-gray-800">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Sunday</span>
+                    <span class="font-semibold text-gray-800">2:00 PM - 8:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <span class="text-gray-600">Public Holidays</span>
+                    <span class="font-semibold text-gray-800">Closed</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-sm text-gray-500">
+                    <i class="fas fa-phone-alt mr-2"></i> Library Help Desk: +265 123 456 789
+                </p>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- LIBRARY SECTION -->
+<section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Knowledge Hub</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">The Miles Crofton <span class="text-red-600">Library</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Your gateway to knowledge, research, and academic excellence
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left: Image -->
+            <div class="relative">
+                <img src="{{ asset('images/library.jpeg') }}" alt="The Miles Crofton Library" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                <div class="absolute -bottom-5 -right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold">50,000+</p>
+                    <p class="text-sm">Books & Resources</p>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Discover The Miles Crofton Library</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    The Miles Crofton Library at St John of God University is a modern, well-equipped facility named in honor of a distinguished benefactor. Designed to support your academic journey, it offers thousands of books, journals, and digital resources in a conducive environment for learning and research.
                 </p>
                 
                 <div class="grid grid-cols-2 gap-4 mb-6">
@@ -1726,6 +1913,7 @@
         <div class="mt-12 bg-white rounded-lg shadow-md p-6">
             <div class="text-center mb-6">
                 <h3 class="text-xl font-bold text-gray-800">Library Hours</h3>
+                <p class="text-sm text-gray-500 mt-1">The Miles Crofton Library</p>
             </div>
             <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <div class="flex justify-between items-center border-b pb-2">
@@ -1753,7 +1941,6 @@
         </div>
     </div>
 </section>
-
 
 
 
