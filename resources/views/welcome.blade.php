@@ -581,7 +581,23 @@
         </div>
     </div>
 
-    <!-- Dean of Faculty - Second in Hierarchy -->
+   
+
+    <!-- Registrar - Third in Hierarchy -->
+    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+    <div class="bg-red-600 px-6 py-4">
+        <h3 class="text-xl font-bold text-white">Deputy Vice Chancellor</h3>
+    </div>
+    <div class="p-6 text-center">
+        <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
+            <img src="{{ asset('images/Registrar.jpeg') }}" alt="Esmie Mkwinda, PhD" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-xl font-bold text-gray-800">Esmie Mkwinda, PhD</h4>
+        <p class="text-red-600 text-sm mb-3">Deputy Vice Chancellor</p>
+        <p class="text-gray-600 text-sm">Supporting the Vice Chancellor in academic and administrative leadership.</p>
+    </div>
+</div>
+     <!-- Dean of Faculty - Second in Hierarchy -->
     <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
         <div class="bg-red-600 px-6 py-4">
             <h3 class="text-xl font-bold text-white">Dean of Faculty</h3>
@@ -593,21 +609,6 @@
             <h4 class="text-xl font-bold text-gray-800">Chimwemwe Munthali</h4>
             <p class="text-red-600 text-sm mb-3">Dean of Faculty</p>
             <p class="text-gray-600 text-sm">Overseeing academic programs and faculty development.</p>
-        </div>
-    </div>
-
-    <!-- Registrar - Third in Hierarchy -->
-    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-        <div class="bg-red-600 px-6 py-4">
-            <h3 class="text-xl font-bold text-white">Registrar</h3>
-        </div>
-        <div class="p-6 text-center">
-            <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
-                <img src="{{ asset('images/Registrar.jpeg') }}" alt="Chisomo Chithyoka" class="w-full h-full object-cover">
-            </div>
-            <h4 class="text-xl font-bold text-gray-800">Chisomo Chithyoka</h4>
-            <p class="text-red-600 text-sm mb-3">Registrar</p>
-            <p class="text-gray-600 text-sm">Managing student records, admissions, and academic administration.</p>
         </div>
     </div>
 </div>
