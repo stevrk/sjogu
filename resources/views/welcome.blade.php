@@ -110,7 +110,7 @@
             
             <!-- Login Options in Mobile Menu -->
             <div class="mb-6 pb-6 border-b">
-    <div class="flex gap-2 sm:gap-3 md:gap-4">
+        <div class="flex gap-2 sm:gap-3 md:gap-4">
         <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
             <i class="fas fa-user-graduate mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Student Portal
         </a>
@@ -129,15 +129,7 @@
                 
                 <li><a href="#library" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Library</a></li>
                 
-                <!--<li>
-                    <div class="block py-2 text-gray-800 font-medium">Media</div>
-                    <div class="pl-4 mt-2 space-y-2 border-l-2 border-red-200">
-                        <a href="#news" class="mobile-nav-link block py-1 text-gray-600 hover:text-red-700">News</a>
-                        <a href="#announcements" class="mobile-nav-link block py-1 text-gray-600 hover:text-red-700">Announcements</a>
-                        <a href="#vacancies" class="mobile-nav-link block py-1 text-gray-600 hover:text-red-700">Vacancies</a>
-                        <a href="#documents" class="mobile-nav-link block py-1 text-gray-600 hover:text-red-700">Documents</a>
-                    </div>
-                </li>-->
+               
                 <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Contact</a></li>
             </ul>
             <a href="#Enroll" class="mobile-nav-link mt-6 bg-red-700 text-white w-full py-2 rounded text-center block hover:bg-red-800 transition">Enroll Now</a>
@@ -149,7 +141,7 @@
         <div class="flex gap-4 md:gap-6">
             <span>+265 123 456 789</span>
             <span>info@sjoguniversity.com</span>
-            <span>Mon - Fri: 09:00 - 18:00</span>
+            <span>Mon - Fri: 08:00 - 17:00</span>
         </div>
         <div class="flex items-center gap-4">
     <div class="hidden md:flex items-center gap-4">
@@ -169,13 +161,13 @@
 
     <nav  class="bg-white px-4 md:px-6 py-4 flex justify-between items-center shadow sticky top-0 z-50">
         <div class="flex items-center gap-3">
-            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center overflow-hidden">
-                <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold break-words whitespace-normal">
-                St John Of God University
-            </h1>
-        </div>
+    <div class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden shadow-md">
+        <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
+    </div>
+    <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold break-words whitespace-normal leading-tight">
+        St John of God University
+    </h1>
+</div>
         
         <div class="flex items-center gap-4">
             <ul class="hidden md:flex gap-8 font-medium">
@@ -209,59 +201,296 @@
             </div>
         </div>
     </nav>
-       <!-- HERO SECTION WITH CAROUSEL -->
-<section id="Home" class="relative">
-    <div class="relative h-[400px] md:h-[500px] overflow-hidden">
-        <!-- Slide 1 -->
+ <!-- HERO SECTION WITH CAROUSEL -->
+
+<!-- HERO SECTION WITH CAROUSEL -->
+<section id="Home" class="relative bg-black">
+    <div class="relative h-[400px] md:h-[550px] lg:h-[600px] overflow-hidden">
+        
+        <!-- Slide 1 - Campus Excellence -->
         <div class="carousel-slide active" data-slide="0">
-            <img src="{{ asset('images/admin block.jpeg') }}" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <img src="{{ asset('images/admin block.jpeg') }}" class="w-full h-full object-cover object-center opacity-50">
+            <div class="absolute inset-0 flex items-center">
+                <div class="text-left px-4 md:px-16 max-w-3xl">
+                    <!-- Tagline -->
+                    <div class="inline-block bg-red-600/80 backdrop-blur-sm rounded-full px-3 md:px-4 py-0.5 md:py-1 mb-3 md:mb-4">
+                        <span class="text-white text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide">Welcome to SJOGU</span>
+                    </div>
+                    <!-- Main Heading -->
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 text-white leading-tight">
+                        Where <span class="text-red-500 relative inline-block">Excellence 
+                            <svg class="absolute -bottom-1 md:-bottom-2 left-0 w-full h-0.5 md:h-1" viewBox="0 0 100 4" preserveAspectRatio="none">
+                                <path d="M0,2 Q25,0 50,2 T100,2" stroke="#dc2626" stroke-width="2" fill="none"/>
+                            </svg>
+                        </span> 
+                        <span class="text-white">Meets</span> 
+                        <span class="text-red-500">Compassion</span>
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-xs sm:text-sm md:text-lg lg:text-xl text-gray-200 mb-4 md:mb-6 max-w-2xl leading-relaxed">
+                        State-of-the-art facilities designed to shape the next generation of healthcare leaders
+                    </p>
+                    <!-- Buttons - Smaller on mobile -->
+                    <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                        <a href="#programs" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
+                            Explore Programs 
+                            <i class="fas fa-arrow-right text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
+                        </a>
+                        <a href="#Enroll" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition text-xs md:text-base">
+                            Apply Now 
+                            <i class="fas fa-user-graduate text-[10px] md:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Slide 2 -->
+        
+        <!-- Slide 2 - Student Life -->
         <div class="carousel-slide" data-slide="1">
-            <img src="{{ asset('images/students_2.jpeg') }}" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <img src="{{ asset('images/students_2.jpeg') }}" class="w-full h-full object-cover object-center opacity-50">
+            <div class="absolute inset-0 flex items-center">
+                <div class="text-left px-4 md:px-16 max-w-3xl">
+                    <!-- Tagline -->
+                    <div class="inline-block bg-red-600/80 backdrop-blur-sm rounded-full px-3 md:px-4 py-0.5 md:py-1 mb-3 md:mb-4">
+                        <span class="text-white text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide">Community & Growth</span>
+                    </div>
+                    <!-- Main Heading -->
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 text-white leading-tight">
+                        Join a <span class="text-red-500">Vibrant</span><br>
+                        <span class="text-white">Community of</span> 
+                        <span class="text-red-500">Leaders</span>
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-xs sm:text-sm md:text-lg lg:text-xl text-gray-200 mb-4 md:mb-6 max-w-2xl leading-relaxed">
+                        Connect, grow, and thrive with fellow students from across Malawi and beyond
+                    </p>
+                    <!-- Buttons - Smaller on mobile -->
+                    <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                        <a href="#students" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
+                            Student Life 
+                            <i class="fas fa-users text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
+                        </a>
+                        <a href="#Enroll" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition text-xs md:text-base">
+                            Join Us 
+                            <i class="fas fa-heart text-[10px] md:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Slide 3 -->
+        
+        <!-- Slide 3 - Academic Excellence -->
         <div class="carousel-slide" data-slide="2">
-            <img src="{{ asset('images/class_room.jpeg') }}" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <img src="{{ asset('images/class_room.jpeg') }}" class="w-full h-full object-cover object-center opacity-50">
+            <div class="absolute inset-0 flex items-center">
+                <div class="text-left px-4 md:px-16 max-w-3xl">
+                    <!-- Tagline -->
+                    <div class="inline-block bg-red-600/80 backdrop-blur-sm rounded-full px-3 md:px-4 py-0.5 md:py-1 mb-3 md:mb-4">
+                        <span class="text-white text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide">Academic Excellence</span>
+                    </div>
+                    <!-- Main Heading -->
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 text-white leading-tight">
+                        Transform <span class="text-red-500">Your</span><br>
+                        <span class="text-white">Future</span> 
+                        <span class="text-red-500">Today</span>
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-xs sm:text-sm md:text-lg lg:text-xl text-gray-200 mb-4 md:mb-6 max-w-2xl leading-relaxed">
+                        World-class education with experienced faculty and hands-on clinical training
+                    </p>
+                    <!-- Buttons - Smaller on mobile -->
+                    <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                        <a href="#programs" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
+                            View Programs 
+                            <i class="fas fa-graduation-cap text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
+                        </a>
+                        <a href="#about" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition text-xs md:text-base">
+                            Learn More 
+                            <i class="fas fa-book-open text-[10px] md:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <!-- Carousel Buttons - Hidden on mobile, visible on tablet/desktop -->
-        <button id="prevBtn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
-            <i class="fas fa-chevron-left"></i>
+        <!-- Slide 4 - Call to Action / Enrollment -->
+        <div class="carousel-slide" data-slide="3">
+            <img src="{{ asset('images/graduation.jpg') }}" class="w-full h-full object-cover object-center opacity-50">
+            <div class="absolute inset-0 flex items-center">
+                <div class="text-left px-4 md:px-16 max-w-3xl">
+                    <!-- Tagline -->
+                    <div class="inline-block bg-red-600/80 backdrop-blur-sm rounded-full px-3 md:px-4 py-0.5 md:py-1 mb-3 md:mb-4">
+                        <span class="text-white text-[10px] md:text-xs lg:text-sm font-semibold uppercase tracking-wide">Limited Seats Available</span>
+                    </div>
+                    <!-- Main Heading -->
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 text-white leading-tight">
+                        Your <span class="text-red-500">Journey</span><br>
+                        <span class="text-white">Starts</span> 
+                        <span class="text-red-500">Here</span>
+                    </h3>
+                    <!-- Description -->
+                    <p class="text-xs sm:text-sm md:text-lg lg:text-xl text-gray-200 mb-4 md:mb-6 max-w-2xl leading-relaxed">
+                        Take the first step toward a rewarding career in healthcare. Applications for 2025/2026 are now open.
+                    </p>
+                    <!-- Buttons - Smaller on mobile -->
+                    <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                        <a href="#Enroll" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-2 md:py-3.5 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-lg">
+                            Enroll Now 
+                            <i class="fas fa-arrow-right text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
+                        </a>
+                        <a href="#contact" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-3 md:px-8 py-2 md:py-3.5 rounded-lg font-semibold transition text-xs md:text-lg">
+                            Contact Us 
+                            <i class="fas fa-envelope text-[10px] md:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Buttons -->
+        <button id="prevBtn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full items-center justify-center transition z-20 backdrop-blur-sm">
+            <i class="fas fa-chevron-left text-lg"></i>
         </button>
-        <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
-            <i class="fas fa-chevron-right"></i>
+        <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full items-center justify-center transition z-20 backdrop-blur-sm">
+            <i class="fas fa-chevron-right text-lg"></i>
         </button>
         
-        <!-- Dots - Responsive sizing -->
-        <div class="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2">
-            <button class="dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white bg-opacity-50" data-dot="0"></button>
-            <button class="dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white bg-opacity-50" data-dot="1"></button>
-            <button class="dot w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white bg-opacity-50" data-dot="2"></button>
+        <!-- Dots -->
+        <div class="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3 z-20">
+            <button class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-dot="0"></button>
+            <button class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-dot="1"></button>
+            <button class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-dot="2"></button>
+            <button class="dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-dot="3"></button>
         </div>
     </div>
+</section>
+<!-- VICE CHANCELLOR'S WELCOME REMARKS SECTION -->
 
-    <!-- Red Content Box - Responsive overlay on carousel -->
-  <div class="absolute left-3 right-3 md:left-10 md:right-auto bottom-3 md:bottom-10 bg-white text-gray-800 p-3 md:p-10 w-auto md:w-[450px] shadow-xl rounded-lg md:rounded-none">
-    <h2 class="text-sm md:text-3xl font-bold leading-tight mb-1 md:mb-4">
-        Transform Your Future at <span class="text-red-600">SJOGU</span>
-    </h2>
-    <p class="mb-2 md:mb-6 text-gray-600 text-xs md:text-base">
-        Empowering growth, knowledge, & success Today!
-    </p>
-    <div class="flex flex-row gap-2 md:gap-3">
-        <a href="#programs" class="flex-1 md:flex-none bg-red-600 text-white px-2 md:px-6 py-1 md:py-2 rounded font-medium hover:bg-red-700 transition text-xs md:text-base text-center">
-            See All Programs →
-        </a>
-        <a href="#Enroll" class="flex-1 md:flex-none bg-gray-800 hover:bg-gray-900 text-white px-2 md:px-6 py-1 md:py-2 rounded font-medium transition border border-gray-300 text-xs md:text-base text-center">
-            ENROLL NOW
-        </a>
+<section id="welcome" class="py-16 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+      
+        <div class="text-center mb-12">
+            
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Vice Chancellor's <span class="text-red-600">Remarks</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-3">
+                A warm welcome from the leader of our academic community
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-stretch">
+            <!-- Left: Vice Chancellor's Photo -->
+            <div class="md:col-span-5">
+                <div class="relative h-full">
+                    <!-- Main Image -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl h-full">
+                        <img src="{{ asset('images/VC.jpeg') }}" alt="Vice Chancellor - Charles Masulani Mwale, PhD" class="w-full h-full object-cover min-h-[450px]">
+                    </div>
+                    
+                    <!-- Decorative Red Elements -->
+                    <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-red-600 rounded-2xl -z-10 hidden md:block"></div>
+                    <div class="absolute -top-3 -left-3 w-20 h-20 bg-red-50 rounded-2xl -z-10 hidden md:block"></div>
+                    
+                    <!-- Quote Badge -->
+                    <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg px-4 py-2 flex items-center gap-2">
+                        <i class="fas fa-quote-left text-red-600 text-sm"></i>
+                        <p class="text-xs font-semibold text-gray-700">Servant Leadership</p>
+                    </div>
+
+                    <!-- Years Badge -->
+                    <div class="absolute top-4 right-4 bg-red-600 rounded-xl px-3 py-1.5 shadow-lg">
+                        <p class="text-white text-xs font-bold">20+ Years</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Welcome Message Content -->
+            <div class="md:col-span-7 flex flex-col justify-between">
+                <div>
+                    <!-- Name & Title -->
+                    <div class="mb-5 text-center">
+    <div class="flex items-center justify-center gap-2 mb-1">
+        <i class="fas fa-crown text-yellow-500 text-xs"></i>
+        <span class="text-red-600 text-xs font-semibold uppercase tracking-wider">University Leadership</span>
+    </div>
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Prof. Charles Masulani Mwale</h3>
+    <div class="flex items-center justify-center gap-3 mt-1 flex-wrap">
+        <p class="text-red-600 font-semibold">Vice Chancellor</p>
+        <span class="text-gray-300">|</span>
+        <div class="flex items-center gap-1">
+            <i class="fas fa-graduation-cap text-gray-400 text-xs"></i>
+            <span class="text-gray-500 text-sm">PhD, MSc, BSc</span>
+        </div>
     </div>
 </div>
+                    
+
+                    <!-- Welcome Message Text -->
+                <div class="space-y-3 text-gray-600 leading-relaxed text-[15px] text-center">
+                    <p class="flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope-open-text text-red-500 text-xs"></i>
+                        <span class="font-medium text-gray-700">Dear Prospective Students, Parents, and Partners,</span>
+                    </p>
+                    <p>
+                        It is my distinct honor and privilege to welcome you to <span class="font-semibold text-gray-800">St. John of God University (SJOGU)</span>. 
+                        As an institution rooted in the rich tradition of the Hospitaller Order of St. John of God, 
+                        we are committed to providing a transformative educational experience that blends academic 
+                        excellence with compassionate service.
+                    </p>
+                    <p>
+                        At SJOGU, we believe that true education goes beyond textbooks and lectures. It is about nurturing 
+                        the whole person — intellectually, spiritually, and professionally. Our programs are designed to 
+                        equip you with the knowledge, skills, and values necessary to become a competent healthcare 
+                        professional who serves with dignity, respect, and compassion.
+                    </p>
+                    <p>
+                        Whether you are joining us for the first time or continuing your academic journey, you will find 
+                        a supportive community dedicated to your success. Our experienced faculty, modern facilities, 
+                        and strong partnerships with healthcare institutions ensure that you receive a world-class 
+                        education right here in Malawi.
+                    </p>
+                    <p class="italic text-gray-700 border-l-2 border-red-600 pl-3 inline-block mx-auto">
+                        I invite you to explore all that SJOGU has to offer. Together, let us build a healthier, 
+                        more compassionate future for our communities and beyond.
+                    </p>
+                </div>
+                </div>
+
+                <!-- Call to Action Buttons + Signature -->
+                <div>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="#about" class="bg-red-600 text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-red-700 transition flex items-center gap-2 shadow-md">
+                            Learn More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#Enroll" class="border-2 border-red-600 text-red-600 px-5 py-2.5 rounded-xl font-semibold hover:bg-red-600 hover:text-white transition flex items-center gap-2">
+                            Apply Now <i class="fas fa-user-graduate text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Signature Line -->
+                    <div class="mt-5 pt-4 border-t border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center">
+                                <i class="fas fa-pen-fancy text-red-500 text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800 font-semibold text-sm">Prof. Charles Masulani Mwale, PhD</p>
+                                <p class="text-gray-400 text-xs">Vice Chancellor, St John of God University</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
 </section>
+
+
+
+
+
 <!-- NEWS & ANNOUNCEMENTS SECTION -->
 <section id="News" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
@@ -417,7 +646,7 @@
         </div>
     </div>
 </section>
-<!-- ABOUT SECTION -->
+
 <!-- ABOUT SECTION -->
 <section id="about" class="py-16 px-4 md:px-16 bg-red-700">
     <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
@@ -436,8 +665,8 @@
             </div>
         </div>
 
-        <!-- RIGHT: CONTENT -->
-        <div>
+        <!-- RIGHT: CONTENT - Centered -->
+        <div class="text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 text-white">
                 About St John Of God <span class="text-yellow-300">University</span>
             </h2>
@@ -476,19 +705,19 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">5,000+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">500+</div>
                 <p class="text-gray-600">Active Students</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">12+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">10+</div>
                 <p class="text-gray-600">Academic Programs</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">150+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">20+</div>
                 <p class="text-gray-600">Qualified Lecturers</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">25+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">5+</div>
                 <p class="text-gray-600">Awards & Recognitions</p>
             </div>
         </div>
@@ -1707,123 +1936,7 @@
     </div>
 </section>
 
-<!-- LIBRARY SECTION -->
-<!--<section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
-    <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Knowledge Hub</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">University <span class="text-red-600">Library</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Your gateway to knowledge, research, and academic excellence
-            </p>
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-           
-            <div class="relative">
-                <img src="{{ asset('images/library.jpg') }}" alt="University Library" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
-                <div class="absolute -bottom-5 -right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
-                    <p class="text-2xl font-bold">50,000+</p>
-                    <p class="text-sm">Books & Resources</p>
-                </div>
-            </div>
-
-            
-            <div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Discover Our Library Resources</h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    The St John of God University Library is a modern, well-equipped facility designed to support your academic journey. With thousands of books, journals, and digital resources, we provide a conducive environment for learning and research.
-                </p>
-                
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-book text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">Print Books</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-laptop text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">E-Resources</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-journal-whills text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">Journals</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-wifi text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">Free Wi-Fi</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-clock text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">Extended Hours</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-users text-red-600 text-xl"></i>
-                        <span class="text-gray-700 text-sm">Study Rooms</span>
-                    </div>
-                </div>
-
-                <a href="#" class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                    Explore Library Resources →
-                </a>
-            </div>
-        </div>
-
-        
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
-            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-search text-red-600 text-2xl"></i>
-                </div>
-                <h4 class="text-lg font-bold text-gray-800 mb-2">Online Catalog</h4>
-                <p class="text-gray-600 text-sm">Search our digital catalog for books, journals, and research materials</p>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-database text-red-600 text-2xl"></i>
-                </div>
-                <h4 class="text-lg font-bold text-gray-800 mb-2">Digital Archives</h4>
-                <p class="text-gray-600 text-sm">Access past exam papers, thesis, and institutional repositories</p>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-chalkboard-user text-red-600 text-2xl"></i>
-                </div>
-                <h4 class="text-lg font-bold text-gray-800 mb-2">Research Support</h4>
-                <p class="text-gray-600 text-sm">Get help from our librarians for your research projects</p>
-            </div>
-        </div>
-
-        
-        <div class="mt-12 bg-white rounded-lg shadow-md p-6">
-            <div class="text-center mb-6">
-                <h3 class="text-xl font-bold text-gray-800">Library Hours</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <div class="flex justify-between items-center border-b pb-2">
-                    <span class="text-gray-600">Monday - Friday</span>
-                    <span class="font-semibold text-gray-800">8:00 AM - 10:00 PM</span>
-                </div>
-                <div class="flex justify-between items-center border-b pb-2">
-                    <span class="text-gray-600">Saturday</span>
-                    <span class="font-semibold text-gray-800">9:00 AM - 6:00 PM</span>
-                </div>
-                <div class="flex justify-between items-center border-b pb-2">
-                    <span class="text-gray-600">Sunday</span>
-                    <span class="font-semibold text-gray-800">2:00 PM - 8:00 PM</span>
-                </div>
-                <div class="flex justify-between items-center border-b pb-2">
-                    <span class="text-gray-600">Public Holidays</span>
-                    <span class="font-semibold text-gray-800">Closed</span>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p class="text-sm text-gray-500">
-                    <i class="fas fa-phone-alt mr-2"></i> Library Help Desk: +265 123 456 789
-                </p>
-            </div>
-        </div>
-    </div>
-</section>-->
 <!-- LIBRARY SECTION -->
 <section id="library" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
@@ -1840,7 +1953,7 @@
             <div class="relative">
                 <img src="{{ asset('images/library.jpeg') }}" alt="The Miles Crofton Library" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
                 <div class="absolute -bottom-5 -right-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
-                    <p class="text-2xl font-bold">50,000+</p>
+                    <p class="text-2xl font-bold">20,000+</p>
                     <p class="text-sm">Books & Resources</p>
                 </div>
             </div>
@@ -2133,69 +2246,7 @@
             });
         });
         
-        // Carousel
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
         
-        if (slides.length > 0) {
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-                dots.forEach((dot, i) => {
-                    dot.style.opacity = i === index ? '1' : '0.5';
-                });
-                currentSlide = index;
-            }
-            
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-            
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            }
-            
-            prevBtn?.addEventListener('click', prevSlide);
-            nextBtn?.addEventListener('click', nextSlide);
-            
-            dots.forEach((dot, i) => {
-                dot.addEventListener('click', () => showSlide(i));
-            });
-            
-            // Auto play
-            setInterval(nextSlide, 5000);
-        }
-        
-        // Highlight active navigation link based on scroll position
-        const sections = document.querySelectorAll('section[id]');
-        
-        function updateActiveNav() {
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('nav-active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('nav-active');
-                        }
-                    });
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
 
         //modal js
         function openModal(modalId) {
@@ -2227,6 +2278,71 @@ window.onclick = function(event) {
         }
     });
 }
+    </script>
+    <script>
+        // Carousel
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+if (slides.length > 0) {
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.style.opacity = i === index ? '1' : '0.5';
+        });
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+    
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => showSlide(i));
+    });
+    
+    // Auto play
+    setInterval(nextSlide, 5000);
+}
+
+// Highlight active navigation link based on scroll position
+const sections = document.querySelectorAll('section[id]');
+
+function updateActiveNav() {
+    const scrollPosition = window.scrollY + 100;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
     </script>
 </body>
 </html>
