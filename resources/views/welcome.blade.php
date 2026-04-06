@@ -408,7 +408,7 @@
             <div class="md:col-span-7 flex flex-col justify-between">
                 <div>
                     <!-- Name & Title -->
-                    <div class="mb-5 text-center">
+            <div class="mb-5 text-center">
     <div class="flex items-center justify-center gap-2 mb-1">
         <i class="fas fa-crown text-yellow-500 text-xs"></i>
         <span class="text-red-600 text-xs font-semibold uppercase tracking-wider">University Leadership</span>
@@ -589,7 +589,7 @@
                     <img src="{{ asset('images/graduation.jpg') }}" alt="Graduation" class="w-full h-32 object-cover">
                     <div class="p-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> March 15, 2024</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i> March 15, 2026</span>
                             <span class="bg-red-100 text-red-600 px-1.5 py-0.5 rounded text-xs">Featured</span>
                         </div>
                         <h3 class="text-sm font-bold text-gray-800 mb-1">18th Graduation Ceremony</h3>
@@ -607,7 +607,7 @@
                     <img src="{{ asset('images/research.jpeg') }}" alt="Research" class="w-full h-32 object-cover">
                     <div class="p-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> April 5, 2024</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i> April 5, 2026</span>
                             <span class="bg-green-100 text-green-600 px-1.5 py-0.5 rounded text-xs">Event</span>
                         </div>
                         <h3 class="text-sm font-bold text-gray-800 mb-1">Research Conference 2024</h3>
@@ -625,7 +625,7 @@
                     <img src="{{ asset('images/news2.jpg') }}" alt="Admissions" class="w-full h-32 object-cover">
                     <div class="p-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> March 10, 2024</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i> March 10, 2026</span>
                             <span class="bg-blue-100 text-blue-600 px-1.5 py-0.5 rounded text-xs">Important</span>
                         </div>
                         <h3 class="text-sm font-bold text-gray-800 mb-1">Applications Open 2024/25</h3>
@@ -1113,6 +1113,25 @@
                             </div>
                         </div>
                     </div>
+                    <!--BSC PUBLIC HEALTH-->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
+                        <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <div class="flex gap-2 mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">4 Years</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">Bachelor of Science in Public Health</h3>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive program focusing on community health, epidemiology, and health promotion.</p>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <span class="text-sm text-gray-500">Full-time | 4 Years</span>
+                                <button onclick="openModal('modal6')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                    Read More →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1180,7 +1199,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
                     <!-- BSc in Psychotherapy (Generic - 4 Year Exit with Diploma) -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
-                        <img src="{{ asset('images/Psychotherapy.jpg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/Psychotherapy.jpeg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <div class="flex gap-2 mb-2">
                                 <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
@@ -1199,7 +1218,7 @@
 
                     <!-- BSc in Psychotherapy (Upgrading) -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
-                        <img src="{{ asset('images/psychotherapy_stud.jpeg') }}" alt="Psychotherapy Upgrading" class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/psychotherapy1.jpeg') }}" alt="Psychotherapy Upgrading" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <div class="flex gap-2 mb-2">
                                 <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">Upgrading</span>
@@ -1220,7 +1239,7 @@
         </div>
 
         <!-- Department: Public Health -->
-        <div class="mb-12">
+        <!--<div class="mb-12">
             <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
                 <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                     <i class="fas fa-chart-line text-red-600 text-lg"></i>
@@ -1229,7 +1248,7 @@
             </div>
             <div class="flex justify-center">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-                    <!-- BSc Public Health (Generic) -->
+                    
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
                         <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
                         <div class="p-5">
@@ -1249,7 +1268,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- Modals -->
@@ -1785,7 +1804,7 @@
                 <i class="fas fa-info-circle text-yellow-600 mt-1"></i>
                 <div>
                     <p class="text-sm text-gray-700">
-                        <strong class="font-semibold">Application Deadline:</strong> May 31st, 2024
+                        <strong class="font-semibold">Application Deadline:</strong> May 31st, 2026
                     </p>
                     <p class="text-sm text-gray-600 mt-1">
                         For inquiries, contact admissions office: <strong>admissions@sjogu.edu</strong> or call <strong>+265 123 456 789</strong>
@@ -2055,6 +2074,88 @@
         </div>
     </div>
 </section>
+<!--University Partner-->
+
+<section id="partners" class="py-16 px-4 md:px-16 bg-red-700">
+    <div class="container mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl mb-3">
+                <i class="fas fa-handshake text-white text-xl"></i>
+            </div>
+            <p class="text-red-100 font-semibold mb-2 uppercase tracking-wide">Our Collaborators</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Trusted <span class="text-yellow-300">Partners</span></h2>
+            <div class="w-20 h-1 bg-yellow-300 mx-auto rounded-full"></div>
+            <p class="text-red-100 max-w-2xl mx-auto mt-3">
+                Working together to advance healthcare education and research
+            </p>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+            
+            <!-- Partner 1 - CHAM -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
+                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
+                    <img src="{{ asset('images/parteners/christian health association.jpeg') }}" 
+                         alt=" - Christian Health Association of Malawi"
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">CHAM</h3>
+                <p class="text-gray-400 text-xs mt-1">Christian Health Association of Malawi</p>
+            </div>
+
+            <!-- Partner 2 - NCHE -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
+                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
+                    <img src="{{ asset('images/parteners/seed health.jpeg') }}" 
+                         alt="NCHE - National Council for Higher Education"
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">SCH</h3>
+                <p class="text-gray-400 text-xs mt-1">Seed Global Health</p>
+            </div>
+
+            <!-- Partner 3 - NMCM -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
+                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
+                    <img src="{{ asset('images/parteners/Global health.jpeg') }}" 
+                         alt="NMCM - Nurses and Midwives Council of Malawi"
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">GAIA</h3>
+                <p class="text-gray-400 text-xs mt-1">GAIA Global Health</p>
+            </div>
+
+            <!-- Partner 4 - MCM -->
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
+                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
+                    <img src="{{ asset('images/parteners/service_learning.png') }}" 
+                         alt="MCM - Medical Council of Malawi"
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                </div>
+                <h3 class="font-semibold text-gray-800 text-sm">Uniservitate</h3>
+                <p class="text-gray-400 text-xs mt-1">Service Learning in Catholic Higher Education</p>
+            </div>
+        </div>
+
+        <!-- Optional: Additional Text -->
+        <div class="text-center mt-10">
+            <p class="text-sm text-red-100">
+                <i class="fas fa-plus-circle text-yellow-300 text-xs mr-1"></i>
+                More partnerships are being established to enhance our academic programs
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
 
 
 
