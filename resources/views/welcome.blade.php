@@ -96,111 +96,91 @@
 <body>
 
     <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
+    <div class="overlay" id="overlay"> </div>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <div class="p-6">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-xl font-bold text-red-700">Menu</h2>
-                <button id="closeMenu" class="text-gray-600">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold text-red-700">Menu</h2>
+            <button id="closeMenu" class="text-gray-600">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Login Options in Mobile Menu - Single Portal Link -->
+        <div class="mb-6 pb-6 border-b">
+            <div class="flex gap-2 sm:gap-3 md:gap-4">
+                <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
+                    <i class="fas fa-sign-in-alt mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Portal Login
+                </a>
             </div>
-            
-            <!-- Login Options in Mobile Menu -->
-            <div class="mb-6 pb-6 border-b">
-        <div class="flex gap-2 sm:gap-3 md:gap-4">
-        <a href="{{ route('portal.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
-            <i class="fas fa-user-graduate mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Student Portal
-        </a>
-        <a href="{{ route('staff.login') }}" class="flex-1 bg-red-50 text-red-700 py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 rounded-lg text-center font-medium text-xs sm:text-sm md:text-base hover:bg-red-700 hover:text-white transition">
-            <i class="fas fa-chalkboard-user mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>Staff Portal
-        </a>
+        </div>
+        
+        <ul class="space-y-4">
+            <li><a href="#Home" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">About</a></li>
+            <li><a href="#News" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">News</a></li>
+            <li><a href="#programs" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Programs</a></li>
+            <li><a href="#research" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Research Hub</a></li>
+            <li><a href="#students" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Students</a</li>
+            <li><a href="#library" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Library</a></li>
+            <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Contact</a></li>
+        </ul>
+        <a href="#Enroll" class="mobile-nav-link mt-6 bg-red-700 text-white w-full py-2 rounded text-center block hover:bg-red-800 transition">Enroll Now</a>
     </div>
 </div>
-            
-            <ul class="space-y-4">
-                <li><a href="#Home" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Home</a></li>
-                <li><a href="#about" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">About</a></li>
-                <li><a href="#News" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">News</a></li>
-                <li><a href="#programs" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Programs</a></li>
-                <li><a href="#students" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Students</a></li>
-                
-                <li><a href="#library" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Library</a></li>
-                
-               
-                <li><a href="#contact" class="mobile-nav-link block py-2 text-gray-800 hover:text-red-700">Contact</a></li>
-            </ul>
-            <a href="#Enroll" class="mobile-nav-link mt-6 bg-red-700 text-white w-full py-2 rounded text-center block hover:bg-red-800 transition">Enroll Now</a>
-        </div>
-    </div>
 
     <!-- TOP BAR - Hidden on mobile -->
     <div class="bg-red-700 text-white text-sm py-2 px-4 md:px-6 hidden md:flex flex-col md:flex-row justify-between items-center gap-2">
-        <div class="flex gap-4 md:gap-6">
-            <span>+265 123 456 789</span>
-            <span>info@sjoguniversity.com</span>
-            <span>Mon - Fri: 08:00 - 17:00</span>
-        </div>
-        <div class="flex items-center gap-4">
-    <div class="hidden md:flex items-center gap-4">
-        <a href="{{ route('portal.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
-            <i class="fas fa-user-graduate"></i>
-            <span>Student Portal</span>
-        </a>
-        <span class="text-gray-300">|</span>
-        <a href="{{ route('staff.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
-            <i class="fas fa-chalkboard-user"></i>
-            <span>Staff Portal</span>
-        </a>
+    <div class="flex gap-4 md:gap-6">
+        <span>+265 123 456 789</span>
+        <span>info@sjoguniversity.com</span>
+        <span>Mon - Fri: 08:00 - 17:00</span>
     </div>
-    <input type="text" placeholder="Search..." class="px-3 py-1 rounded text-black text-sm outline-none w-full md:w-auto">
-</div>
+    <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center gap-4">
+            <a href="{{ route('portal.login') }}" class="hover:text-gray-200 transition flex items-center gap-1">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Portal Login</span>
+            </a>
+        </div>
+        <input type="text" placeholder="Search..." class="px-3 py-1 rounded text-black text-sm outline-none w-full md:w-auto">
+    </div>
     </div>
 
-    <nav  class="bg-white px-4 md:px-6 py-4 flex justify-between items-center shadow sticky top-0 z-50">
-        <div class="flex items-center gap-3">
-    <div class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden shadow-md">
-        <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
+   <nav class="bg-white px-4 md:px-6 py-4 flex justify-between items-center shadow sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden shadow-md">
+            <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
+        </div>
+        <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold break-words whitespace-normal leading-tight">
+            St John of God University
+        </h1>
     </div>
-    <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold break-words whitespace-normal leading-tight">
-        St John of God University
-    </h1>
-</div>
+    
+    <div class="flex items-center gap-4">
+        <ul class="hidden md:flex gap-8 font-medium">
+            <li><a href="#Home" class="nav-link hover:text-red-600 transition">Home</a></li>
+            <li><a href="#about" class="nav-link hover:text-red-600 transition">About</a></li>
+            <li><a href="#News" class="nav-link hover:text-red-600 transition">News</a></li>
+            <li><a href="#programs" class="nav-link hover:text-red-600 transition">Programs</a></li>
+            <li><a href="#research" class="nav-link hover:text-red-600 transition">Research Hub</a></li>
+            <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
+            <li><a href="#library" class="nav-link hover:text-red-600 transition">Library</a></li>
+            <li><a href="#contact" class="nav-link hover:text-red-600 transition">Contact</a></li>
+        </ul>
         
         <div class="flex items-center gap-4">
-            <ul class="hidden md:flex gap-8 font-medium">
-                <li><a href="#Home" class="nav-link hover:text-red-600 transition">Home</a></li>
-                <li><a href="#about" class="nav-link hover:text-red-600 transition">About</a></li>
-                <li><a href="#News" class="nav-link hover:text-red-600 transition">News</a></li>
-                <li><a href="#programs" class="nav-link hover:text-red-600 transition">Programs</a></li>
-                 <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
-                <li><a href="#library" class="nav-link hover:text-red-600 transition">Library</a></li>
-                
-                <!--<li class="dropdown">
-                    <a href="#" class="hover:text-red-600 transition inline-flex items-center gap-1">
-                        Media
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#news">News</a>
-                        <a href="#announcements">Announcements</a>
-                        <a href="#vacancies">Vacancies</a>
-                        <a href="#documents">Documents</a>
-                    </div>
-                </li>-->
-                
-                <li><a href="#contact" class="nav-link hover:text-red-600 transition">Contact</a></li>
-            </ul>
-            
-            <div class="flex items-center gap-4">
-                <button id="hamburgerBtn" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+            <button id="hamburgerBtn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-    </nav>
+    </div>
+</nav>
+
+
+
  <!-- HERO SECTION WITH CAROUSEL -->
 
 <!-- HERO SECTION WITH CAROUSEL -->
@@ -413,7 +393,7 @@
         <i class="fas fa-crown text-yellow-500 text-xs"></i>
         <span class="text-red-600 text-xs font-semibold uppercase tracking-wider">University Leadership</span>
     </div>
-    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Prof. Charles Masulani Mwale</h3>
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Dr. Charles Masulani Mwale</h3>
     <div class="flex items-center justify-center gap-3 mt-1 flex-wrap">
         <p class="text-red-600 font-semibold">Vice Chancellor</p>
         <span class="text-gray-300">|</span>
@@ -474,7 +454,7 @@
                                 <i class="fas fa-pen-fancy text-red-500 text-sm"></i>
                             </div>
                             <div>
-                                <p class="text-gray-800 font-semibold text-sm">Prof. Charles Masulani Mwale, PhD</p>
+                                <p class="text-gray-800 font-semibold text-sm">Dr. Charles Masulani Mwale, PhD</p>
                                 <p class="text-gray-400 text-xs">Vice Chancellor, St John of God University</p>
                             </div>
                         </div>
@@ -1142,7 +1122,7 @@
                 <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                     <i class="fas fa-hand-holding-heart text-red-600 text-lg"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Department of Nursing</h3>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Nursing and Midwifery </h3>
             </div>
             <div class="flex justify-center">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
@@ -1271,278 +1251,7 @@
         </div>-->
     </div>
 </section>
-<!-- Modals -->
-<!-- Modal 1 - Diploma in Clinical Medicine -->
-<div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">Diploma in Clinical Medicine</h3>
-            <button onclick="closeModal('modal1')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/news2.jpg') }}" alt="Clinical Medicine" class="w-full h-64 object-cover rounded-lg mb-4">
-            <div class="flex gap-2 mb-4">
-                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
-                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Upgrading</span>
-            </div>
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">The Diploma in Clinical Medicine program provides comprehensive training in clinical medicine, preparing students for primary healthcare delivery. Students gain hands-on experience in diagnosis, treatment, and patient care.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">3 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including English, Mathematics, Biology, and Physical Science</li>
-                <li>O-Level equivalent qualifications accepted</li>
-                <li>For upgrading: Diploma in Clinical Medicine or related field</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Clinical Officer in hospitals and health centers</li>
-                <li>Private practice</li>
-                <li>Public health officer</li>
-                <li>Medical research assistant</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
 
-<!-- Modal 2 - BSc in Nursing and Midwifery -->
-<div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">BSc in Nursing and Midwifery</h3>
-            <button onclick="closeModal('modal2')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/midwifery.jpg') }}" alt="Nursing and Midwifery" class="w-full h-64 object-cover rounded-lg mb-4">
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">Professional nursing program combining theoretical knowledge with practical clinical skills. Students are trained in patient care, midwifery, and healthcare management.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including English, Mathematics, Biology, and Physical Science</li>
-                <li>O-Level equivalent qualifications accepted</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Registered Nurse/Midwife in hospitals</li>
-                <li>Nurse educator</li>
-                <li>Community health nurse</li>
-                <li>Clinical nurse specialist</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 3 - BSc in Clinical Medicine - Mental Health -->
-<div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">BSc in Clinical Medicine - Mental Health</h3>
-            <button onclick="closeModal('modal3')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/mental.jpg') }}" alt="Mental Health" class="w-full h-64 object-cover rounded-lg mb-4">
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">Specialized program focusing on mental health assessment, diagnosis, and treatment. Students learn to manage psychiatric conditions and provide mental health care.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including relevant sciences</li>
-                <li>Diploma in Clinical Medicine or related field for upgrading</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Mental Health Clinical Officer</li>
-                <li>Psychiatric care specialist</li>
-                <li>Mental health program coordinator</li>
-                <li>Community mental health worker</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 4 - BSc in Psychiatric Nursing -->
-<div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">BSc in Psychiatric Nursing</h3>
-            <button onclick="closeModal('modal4')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/Psychiatric Nursing.jpg') }}" alt="Psychiatric Nursing" class="w-full h-64 object-cover rounded-lg mb-4">
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">Advanced nursing program specializing in psychiatric care and mental health services. Students gain expertise in mental health assessment and therapeutic interventions.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including relevant sciences</li>
-                <li>Diploma in Nursing or related field for upgrading</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Psychiatric Nurse Specialist</li>
-                <li>Mental Health Nurse Educator</li>
-                <li>Psychiatric unit manager</li>
-                <li>Community mental health nurse</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 5 - University Certificate -->
-<div id="modal5" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">University Certificate in Nursing and Midwifery</h3>
-            <button onclick="closeModal('modal5')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/midwifery.jpg') }}" alt="Certificate Nursing" class="w-full h-64 object-cover rounded-lg mb-4">
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">Foundation program for aspiring nurses and midwives. Provides basic knowledge and skills in nursing and midwifery practice.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">1 Year (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits</li>
-                <li>BSc in Nursing or related field for university certificate programs</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Nurse Assistant</li>
-                <li>Community Health Worker</li>
-                <li>Pathway to BSc in Nursing</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 6 - Public Health -->
-<div id="modal6" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">Bachelor of Science in Public Health</h3>
-            <button onclick="closeModal('modal6')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-64 object-cover rounded-lg mb-4">
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">Comprehensive program focusing on community health, epidemiology, and health promotion. Students learn to address public health challenges and promote wellness.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including Biology, Chemistry, and Mathematics</li>
-                <li>O-Level equivalent qualifications accepted</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Public Health Officer</li>
-                <li>Epidemiologist</li>
-                <li>Health Program Manager</li>
-                <li>Community Health Specialist</li>
-                <li>Health Policy Analyst</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
-
-<!--card 7-->
-<!-- Modal 7 - Bachelor in Psychotherapy -->
-<div id="modal7" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">Bsc in Psychotherapy</h3>
-            <button onclick="closeModal('modal7')" class="text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-        </div>
-        <div class="p-6">
-            <img src="{{ asset('images/psychotherapy.jpg') }}" alt="Psychotherapy" class="w-full h-64 object-cover rounded-lg mb-4">
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Program Overview</h4>
-            <p class="text-gray-600 mb-4">The Bachelor in Psychotherapy program provides comprehensive training in therapeutic techniques, mental health assessment, and evidence-based psychotherapy practices. Students gain practical skills in counseling, psychological assessment, and therapeutic interventions for various mental health conditions.</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Duration</h4>
-            <p class="text-gray-600 mb-4">4 Years (Full-time)</p>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Entry Requirements</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Full MSCE with 6 credits including English, Psychology, and Biology</li>
-                <li>O-Level equivalent qualifications accepted</li>
-                <li>Strong interest in mental health and counseling</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Career Opportunities</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Clinical Psychotherapist</li>
-                <li>Mental Health Counselor</li>
-                <li>School Psychologist</li>
-                <li>Rehabilitation Specialist</li>
-                <li>Private Practice Therapist</li>
-                <li>Mental Health Program Coordinator</li>
-            </ul>
-            
-            <h4 class="font-semibold text-gray-800 mb-2">Core Modules</h4>
-            <ul class="text-gray-600 mb-4 list-disc pl-5">
-                <li>Introduction to Psychotherapy</li>
-                <li>Cognitive Behavioral Therapy (CBT)</li>
-                <li>Psychodynamic Approaches</li>
-                <li>Trauma and Crisis Intervention</li>
-                <li>Ethics in Mental Health Practice</li>
-                <li>Clinical Supervision and Practice</li>
-            </ul>
-            
-            <button class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">Apply Now</button>
-        </div>
-    </div>
-</div>
 <!-- ADMISSIONS SECTION - Red Background -->
 <section id="Enroll" class="py-16 px-4 md:px-16 bg-red-700">
     <div class="container mx-auto">
@@ -2074,12 +1783,12 @@
         </div>
     </div>
 </section>
-<!--University Partner-->
 
+<!--University Partner-->
 <section id="partners" class="py-16 px-4 md:px-16 bg-red-700">
     <div class="container mx-auto">
         <!-- Section Header -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-10">
             <div class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl mb-3">
                 <i class="fas fa-handshake text-white text-xl"></i>
             </div>
@@ -2091,55 +1800,80 @@
             </p>
         </div>
 
-        <!-- Partners Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
-            
-            <!-- Partner 1 - CHAM -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
-                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
-                    <img src="{{ asset('images/parteners/christian health association.jpeg') }}" 
-                         alt=" - Christian Health Association of Malawi"
-                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+        <!-- Partners Grid - Centered -->
+        <div class="flex justify-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-6 max-w-7xl">
+                
+                <!-- Partner 1 - CHAM -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/christian health association.jpeg') }}" 
+                             alt="CHAM"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">CHAM</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Christian Health Association</p>
                 </div>
-                <h3 class="font-semibold text-gray-800 text-sm">CHAM</h3>
-                <p class="text-gray-400 text-xs mt-1">Christian Health Association of Malawi</p>
-            </div>
 
-            <!-- Partner 2 - NCHE -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
-                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
-                    <img src="{{ asset('images/parteners/seed health.jpeg') }}" 
-                         alt="NCHE - National Council for Higher Education"
-                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                <!-- Partner 2 - Seed Global Health -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/seed health.jpeg') }}" 
+                             alt="Seed Global Health"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">Seed Global Health</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Health Workforce</p>
                 </div>
-                <h3 class="font-semibold text-gray-800 text-sm">SCH</h3>
-                <p class="text-gray-400 text-xs mt-1">Seed Global Health</p>
-            </div>
 
-            <!-- Partner 3 - NMCM -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
-                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
-                    <img src="{{ asset('images/parteners/Global health.jpeg') }}" 
-                         alt="NMCM - Nurses and Midwives Council of Malawi"
-                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                <!-- Partner 3 - GAIA -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/Global health.jpeg') }}" 
+                             alt="GAIA"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">GAIA</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Global Health</p>
                 </div>
-                <h3 class="font-semibold text-gray-800 text-sm">GAIA</h3>
-                <p class="text-gray-400 text-xs mt-1">GAIA Global Health</p>
-            </div>
 
-            <!-- Partner 4 - MCM -->
-            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center group hover:-translate-y-1">
-                <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center">
-                    <img src="{{ asset('images/parteners/service_learning.png') }}" 
-                         alt="MCM - Medical Council of Malawi"
-                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                <!-- Partner 4 - Uniservitate -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/service_learning.png') }}" 
+                             alt="Uniservitate"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">Uniservitate</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Service Learning</p>
                 </div>
-                <h3 class="font-semibold text-gray-800 text-sm">Uniservitate</h3>
-                <p class="text-gray-400 text-xs mt-1">Service Learning in Catholic Higher Education</p>
+
+                <!-- Partner 5 - Medic to Medic -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/medic to medic.jpeg') }}" 
+                             alt="Medic to Medic"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">Medic to Medic</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Medical Education Support</p>
+                </div>
+
+                <!-- Partner 6 - Book Aid International -->
+                <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
+                        <img src="{{ asset('images/parteners/Book aid.jpeg') }}" 
+                             alt="Book Aid International"
+                             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-gray-800 text-xs md:text-sm">Book Aid International</h3>
+                    <p class="text-gray-400 text-[10px] md:text-xs mt-0.5 leading-tight">Library Resources</p>
+                </div>
+
             </div>
         </div>
 
-        <!-- Optional: Additional Text -->
+        <!-- Additional Text -->
         <div class="text-center mt-10">
             <p class="text-sm text-red-100">
                 <i class="fas fa-plus-circle text-yellow-300 text-xs mr-1"></i>
@@ -2149,7 +1883,170 @@
     </div>
 </section>
 
+<!--Allumin Section -->
+<!-- ALUMNI SECTION -->
+<section id="alumni" class="py-16 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-red-50 rounded-2xl mb-3">
+                <i class="fas fa-users text-red-600 text-xl"></i>
+            </div>
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Community</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Alumni <span class="text-red-600">Network</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-3">
+                Connecting graduates who are making a difference in healthcare across Malawi and beyond
+            </p>
+        </div>
 
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-user-graduate text-red-600 text-lg"></i>
+                </div>
+                <p class="text-2xl md:text-3xl font-bold text-gray-800">3,000+</p>
+                <p class="text-gray-500 text-sm">Alumni Members</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-globe-africa text-red-600 text-lg"></i>
+                </div>
+                <p class="text-2xl md:text-3xl font-bold text-gray-800">15+</p>
+                <p class="text-gray-500 text-sm">Countries Represented</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-calendar-alt text-red-600 text-lg"></i>
+                </div>
+                <p class="text-2xl md:text-3xl font-bold text-gray-800">20+</p>
+                <p class="text-gray-500 text-sm">Years of Excellence</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <i class="fas fa-chalkboard-user text-red-600 text-lg"></i>
+                </div>
+                <p class="text-2xl md:text-3xl font-bold text-gray-800">85%</p>
+                <p class="text-gray-500 text-sm">Employed in Healthcare</p>
+            </div>
+        </div>
+
+        <!-- Featured Alumni Stories -->
+        <div class="mb-12">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">Featured <span class="text-red-600">Alumni</span></h3>
+                <div class="w-16 h-0.5 bg-red-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Alumni 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="{{ asset('images/alumni1.jpg') }}" 
+                             alt="Alumni"
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                            <p class="text-gray-500 text-xs">Class of 2018</p>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">Dr. Sarah Mwale</h4>
+                        <p class="text-red-600 text-sm mb-2">Senior Clinical Officer, Mzuzu Central Hospital</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "SJOGU gave me the foundation and confidence to excel in my career. The practical training and supportive faculty prepared me for real-world challenges."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="{{ asset('images/alumni2.jpg') }}" 
+                             alt="Alumni"
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                            <p class="text-gray-500 text-xs">Class of 2019</p>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">John Banda</h4>
+                        <p class="text-red-600 text-sm mb-2">Public Health Specialist, WHO Malawi</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "The holistic education at SJOGU shaped my approach to community health. I'm proud to be part of this alumni network."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="{{ asset('images/alumni3.jpg') }}" 
+                             alt="Alumni"
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                            <p class="text-gray-500 text-xs">Class of 2020</p>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">Grace Phiri</h4>
+                        <p class="text-red-600 text-sm mb-2">Nurse Educator, St John of God College</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "Returning as an educator after graduating from SJOGU feels like coming home. The values instilled in me continue to guide my work."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alumni Benefits -->
+        <div class="mb-12">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800">Alumni <span class="text-red-600">Benefits</span></h3>
+                <div class="w-16 h-0.5 bg-red-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
+                    <i class="fas fa-handshake text-red-600 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-800 text-sm">Networking Events</p>
+                </div>
+                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
+                    <i class="fas fa-chalkboard-user text-red-600 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-800 text-sm">Continuing Education</p>
+                </div>
+                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
+                    <i class="fas fa-briefcase text-red-600 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-800 text-sm">Career Support</p>
+                </div>
+                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
+                    <i class="fas fa-newspaper text-red-600 text-2xl mb-2"></i>
+                    <p class="font-semibold text-gray-800 text-sm">Alumni Newsletter</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+     <!-- Call to Action -->
+<div class="bg-red-700 rounded-2xl p-8 text-center">
+    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Connected</h3>
+    <p class="text-red-100 mb-6 max-w-2xl mx-auto">
+        Join our growing alumni network and be part of a community that's shaping the future of healthcare
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition flex items-center gap-2">
+            <i class="fas fa-user-plus"></i> Register as Alumni
+        </a>
+        <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 shadow-md">
+            <i class="fab fa-whatsapp text-lg"></i> Join WhatsApp Group
+        </a>
+    </div>
+</div>
+    </div>
+</section>
 
 
 
@@ -2444,6 +2341,431 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
-    </script>
+
+</script>
+<!--chatbot code -->
+
+
+
+<!-- Floating Chatbot Widget - Dummy Version for Presentation -->
+<style>
+    /* Chatbot Floating Button */
+    .chatbot-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .chatbot-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .chatbot-btn i {
+        font-size: 28px;
+        color: white;
+    }
+    
+    /* Tooltip/Prompt */
+    .chatbot-prompt {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        background: white;
+        padding: 12px 18px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        z-index: 999;
+        animation: pulse 2s infinite;
+        border-left: 4px solid #dc2626;
+    }
+    
+    .chatbot-prompt:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: 20px;
+        border-width: 10px 10px 0 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-5px);
+            opacity: 0.9;
+        }
+    }
+    
+    /* Chatbot Modal */
+    .chatbot-modal {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 350px;
+        max-width: calc(100vw - 60px);
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        z-index: 1001;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        animation: slideUp 0.3s ease;
+    }
+    
+    .chatbot-modal.active {
+        display: flex;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .chatbot-header {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .chatbot-header h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .chatbot-header h3 i {
+        font-size: 20px;
+    }
+    
+    .chatbot-close {
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .chatbot-close:hover {
+        background: rgba(255,255,255,0.3);
+        transform: rotate(90deg);
+    }
+    
+    .chatbot-body {
+        padding: 20px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 12px;
+    }
+    
+    .faq-question {
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        margin-bottom: 8px;
+    }
+    
+    .faq-question i {
+        color: #dc2626;
+        font-size: 12px;
+        transition: transform 0.3s;
+    }
+    
+    .faq-question.active i {
+        transform: rotate(90deg);
+    }
+    
+    .faq-answer {
+        color: #666;
+        font-size: 13px;
+        line-height: 1.5;
+        padding-left: 24px;
+        display: none;
+    }
+    
+    .faq-answer.show {
+        display: block;
+    }
+    
+    .chatbot-footer {
+        padding: 15px 20px;
+        border-top: 1px solid #f0f0f0;
+        background: #fafafa;
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+    }
+    
+    /* Overlay for mobile */
+    .chatbot-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        display: none;
+    }
+    
+    .chatbot-overlay.active {
+        display: block;
+    }
+    
+    @media (max-width: 640px) {
+        .chatbot-modal {
+            width: calc(100vw - 40px);
+            right: 20px;
+            bottom: 90px;
+        }
+        .chatbot-prompt {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Floating Chatbot Button -->
+<div class="chatbot-btn" id="chatbotBtn">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- Chatbot Prompt/Tooltip -->
+<div class="chatbot-prompt" id="chatbotPrompt">
+    <i class="fas fa-robot text-red-600 mr-2"></i> How may I assist you today?
+</div>
+
+<!-- Chatbot Modal -->
+<div class="chatbot-modal" id="chatbotModal">
+    <div class="chatbot-header">
+        <h3>
+            <i class="fas fa-headset"></i>
+            SJOGU Assistant
+        </h3>
+        <button class="chatbot-close" id="chatbotCloseBtn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="chatbot-body">
+        <div class="mb-4 text-center">
+            <i class="fas fa-robot text-4xl text-red-600 mb-2"></i>
+            <p class="text-gray-600 text-sm">Hello! I'm your virtual assistant. Here are some frequently asked questions:</p>
+        </div>
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="1">
+                <i class="fas fa-chevron-right"></i>
+                When are the application deadlines?
+            </div>
+            <div class="faq-answer" data-answer="1">
+                Applications for the 2025/2026 academic year close on <strong>May 31st, 2026</strong>. Late applications may be considered on a case-by-case basis.
+            </div>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="2">
+                <i class="fas fa-chevron-right"></i>
+                What programs are offered at SJOGU?
+            </div>
+            <div class="faq-answer" data-answer="2">
+                We offer programs in Clinical Medicine, Nursing and Midwifery, Psycho-Social Counselling, and Public Health. Both generic and upgrading programs are available.
+            </div>
+        </div>
+        
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="3">
+                <i class="fas fa-chevron-right"></i>
+                How do I apply for admission?
+            </div>
+            <div class="faq-answer" data-answer="3">
+                You can apply online through our Admissions section or download the application form and submit it to the admissions office along with required documents.
+            </div>
+        </div>
+        
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="4">
+                <i class="fas fa-chevron-right"></i>
+                What are the entry requirements?
+            </div>
+            <div class="faq-answer" data-answer="4">
+                Generic programs require MSCE with 6 credits including English, Mathematics, Biology, Physics, and Chemistry. Upgrading programs require a Diploma in a relevant field.
+            </div>
+        </div>
+        
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="5">
+                <i class="fas fa-chevron-right"></i>
+                Is there accommodation available?
+            </div>
+            <div class="faq-answer" data-answer="5">
+                Yes, we offer comfortable on-campus accommodation with single and shared rooms, 24/7 security, and common study areas.
+            </div>
+        </div>
+        
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="6">
+                <i class="fas fa-chevron-right"></i>
+                How can I contact the admissions office?
+            </div>
+            <div class="faq-answer" data-answer="6">
+                You can email admissions@sjogu.edu or call +265 123 456 789. Our office hours are Monday-Friday, 8:00 AM - 5:00 PM.
+            </div>
+        </div>
+        
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="7">
+                <i class="fas fa-chevron-right"></i>
+                Are there scholarships available?
+            </div>
+            <div class="faq-answer" data-answer="7">
+                Yes, merit-based and need-based scholarships are available. Contact the financial aid office for more information.
+            </div>
+        </div>
+        
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+            <div class="faq-question" data-faq="8">
+                <i class="fas fa-chevron-right"></i>
+                Is SJOGU accredited?
+            </div>
+            <div class="faq-answer" data-answer="8">
+                Yes, SJOGU is accredited by the National Council for Higher Education (NCHE) and our programs are approved by NMCM and MCM.
+            </div>
+        </div>
+    </div>
+    <div class="chatbot-footer">
+        <i class="fas fa-clock mr-1"></i> This is a demo assistant. For urgent matters, please contact the university directly.
+    </div>
+</div>
+
+<!-- Chatbot JavaScript -->
+<script>
+    // Chatbot elements
+    const chatbotBtn = document.getElementById('chatbotBtn');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
+    const chatbotPrompt = document.getElementById('chatbotPrompt');
+    
+    // Open chatbot modal
+    chatbotBtn?.addEventListener('click', () => {
+        chatbotModal.classList.add('active');
+        chatbotPrompt.style.display = 'none';
+    });
+    
+    // Close chatbot modal
+    function closeChatbotModal() {
+        chatbotModal.classList.remove('active');
+        setTimeout(() => {
+            if (chatbotPrompt) chatbotPrompt.style.display = 'block';
+        }, 300);
+    }
+    
+    chatbotCloseBtn?.addEventListener('click', closeChatbotModal);
+    
+    // Close modal when clicking outside (on overlay - not implemented, but click outside works)
+    document.addEventListener('click', (e) => {
+        if (chatbotModal.classList.contains('active')) {
+            if (!chatbotModal.contains(e.target) && !chatbotBtn.contains(e.target)) {
+                closeChatbotModal();
+            }
+        }
+    });
+    
+    // FAQ Toggle functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqId = question.getAttribute('data-faq');
+            const answer = document.querySelector(`.faq-answer[data-answer="${faqId}"]`);
+            
+            // Toggle current answer
+            answer.classList.toggle('show');
+            question.classList.toggle('active');
+            
+            // Rotate chevron
+            const chevron = question.querySelector('i');
+            if (answer.classList.contains('show')) {
+                chevron.style.transform = 'rotate(90deg)';
+            } else {
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+    
+    // Auto-hide prompt after 8 seconds
+    setTimeout(() => {
+        if (chatbotPrompt) {
+            chatbotPrompt.style.opacity = '0';
+            setTimeout(() => {
+                if (chatbotPrompt) chatbotPrompt.style.display = 'none';
+            }, 500);
+        }
+    }, 8000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Login - St John of God University</title>
+    <title>Portal Login - St John of God University</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -21,36 +21,50 @@
             <div class="text-center mb-8">
                 <div class="flex justify-center mb-4">
                     <div class="w-20 h-20 flex items-center justify-center">
-                        <img src="{{ asset('images/logo_stjohn.png') }}" alt="Logo" class="w-12 h-12 object-cover">
+                        <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-14 h-14 object-cover">
                     </div>
                 </div>
-                <h1 class="text-xl font-bold text-gray-800">St John Of God University</h1>
-                <p class="text-sm text-gray-500 mt-1">Staff Portal</p>
+                <h1 class="text-xl font-bold text-gray-800">St John of God University</h1>
+                <p class="text-sm text-red-600 font-semibold mt-1">Portal Login</p>
             </div>
 
             <!-- Login Form -->
-            <form>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                
                 <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Staff ID / Email</label>
-                    <input type="text" placeholder="Enter your staff ID or email" 
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 focus:ring-1 focus:ring-gray-600">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-envelope text-gray-400 text-xs mr-1"></i> Email Address
+                    </label>
+                    <input type="email" name="email" placeholder="Enter your email address" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                 </div>
 
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
-                    <input type="password" placeholder="Enter your password" 
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 focus:ring-1 focus:ring-gray-600">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-lock text-gray-400 text-xs mr-1"></i> Password
+                    </label>
+                    <input type="password" name="password" placeholder="Enter your password" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                 </div>
 
-                <a href="{{ route('staff.dashboard') }}" class="block w-full bg-red-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-gray-900 transition">
-                    Login
-                </a>
+                <div class="flex items-center justify-between mb-6">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="remember" class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500">
+                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-red-600 hover:text-red-700 transition">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 text-white py-2.5 rounded-lg font-semibold hover:bg-red-700 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-sign-in-alt"></i> Login to Portal
+                </button>
             </form>
 
             <!-- Back to Home -->
             <div class="text-center mt-6">
-                <a href="{{ route('home') }}" class="text-sm text-gray-500 hover:text-gray-700 transition">
-                    ← Back to School Website
+                <a href="{{ route('home') }}" class="text-sm text-gray-500 hover:text-red-600 transition inline-flex items-center gap-1">
+                    <i class="fas fa-arrow-left text-xs"></i> Back to School Website
                 </a>
             </div>
         </div>
