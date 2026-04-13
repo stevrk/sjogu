@@ -162,8 +162,9 @@
     <div class="flex items-center gap-4">
         <ul class="hidden md:flex gap-8 font-medium">
             <li><a href="#Home" class="nav-link hover:text-red-600 transition">Home</a></li>
+             <li><a href="#News" class="nav-link hover:text-red-600 transition">News</a></li>
             <li><a href="#about" class="nav-link hover:text-red-600 transition">About</a></li>
-            <li><a href="#News" class="nav-link hover:text-red-600 transition">News</a></li>
+           
             <li><a href="#programs" class="nav-link hover:text-red-600 transition">Programs</a></li>
             <li><a href="#research" class="nav-link hover:text-red-600 transition">Research Hub</a></li>
             <li><a href="#students" class="nav-link hover:text-red-600 transition">Students</a></li>
@@ -467,10 +468,6 @@
     </div>
 </section>
 
-
-
-
-
 <!-- NEWS & ANNOUNCEMENTS SECTION -->
 <section id="News" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
@@ -608,7 +605,7 @@
                             <span><i class="far fa-calendar-alt mr-1"></i> March 10, 2026</span>
                             <span class="bg-blue-100 text-blue-600 px-1.5 py-0.5 rounded text-xs">Important</span>
                         </div>
-                        <h3 class="text-sm font-bold text-gray-800 mb-1">Applications Open 2024/25</h3>
+                        <h3 class="text-sm font-bold text-gray-800 mb-1">Applications Open 2026/27</h3>
                         <p class="text-gray-600 text-xs mb-2">Applications now open for the upcoming academic year.</p>
                         <a href="#" class="text-red-600 text-xs font-semibold hover:text-red-700 transition inline-flex items-center gap-1">
                             Read More <i class="fas fa-arrow-right text-xs"></i>
@@ -707,63 +704,75 @@
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Our <span class="text-yellow-400">Foundation</span></h2>
             <p class="text-gray-300">Guiding principles that shape our institution</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-4 gap-6">
             <!-- Mission -->
-            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <i class="fas fa-bullseye text-yellow-600 text-2xl"></i>
+            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-5 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
+                <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+                    <i class="fas fa-bullseye text-yellow-600 text-xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Our Mission</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                To Provide Quality and Holistic Teaching, Learning and Research
-                <br>
-                In the manner of St John of God 
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Our Mission</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                    To Provide Quality and Holistic Teaching, Learning and Research
+                    <br>
+                    In the manner of St John of God 
                 </p>
             </div>
 
             <!-- Vision -->
-            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <i class="fas fa-eye text-yellow-600 text-2xl"></i>
+            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-5 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
+                <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+                    <i class="fas fa-eye text-yellow-600 text-xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Our Philosophy</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    The University Upholds the philosophy of hospitalier order of St John of God that promotes the Dignity of individuals
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Our Vision</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                    In the next five years St John of God University aspires to become a center of excellence in academics and research in health and related fields whilst upholding the Christian values in the student learning
+                </p>
+            </div>
+
+            <!-- Philosophy -->
+            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-5 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
+                <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+                    <i class="fas fa-brain text-yellow-600 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Our Philosophy</h3>
+                <p class="text-gray-600 text-xs leading-relaxed">
+                    The University upholds the philosophy of the Hospitaller Order of St John of God that promotes the Dignity of individuals
                 </p>
             </div>
 
             <!-- Core Values -->
-            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <i class="fas fa-heart text-yellow-600 text-2xl"></i>
+            <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-5 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
+                <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+                    <i class="fas fa-heart text-yellow-600 text-xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Core Values</h3>
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2 justify-center">
-                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Hospitality</span>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Core Values</h3>
+                <div class="grid grid-cols-2 gap-1">
+                    <div class="flex items-center gap-1 justify-center">
+                        <i class="fas fa-check-circle text-yellow-600 text-xs"></i>
+                        <span class="text-gray-600 text-xs">Hospitality</span>
                     </div>
-                    <div class="flex items-center gap-2 justify-center">
-                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Compassion</span>
+                    <div class="flex items-center gap-1 justify-center">
+                        <i class="fas fa-check-circle text-yellow-600 text-xs"></i>
+                        <span class="text-gray-600 text-xs">Compassion</span>
                     </div>
-                    <div class="flex items-center gap-2 justify-center">
-                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Respect</span>
+                    <div class="flex items-center gap-1 justify-center">
+                        <i class="fas fa-check-circle text-yellow-600 text-xs"></i>
+                        <span class="text-gray-600 text-xs">Respect</span>
                     </div>
-                    <div class="flex items-center gap-2 justify-center">
-                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Justice</span>
+                    <div class="flex items-center gap-1 justify-center">
+                        <i class="fas fa-check-circle text-yellow-600 text-xs"></i>
+                        <span class="text-gray-600 text-xs">Justice</span>
                     </div>
-                    <div class="flex items-center gap-2 justify-center">
-                        <i class="fas fa-check-circle text-yellow-600 text-sm"></i>
-                        <span class="text-gray-600 text-sm">Excellence</span>
+                    <div class="flex items-center gap-1 justify-center col-span-2">
+                        <i class="fas fa-check-circle text-yellow-600 text-xs"></i>
+                        <span class="text-gray-600 text-xs">Excellence</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <!-- LEADERSHIP / EXECUTIVE STAFF SECTION -->
 <section class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
@@ -815,7 +824,7 @@
             <div class="w-48 h-48 lg:w-56 lg:h-56 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-lg">
                 <img src="{{ asset('images/Dean.jpeg') }}" alt="Chimwemwe Munthali" class="w-full h-full object-cover">
             </div>
-            <h4 class="text-xl font-bold text-gray-800">Chimwemwe Munthali</h4>
+            <h4 class="text-xl font-bold text-gray-800">Chimwemwe Munthali, Msc</h4>
             <p class="text-red-600 text-sm mb-3">Dean of Faculty</p>
             <p class="text-gray-600 text-sm">Overseeing academic programs and faculty development.</p>
         </div>
@@ -824,7 +833,7 @@
        
 
         <!-- View All Staff Button -->
-        <div class="text-center mt-12">
+<div class="text-center mt-12">
             <a href="#" class="inline-block border-2 border-red-600 text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-600 hover:text-white transition">
                 View All Staff →
             </a>
@@ -1106,7 +1115,7 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <p class="text-red-200 font-semibold mb-2 uppercase tracking-wide">Join Us</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Admissions <span class="text-yellow-300">2025/2026</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Admissions <span class="text-yellow-300">2026/2027</span></h2>
             <p class="text-red-100 max-w-2xl mx-auto">
                 Take the first step towards your future career in healthcare. Apply now to join our community of excellence.
             </p>
@@ -1220,39 +1229,82 @@
 <!-- Dummy Application Form Modal -->
 <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
-            <h3 class="text-xl font-bold text-gray-800">Online Application Form</h3>
-            <button onclick="closeApplicationModal()" class="text-gray-500 hover:text-gray-700">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-file-alt text-xl"></i>
+                <h3 class="text-xl font-bold">Online Application Form</h3>
+            </div>
+            <button onclick="closeApplicationModal()" class="text-white hover:text-gray-200 transition">
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
         <div class="p-6">
+           
+
+            <!-- Application Fee Section -->
+            <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-5">
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-receipt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">Application Fee</p>
+                            <p class="text-2xl font-bold text-red-600">MK 12,000</p>
+                            <p class="text-xs text-gray-500">Non-refundable application processing fee</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-gray-600 mb-1">Payment Methods:</p>
+                        <div class="flex gap-2">
+                            <span class="bg-white px-2 py-1 rounded text-xs"><i class="fas fa-mobile-alt"></i> Airtel Money</span>
+                            <span class="bg-white px-2 py-1 rounded text-xs"><i class="fas fa-mobile-alt"></i> TNM Mpamba</span>
+                            <span class="bg-white px-2 py-1 rounded text-xs"><i class="fas fa-university"></i> Bank Deposit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <form id="applicationForm">
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                        <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-user text-red-500 text-xs mr-1"></i> Full Name *
+                        </label>
+                        <input type="text" id="fullName" required placeholder="Enter your full name" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Date of Birth *</label>
-                        <input type="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-calendar-alt text-red-500 text-xs mr-1"></i> Date of Birth *
+                        </label>
+                        <input type="date" id="dob" required 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                     </div>
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-envelope text-red-500 text-xs mr-1"></i> Email Address *
+                        </label>
+                        <input type="email" id="email" required placeholder="your.email@example.com" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                        <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-phone text-red-500 text-xs mr-1"></i> Phone Number *
+                        </label>
+                        <input type="tel" id="phone" required placeholder="+265 999 123 456" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                     </div>
                 </div>
                 
                 <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Program Applying For *</label>
-                    <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-graduation-cap text-red-500 text-xs mr-1"></i> Program Applying For *
+                    </label>
+                    <select id="program" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
                         <option value="">Select Program</option>
                         <option>Diploma in Clinical Medicine</option>
                         <option>BSc in Nursing and Midwifery</option>
@@ -1263,25 +1315,66 @@
                     </select>
                 </div>
                 
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Highest Qualification *</label>
-                    <input type="text" required placeholder="e.g., MSCE, Diploma, Degree" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-certificate text-red-500 text-xs mr-1"></i> Highest Qualification *
+                        </label>
+                        <input type="text" id="qualification" required placeholder="e.g., MSCE, Diploma, Degree" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                            <i class="fas fa-calendar-check text-red-500 text-xs mr-1"></i> Year of Completion
+                        </label>
+                        <input type="text" id="completionYear" placeholder="e.g., 2022" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
+                    </div>
                 </div>
                 
                 <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Upload Documents</label>
-                    <input type="file" multiple class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
-                    <p class="text-xs text-gray-500 mt-1">Upload academic certificates, ID, and passport photo (PDF, JPG, PNG)</p>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-file-pdf text-red-500 text-xs mr-1"></i> Upload Documents
+                    </label>
+                    <input type="file" id="documents" multiple 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 transition">
+                    <p class="text-xs text-gray-500 mt-1">
+                        <i class="fas fa-info-circle"></i> Upload academic certificates, national ID, and passport photo (PDF, JPG, PNG - Max 5MB each)
+                    </p>
                 </div>
                 
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Additional Information</label>
-                    <textarea rows="3" placeholder="Any additional information you'd like to share..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500"></textarea>
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-money-bill-wave text-red-500 text-xs mr-1"></i> Payment Reference Number
+                    </label>
+                    <input type="text" id="paymentRef" placeholder="Enter payment reference number (e.g., ATR123456789)" 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
+                    <p class="text-xs text-gray-500 mt-1">
+                        <i class="fas fa-info-circle"></i> After paying MK 12,000 application fee, enter your transaction reference number
+                    </p>
+                </div>
+                
+                <div class="mb-5">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-comment text-red-500 text-xs mr-1"></i> Additional Information
+                    </label>
+                    <textarea id="additionalInfo" rows="3" placeholder="Any additional information you'd like to share (e.g., work experience, special needs, etc.)..." 
+                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"></textarea>
+                </div>
+                
+                <!-- Terms and Conditions -->
+                <div class="mb-5">
+                    <label class="flex items-start gap-2 cursor-pointer">
+                        <input type="checkbox" id="termsCheckbox" required class="mt-1 w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500">
+                        <span class="text-sm text-gray-700">
+                            I confirm that all information provided is accurate and complete. I understand that providing false information may lead to disqualification.
+                        </span>
+                    </label>
                 </div>
                 
                 <div class="flex gap-3">
-                    <button type="submit" class="flex-1 bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition">
-                        Submit Application
+                    <button type="submit" class="flex-1 bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Submit Application
                     </button>
                     <button type="button" onclick="closeApplicationModal()" class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition">
                         Cancel
@@ -1291,6 +1384,67 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Open application modal function
+    function openApplicationModal() {
+        const modal = document.getElementById('applicationModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+    
+    // Close application modal function
+    function closeApplicationModal() {
+        const modal = document.getElementById('applicationModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        // Optional: Reset form when closing
+        // document.getElementById('applicationForm').reset();
+    }
+    
+    // Handle form submission (demo only)
+    const applicationForm = document.getElementById('applicationForm');
+    if (applicationForm) {
+        applicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values for demo
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const program = document.getElementById('program').value;
+            const paymentRef = document.getElementById('paymentRef').value;
+            const termsChecked = document.getElementById('termsCheckbox').checked;
+            
+            // Simple validation for demo
+            if (!fullName || !email || !program) {
+                alert('⚠️ Please fill in all required fields (*)\n\nThis is a demonstration form.');
+                return;
+            }
+            
+            if (!termsChecked) {
+                alert('⚠️ Please accept the terms and conditions to continue.');
+                return;
+            }
+            
+            // Show success message
+            alert(`🎓 Application Submitted (Demo)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n✅ Application Received!\n\n📝 Applicant: ${fullName}\n📧 Email: ${email}\n🎯 Program: ${program}\n💰 Application Fee: MK 12,000\n📋 Payment Ref: ${paymentRef || 'Not provided'}\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📢 This is a demonstration. No actual application has been submitted.\n\nFor real applications, please visit our admissions office.\n\nThank you for your interest in SJOGU! 🎓`);
+            
+            // Close modal after submission
+            closeApplicationModal();
+            
+            // Reset form (optional)
+            applicationForm.reset();
+        });
+    }
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('applicationModal');
+        if (e.target === modal) {
+            closeApplicationModal();
+        }
+    });
+</script>
 
 <!-- Success Modal -->
 <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
@@ -1371,6 +1525,189 @@
         </div>
     </div>
 </section>
+
+
+<!--Research Hub-->
+
+<section id="research" class="py-12 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-red-100 rounded-xl mb-3">
+                <i class="fas fa-flask text-red-600 text-xl"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Research <span class="text-red-600">Hub</span></h2>
+            <div class="w-16 h-0.5 bg-red-600 mx-auto rounded-full mb-3"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto text-sm">
+                Advancing healthcare knowledge through innovative research and collaboration
+            </p>
+        </div>
+
+        <!-- Research Stats Highlights -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                <i class="fas fa-file-alt text-red-600 text-xl mb-1"></i>
+                <p class="text-lg font-bold text-gray-800">45+</p>
+                <p class="text-gray-500 text-xs">Research Papers</p>
+            </div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                <i class="fas fa-users text-red-600 text-xl mb-1"></i>
+                <p class="text-lg font-bold text-gray-800">12+</p>
+                <p class="text-gray-500 text-xs">Active Projects</p>
+            </div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                <i class="fas fa-globe text-red-600 text-xl mb-1"></i>
+                <p class="text-lg font-bold text-gray-800">8+</p>
+                <p class="text-gray-500 text-xs">Collaborations</p>
+            </div>
+            <div class="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                <i class="fas fa-chart-line text-red-600 text-xl mb-1"></i>
+                <p class="text-lg font-bold text-gray-800">5+</p>
+                <p class="text-gray-500 text-xs">Grants Funded</p>
+            </div>
+        </div>
+
+        <!-- Research Areas by Department -->
+        <div class="mb-8">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Research <span class="text-red-600">Departments</span></h3>
+                <p class="text-gray-500 text-sm">Key research areas across our academic departments</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Department 1: Clinical Medicine -->
+                <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition border-l-4 border-red-600">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fas fa-stethoscope text-red-600 text-lg"></i>
+                        <h4 class="font-bold text-gray-800">Clinical Medicine</h4>
+                    </div>
+                    <p class="text-gray-600 text-xs leading-relaxed mb-2">
+                        Infectious diseases, internal medicine, surgical innovations, and patient care optimization
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Malaria Research</span>
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">HIV/AIDS</span>
+                    </div>
+                </div>
+
+                <!-- Department 2: Nursing and Midwifery -->
+                <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition border-l-4 border-red-600">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fas fa-hand-holding-heart text-red-600 text-lg"></i>
+                        <h4 class="font-bold text-gray-800">Nursing & Midwifery</h4>
+                    </div>
+                    <p class="text-gray-600 text-xs leading-relaxed mb-2">
+                        Maternal health, neonatal care, nursing education, and community health nursing
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Maternal Health</span>
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Child Care</span>
+                    </div>
+                </div>
+
+                <!-- Department 3: Psycho-Social Counselling -->
+                <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition border-l-4 border-red-600">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fas fa-brain text-red-600 text-lg"></i>
+                        <h4 class="font-bold text-gray-800">Psycho-Social Counselling</h4>
+                    </div>
+                    <p class="text-gray-600 text-xs leading-relaxed mb-2">
+                        Mental health, trauma counselling, substance abuse, and community psychosocial support
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Mental Health</span>
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Trauma Care</span>
+                    </div>
+                </div>
+
+                <!-- Department 4: Public Health -->
+                <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition border-l-4 border-red-600">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fas fa-chart-bar text-red-600 text-lg"></i>
+                        <h4 class="font-bold text-gray-800">Public Health</h4>
+                    </div>
+                    <p class="text-gray-600 text-xs leading-relaxed mb-2">
+                        Epidemiology, health promotion, disease prevention, and health policy research
+                    </p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Epidemiology</span>
+                        <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded">Health Policy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Research Projects -->
+        <div class="mb-8">
+            <div class="text-center mb-5">
+                <h3 class="text-xl font-bold text-gray-800">Featured <span class="text-red-600">Research</span></h3>
+                <div class="w-12 h-0.5 bg-red-600 mx-auto mt-1 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-lg p-3 shadow-sm">
+                    <div class="flex items-start gap-2">
+                        <i class="fas fa-microscope text-red-600 text-base mt-0.5"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Malaria Prevention in Rural Communities</h4>
+                            <p class="text-gray-500 text-xs mt-1">Department of Public Health</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-3 shadow-sm">
+                    <div class="flex items-start gap-2">
+                        <i class="fas fa-heartbeat text-red-600 text-base mt-0.5"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Maternal Mortality Reduction</h4>
+                            <p class="text-gray-500 text-xs mt-1">Dept of Nursing & Midwifery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg p-3 shadow-sm">
+                    <div class="flex items-start gap-2">
+                        <i class="fas fa-hand-holding-heart text-red-600 text-base mt-0.5"></i>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Youth Mental Health Awareness</h4>
+                            <p class="text-gray-500 text-xs mt-1">Dept of Psycho-Social Counselling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View More Button (Non-functional) -->
+        <div class="text-center">
+            <a href="#" id="viewMoreResearchBtn" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-red-700 transition shadow-md">
+                <i class="fas fa-search"></i>
+                View More Research
+                <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+           
+        </div>
+    </div>
+</section>
+
+<!-- Simple Alert Script for View More Button -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const viewMoreBtn = document.getElementById('viewMoreResearchBtn');
+        if (viewMoreBtn) {
+            viewMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Research Hub - Demo Version\n\nThis is a demonstration. The full research repository will be available soon.\n\nDepartments:\n• Clinical Medicine\n• Nursing and Midwifery\n• Psycho-Social Counselling\n• Public Health');
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
 <!-- STUDENT SECTION -->
 <section id="students" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
@@ -1732,169 +2069,336 @@
 </section>
 
 <!--Allumin Section -->
-<!-- ALUMNI SECTION -->
-<section id="alumni" class="py-16 px-4 md:px-16 bg-white">
+
+<section id="alumni" class="py-12 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
-        <!-- Section Header -->
-        <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-12 h-12 bg-red-50 rounded-2xl mb-3">
-                <i class="fas fa-users text-red-600 text-xl"></i>
+        <!-- Section Header - Compact -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-10 h-10 bg-red-50 rounded-xl mb-2">
+                <i class="fas fa-users text-red-600 text-lg"></i>
             </div>
-            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Community</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Alumni <span class="text-red-600">Network</span></h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full"></div>
-            <p class="text-gray-500 max-w-2xl mx-auto mt-3">
-                Connecting graduates who are making a difference in healthcare across Malawi and beyond
+            <p class="text-red-600 font-semibold mb-1 text-sm uppercase tracking-wide">Our Community</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Alumni <span class="text-red-600">Network</span></h2>
+            <div class="w-16 h-0.5 bg-red-600 mx-auto rounded-full"></div>
+            <p class="text-gray-500 text-sm max-w-2xl mx-auto mt-2">
+                Connecting graduates making a difference in healthcare across Malawi and beyond
             </p>
         </div>
 
-        <!-- Stats Row -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <i class="fas fa-user-graduate text-red-600 text-lg"></i>
+        <!-- Stats Row - More Compact -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-user-graduate text-red-600 text-base"></i>
                 </div>
-                <p class="text-2xl md:text-3xl font-bold text-gray-800">3,000+</p>
-                <p class="text-gray-500 text-sm">Alumni Members</p>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">3,000+</p>
+                <p class="text-gray-500 text-xs">Alumni Members</p>
             </div>
-            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <i class="fas fa-globe-africa text-red-600 text-lg"></i>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-globe-africa text-red-600 text-base"></i>
                 </div>
-                <p class="text-2xl md:text-3xl font-bold text-gray-800">15+</p>
-                <p class="text-gray-500 text-sm">Countries Represented</p>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">15+</p>
+                <p class="text-gray-500 text-xs">Countries</p>
             </div>
-            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <i class="fas fa-calendar-alt text-red-600 text-lg"></i>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-calendar-alt text-red-600 text-base"></i>
                 </div>
-                <p class="text-2xl md:text-3xl font-bold text-gray-800">20+</p>
-                <p class="text-gray-500 text-sm">Years of Excellence</p>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">20+</p>
+                <p class="text-gray-500 text-xs">Years</p>
             </div>
-            <div class="text-center bg-gray-50 rounded-2xl p-4 hover:shadow-lg transition">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <i class="fas fa-chalkboard-user text-red-600 text-lg"></i>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-chalkboard-user text-red-600 text-base"></i>
                 </div>
-                <p class="text-2xl md:text-3xl font-bold text-gray-800">85%</p>
-                <p class="text-gray-500 text-sm">Employed in Healthcare</p>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">85%</p>
+                <p class="text-gray-500 text-xs">Employed</p>
             </div>
         </div>
 
-        <!-- Featured Alumni Stories -->
-        <div class="mb-12">
-            <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-800">Featured <span class="text-red-600">Alumni</span></h3>
-                <div class="w-16 h-0.5 bg-red-600 mx-auto mt-2 rounded-full"></div>
+        <!-- Featured Alumni - 2 columns instead of 3 for compactness -->
+        <div class="mb-8">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Featured <span class="text-red-600">Alumni</span></h3>
+                <div class="w-12 h-0.5 bg-red-600 mx-auto mt-1 rounded-full"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 gap-5">
                 <!-- Alumni 1 -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
-                    <div class="h-48 overflow-hidden">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
                         <img src="{{ asset('images/alumni1.jpg') }}" 
                              alt="Alumni"
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                             class="w-full h-full object-cover">
                     </div>
-                    <div class="p-5">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
                             <p class="text-gray-500 text-xs">Class of 2018</p>
                         </div>
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">Dr. Sarah Mwale</h4>
-                        <p class="text-red-600 text-sm mb-2">Senior Clinical Officer, Mzuzu Central Hospital</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            "SJOGU gave me the foundation and confidence to excel in my career. The practical training and supportive faculty prepared me for real-world challenges."
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Dr. Sarah Mwale</h4>
+                        <p class="text-red-600 text-xs mb-1">Senior Clinical Officer</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            "SJOGU gave me the foundation and confidence to excel in my career."
                         </p>
                     </div>
                 </div>
 
                 <!-- Alumni 2 -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
-                    <div class="h-48 overflow-hidden">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
                         <img src="{{ asset('images/alumni2.jpg') }}" 
                              alt="Alumni"
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                             class="w-full h-full object-cover">
                     </div>
-                    <div class="p-5">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
                             <p class="text-gray-500 text-xs">Class of 2019</p>
                         </div>
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">John Banda</h4>
-                        <p class="text-red-600 text-sm mb-2">Public Health Specialist, WHO Malawi</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            "The holistic education at SJOGU shaped my approach to community health. I'm proud to be part of this alumni network."
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">John Banda</h4>
+                        <p class="text-red-600 text-xs mb-1">Public Health Specialist</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            "The holistic education at SJOGU shaped my approach to community health."
                         </p>
                     </div>
                 </div>
 
                 <!-- Alumni 3 -->
-                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group">
-                    <div class="h-48 overflow-hidden">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
                         <img src="{{ asset('images/alumni3.jpg') }}" 
                              alt="Alumni"
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                             class="w-full h-full object-cover">
                     </div>
-                    <div class="p-5">
-                        <div class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-quote-left text-red-500 text-sm"></i>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
                             <p class="text-gray-500 text-xs">Class of 2020</p>
                         </div>
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">Grace Phiri</h4>
-                        <p class="text-red-600 text-sm mb-2">Nurse Educator, St John of God College</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            "Returning as an educator after graduating from SJOGU feels like coming home. The values instilled in me continue to guide my work."
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Grace Phiri</h4>
+                        <p class="text-red-600 text-xs mb-1">Nurse Educator</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            "Returning as an educator after graduating from SJOGU feels like coming home."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 4 - Added to balance -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
+                        <img src="{{ asset('images/alumni4.jpg') }}" 
+                             alt="Alumni"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
+                            <p class="text-gray-500 text-xs">Class of 2017</p>
+                        </div>
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Dr. Michael Chirwa</h4>
+                        <p class="text-red-600 text-xs mb-1">Medical Director</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            "SJOGU alumni network has been instrumental in my professional growth."
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Alumni Benefits -->
-        <div class="mb-12">
-            <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-800">Alumni <span class="text-red-600">Benefits</span></h3>
-                <div class="w-16 h-0.5 bg-red-600 mx-auto mt-2 rounded-full"></div>
+        <!-- Alumni Benefits - More compact -->
+        <div class="mb-8">
+            <div class="text-center mb-5">
+                <h3 class="text-xl font-bold text-gray-800">Alumni <span class="text-red-600">Benefits</span></h3>
+                <div class="w-12 h-0.5 bg-red-600 mx-auto mt-1 rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
-                    <i class="fas fa-handshake text-red-600 text-2xl mb-2"></i>
-                    <p class="font-semibold text-gray-800 text-sm">Networking Events</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-handshake text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Networking</p>
                 </div>
-                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
-                    <i class="fas fa-chalkboard-user text-red-600 text-2xl mb-2"></i>
-                    <p class="font-semibold text-gray-800 text-sm">Continuing Education</p>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-chalkboard-user text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Education</p>
                 </div>
-                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
-                    <i class="fas fa-briefcase text-red-600 text-2xl mb-2"></i>
-                    <p class="font-semibold text-gray-800 text-sm">Career Support</p>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-briefcase text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Career</p>
                 </div>
-                <div class="text-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
-                    <i class="fas fa-newspaper text-red-600 text-2xl mb-2"></i>
-                    <p class="font-semibold text-gray-800 text-sm">Alumni Newsletter</p>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-newspaper text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Newsletter</p>
                 </div>
             </div>
         </div>
 
-        <!-- Call to Action -->
-     <!-- Call to Action -->
-<div class="bg-red-700 rounded-2xl p-8 text-center">
-    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Stay Connected</h3>
-    <p class="text-red-100 mb-6 max-w-2xl mx-auto">
-        Join our growing alumni network and be part of a community that's shaping the future of healthcare
-    </p>
-    <div class="flex flex-wrap gap-4 justify-center">
-        <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition flex items-center gap-2">
-            <i class="fas fa-user-plus"></i> Register as Alumni
-        </a>
-        <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2 shadow-md">
-            <i class="fab fa-whatsapp text-lg"></i> Join WhatsApp Group
-        </a>
-    </div>
-</div>
+        <!-- CTA Buttons - Compact -->
+        <div class="bg-red-700 rounded-xl p-5 text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Stay Connected</h3>
+            <p class="text-red-100 text-sm mb-4 max-w-xl mx-auto">
+                Join our growing alumni network and shape the future of healthcare
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <a href="#" id="registerAlumniBtn" class="bg-white text-red-600 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2 text-sm">
+                    <i class="fas fa-user-plus"></i> Register
+                </a>
+                <a href="#" id="whatsappBtn" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition flex items-center gap-2 text-sm shadow-md">
+                    <i class="fab fa-whatsapp"></i> Join WhatsApp
+                </a>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- Alumni Registration Popup Modal (Compact) -->
+<div id="alumniModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl max-w-md w-full mx-4 transform transition-all duration-300">
+        <!-- Modal Header -->
+        <div class="bg-red-600 text-white rounded-t-xl px-5 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3 class="font-bold">Alumni Registration</h3>
+                </div>
+                <button id="closeModalBtn" class="text-white hover:text-gray-200 text-2xl leading-none">&times;</button>
+            </div>
+            <p class="text-red-100 text-xs mt-1">Demo Version - No data saved</p>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="p-5">
+            <form id="alumniForm">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="mb-3 col-span-2">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-user text-gray-400 text-xs mr-1"></i> Full Name *
+                        </label>
+                        <input type="text" id="fullName" placeholder="Enter full name" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-envelope text-gray-400 text-xs mr-1"></i> Email *
+                        </label>
+                        <input type="email" id="email" placeholder="Email address" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-phone text-gray-400 text-xs mr-1"></i> Phone
+                        </label>
+                        <input type="tel" id="phone" placeholder="Phone number" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-calendar-alt text-gray-400 text-xs mr-1"></i> Grad Year
+                        </label>
+                        <select id="gradYear" class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                            <option value="">Select year</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-graduation-cap text-gray-400 text-xs mr-1"></i> Program
+                        </label>
+                        <select id="program" class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                            <option value="">Select program</option>
+                            <option>Bachelor of Medicine</option>
+                            <option>Bachelor of Nursing</option>
+                            <option>Bachelor of Public Health</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-xs font-medium text-gray-700 mb-1">
+                        <i class="fas fa-briefcase text-gray-400 text-xs mr-1"></i> Occupation
+                    </label>
+                    <input type="text" id="occupation" placeholder="Current job title" 
+                        class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-red-500">
+                </div>
+                
+                <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition flex items-center justify-center gap-2 text-sm">
+                    <i class="fas fa-paper-plane"></i> Register (Demo)
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Success Toast -->
+<div id="successToast" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg hidden items-center gap-2 z-50 text-sm">
+    <i class="fas fa-check-circle"></i>
+    <div>
+        <p class="font-semibold">Registration Successful!</p>
+        <p class="text-xs opacity-90">Thank you for joining</p>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('alumniModal');
+    const registerBtn = document.getElementById('registerAlumniBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const alumniForm = document.getElementById('alumniForm');
+    const successToast = document.getElementById('successToast');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    
+    registerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    });
+    
+    function closeModal() {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+    
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+    
+    alumniForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        
+        if (!fullName || !email) {
+            alert('Please fill in name and email');
+            return;
+        }
+        
+        successToast.classList.remove('hidden');
+        setTimeout(() => successToast.classList.add('hidden'), 3000);
+        alumniForm.reset();
+        closeModal();
+    });
+    
+    whatsappBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Demo: WhatsApp group link would open here');
+    });
+</script>
+
+
+
+
+
+
 
 
 
@@ -2020,7 +2524,9 @@
    
 
     <script>
+
         // Function to close mobile menu
+
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
             overlay.classList.remove('active');
@@ -2094,24 +2600,24 @@
         
         
 
-        //modal js
-        function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden';
-    }
+                //modal js
+                function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
 }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = '';
-    }
-}
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }
+            }
 
 // Close modal when clicking outside
 window.onclick = function(event) {
@@ -2125,77 +2631,79 @@ window.onclick = function(event) {
     });
 }
     </script>
+
+
     <script>
+
         // Carousel
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
 
-if (slides.length > 0) {
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-        dots.forEach((dot, i) => {
-            dot.style.opacity = i === index ? '1' : '0.5';
-        });
-        currentSlide = index;
-    }
-    
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-    
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-    
-    prevBtn?.addEventListener('click', prevSlide);
-    nextBtn?.addEventListener('click', nextSlide);
-    
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => showSlide(i));
-    });
-    
-    // Auto play
-    setInterval(nextSlide, 5000);
-}
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
 
-// Highlight active navigation link based on scroll position
-const sections = document.querySelectorAll('section[id]');
-
-function updateActiveNav() {
-    const scrollPosition = window.scrollY + 100;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('nav-active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('nav-active');
+            if (slides.length > 0) {
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === index);
+                    });
+                    dots.forEach((dot, i) => {
+                        dot.style.opacity = i === index ? '1' : '0.5';
+                    });
+                    currentSlide = index;
                 }
-            });
-        }
-    });
-}
+                
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }
+                
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                }
+                
+                prevBtn?.addEventListener('click', prevSlide);
+                nextBtn?.addEventListener('click', nextSlide);
+                
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => showSlide(i));
+                });
+                
+                // Auto play
+                setInterval(nextSlide, 5000);
+            }
 
-window.addEventListener('scroll', updateActiveNav);
-updateActiveNav();
+            // Highlight active navigation link based on scroll position
+            const sections = document.querySelectorAll('section[id]');
 
-</script>
-<!--chatbot code -->
+            function updateActiveNav() {
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('nav-active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('nav-active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav();
+
+    </script>
 
 
 
-<!-- Floating Chatbot Widget - Dummy Version for Presentation -->
 <style>
     /* Chatbot Floating Button */
     .chatbot-btn {
@@ -2336,7 +2844,7 @@ updateActiveNav();
     
     .chatbot-body {
         padding: 20px;
-        max-height: 400px;
+        max-height: 350px;
         overflow-y: auto;
     }
     
@@ -2379,6 +2887,88 @@ updateActiveNav();
         display: block;
     }
     
+    /* Chat Input Section */
+    .chatbot-input-section {
+        padding: 15px 20px 20px 20px;
+        border-top: 1px solid #e5e7eb;
+        background-color: #ffffff;
+    }
+    
+    .demo-notice {
+        background-color: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 8px 12px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+    
+    .demo-notice p {
+        font-size: 11px;
+        color: #92400e;
+        margin: 0;
+    }
+    
+    .demo-notice i {
+        margin-right: 6px;
+    }
+    
+    .chatbot-input-wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .chatbot-input-wrapper input {
+        flex: 1;
+        padding: 10px 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 13px;
+        outline: none;
+        transition: all 0.3s;
+    }
+    
+    .chatbot-input-wrapper input:focus {
+        border-color: #dc2626;
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+    
+    .chatbot-input-wrapper input::placeholder {
+        color: #9ca3af;
+        font-size: 12px;
+    }
+    
+    .send-btn {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        border: none;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    
+    .send-btn:hover {
+        transform: scale(1.02);
+        background: linear-gradient(135deg, #b91c1c, #991b1b);
+    }
+    
+    .demo-hint {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 10px;
+        color: #9ca3af;
+    }
+    
+    .demo-hint i {
+        margin-right: 4px;
+    }
+    
     .chatbot-footer {
         padding: 15px 20px;
         border-top: 1px solid #f0f0f0;
@@ -2412,6 +3002,9 @@ updateActiveNav();
         }
         .chatbot-prompt {
             display: none;
+        }
+        .chatbot-body {
+            max-height: 300px;
         }
     }
 </style>
@@ -2531,9 +3124,30 @@ updateActiveNav();
             </div>
         </div>
     </div>
-    <div class="chatbot-footer">
-        <i class="fas fa-clock mr-1"></i> This is a demo assistant. For urgent matters, please contact the university directly.
+    
+    <!-- Chat Input Section - Demo -->
+    <div class="chatbot-input-section">
+        <!--<div class="demo-notice">
+            <p><i class="fas fa-info-circle"></i> <strong>Demo Mode:</strong> This is a demonstration chatbot. No responses will be generated.</p>
+        </div>-->
+        
+        <div class="chatbot-input-wrapper">
+            <input type="text" 
+                   id="chatbotInput" 
+                   placeholder="Type your question here (demo)..."
+                   autocomplete="off">
+            <button id="sendChatBtn" class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+                Send
+            </button>
+        </div>
+        
+        <!--<div class="demo-hint">
+            <i class="fas fa-robot"></i> Demo chatbot - Ask anything about SJOGU (simulated responses)
+        </div>-->
     </div>
+    
+   
 </div>
 
 <!-- Chatbot JavaScript -->
@@ -2543,11 +3157,17 @@ updateActiveNav();
     const chatbotModal = document.getElementById('chatbotModal');
     const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
     const chatbotPrompt = document.getElementById('chatbotPrompt');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const sendChatBtn = document.getElementById('sendChatBtn');
     
     // Open chatbot modal
     chatbotBtn?.addEventListener('click', () => {
         chatbotModal.classList.add('active');
         chatbotPrompt.style.display = 'none';
+        // Focus on input when modal opens
+        setTimeout(() => {
+            if (chatbotInput) chatbotInput.focus();
+        }, 300);
     });
     
     // Close chatbot modal
@@ -2560,7 +3180,7 @@ updateActiveNav();
     
     chatbotCloseBtn?.addEventListener('click', closeChatbotModal);
     
-    // Close modal when clicking outside (on overlay - not implemented, but click outside works)
+    // Close modal when clicking outside
     document.addEventListener('click', (e) => {
         if (chatbotModal.classList.contains('active')) {
             if (!chatbotModal.contains(e.target) && !chatbotBtn.contains(e.target)) {
@@ -2591,6 +3211,36 @@ updateActiveNav();
         });
     });
     
+    // Demo chat response function
+    function showDemoResponse() {
+        const message = chatbotInput.value.trim();
+        
+        if (message === "") {
+            alert("💬 Demo Chatbot\n\nPlease type a question to see how the chatbot would respond.\n\n📢 This is a demonstration - no actual AI responses are generated.\n\n💡 Try asking about:\n• Application deadlines\n• Programs offered\n• Entry requirements\n• Scholarships");
+        } else {
+            alert(`💬 SJOGU Assistant - Demo Response\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n📝 You asked: "${message}"\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📢 This is a demonstration chatbot.\n\nFor real assistance, please:\n✓ Check our FAQ section above\n✓ Call: +265 123 456 789\n✓ Email: info@sjogu.edu\n✓ Visit our admissions office\n\nThank you for your interest in SJOGU! 🎓\n━━━━━━━━━━━━━━━━━━━━━━━━`);
+        }
+        
+        // Clear input after sending (optional - comment out if you want to keep the message)
+        // chatbotInput.value = "";
+        
+        // Keep focus on input for next question
+        setTimeout(() => {
+            chatbotInput.focus();
+        }, 100);
+    }
+    
+    // Send button click event
+    sendChatBtn?.addEventListener('click', showDemoResponse);
+    
+    // Enter key press event
+    chatbotInput?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            showDemoResponse();
+        }
+    });
+    
     // Auto-hide prompt after 8 seconds
     setTimeout(() => {
         if (chatbotPrompt) {
@@ -2601,16 +3251,6 @@ updateActiveNav();
         }
     }, 8000);
 </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
