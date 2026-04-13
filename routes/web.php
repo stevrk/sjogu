@@ -18,8 +18,10 @@ Route::get('/about', function () {
 
 
 // Student Portal Routes (no backend - demo)
+
 Route::prefix('portal')->group(function () {
-    Route::get('/', [StudentPortalController::class, 'dashboard'])->name('portal.dashboard');
+
+    Route::get('/', [StudentPortalController::class,'dashboard'])->name('portal.dashboard');
     Route::get('/courses', [StudentPortalController::class, 'courses'])->name('portal.courses');
     Route::get('/grades', [StudentPortalController::class, 'grades'])->name('portal.grades');
     Route::get('/attendance', [StudentPortalController::class, 'attendance'])->name('portal.attendance');
@@ -39,7 +41,7 @@ Route::prefix('portal')->group(function () {
     Route::get('/attendance', [StudentPortalController::class, 'attendance'])->name('portal.attendance');
     Route::get('/fees', [StudentPortalController::class, 'fees'])->name('portal.fees');
     Route::get('/profile', [StudentPortalController::class, 'profile'])->name('portal.profile');
-    // Staff Portal Route
+   
    Route::get('/staff-login', function () {
     return view('portal.staff_login');
     })->name('staff.login');

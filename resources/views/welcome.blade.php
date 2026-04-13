@@ -833,157 +833,7 @@
 </section>
 
 
-<!--<section id="programs" class="py-16 px-4 md:px-16 bg-white">
-    <div class="container mx-auto">
-        
-        <div class="text-center mb-12">
-            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Academic Programs</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Courses & <span class="text-red-600">Programs</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Explore our diverse range of healthcare programs designed to shape future medical professionals
-            </p>
-        </div>
 
-        
-        <div class="bg-gray-50 rounded-lg p-6 mb-12 border border-gray-200">
-            <div class="flex items-center gap-3 mb-4">
-                <i class="fas fa-graduation-cap text-2xl text-red-600"></i>
-                <h3 class="text-xl font-bold text-gray-800">Entry Requirements</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h4 class="font-semibold text-red-600 mb-2">Generic Programs</h4>
-                    <ul class="space-y-1 text-gray-600 text-sm">
-                        <li>• Full MSCE with 6 credits including English, Mathematics, Biology, and Physical Science</li>
-                        <li>• O-Level equivalent qualifications accepted</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-red-600 mb-2">Upgrading Programs</h4>
-                    <ul class="space-y-1 text-gray-600 text-sm">
-                        <li>• Certificate or Diploma in relevant field from accredited institution</li>
-                        <li>• BSc in Nursing or related field for University Certificate programs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-       
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/news2.jpg') }}" alt="Clinical Medicine" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <div class="flex gap-2 mb-3">
-                        <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
-                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Upgrading</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Diploma in Clinical Medicine</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive training in clinical medicine preparing students for primary healthcare delivery.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 3 Years</span>
-                        <button onclick="openModal('modal1')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/midwifery.jpg') }}" alt="Nursing and Midwifery" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Nursing and Midwifery</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Professional nursing program combining theoretical knowledge with practical clinical skills.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
-                        <button onclick="openModal('modal2')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/mental.jpg') }}" alt="Mental Health" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Clinical Medicine - Mental Health</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Specialized program focusing on mental health assessment, diagnosis, and treatment.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
-                        <button onclick="openModal('modal3')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/Psychiatric Nursing.jpg') }}" alt="Psychiatric Nursing" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">BSc in Psychiatric Nursing</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Advanced nursing program specializing in psychiatric care and mental health services.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
-                        <button onclick="openModal('modal4')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/midwifery.jpg') }}" alt="Certificate Nursing" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">University Certificate in Nursing and Midwifery</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Foundation program for aspiring nurses and midwives.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 1 Year</span>
-                        <button onclick="openModal('modal5')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-           
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Bachelor of Science in Public Health</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive program focusing on community health, epidemiology, and health promotion.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
-                        <button onclick="openModal('modal6')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-           
-               <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
-                <img src="{{ asset('images/Psychotherapy.jpg') }}" alt="Bachelor in Psychotherapy" class="w-full h-48 object-cover">
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Bsc in Psychotherapy</h3>
-                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">Train to become a qualified psychotherapist specializing in mental health diagnosis, therapeutic counseling, and evidence-based interventions.</p>
-                    <div class="flex items-center justify-between pt-3 border-t">
-                        <span class="text-sm text-gray-500">Duration: 4 Years</span>
-                        <button onclick="openModal('modal7')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                            Read More →
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        
-    </div>
-</section>-->
 
 <!-- PROGRAMS SECTION -->
 <section id="programs" class="py-16 px-4 md:px-16 bg-white">
@@ -1021,9 +871,7 @@
             </ul>
         </div>
     </div>
-    <!--<div class="mt-4 pt-3 border-t border-gray-200">
-        <p class="text-xs text-gray-500 italic">Note: Specific requirements vary by program. Please refer to individual program details for complete admission criteria.</p>
-    </div>-->
+  
 </div>
         
 
@@ -1179,7 +1027,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
                     <!-- BSc in Psychotherapy (Generic - 4 Year Exit with Diploma) -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
-                        <img src="{{ asset('images/Psychotherapy.jpeg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/Psychotherapy_1.jpeg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <div class="flex gap-2 mb-2">
                                 <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
@@ -1862,7 +1710,7 @@
                 <!-- Partner 6 - Book Aid International -->
                 <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
                     <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
-                        <img src="{{ asset('images/parteners/Book aid.jpeg') }}" 
+                        <img src="{{ asset('images/parteners/Book_aid.jpeg') }}" 
                              alt="Book Aid International"
                              class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
                     </div>

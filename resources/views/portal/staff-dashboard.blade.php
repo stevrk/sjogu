@@ -125,7 +125,7 @@
                 </ul>
             </nav>
             <div class="absolute bottom-0 w-72 p-4 border-t">
-                <a href="{{ route('staff.login') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-red-50 transition font-medium"><span class="text-xl">🚪</span> Logout</a>
+                <a href="{{ route('portal.login') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-red-50 transition font-medium"><span class="text-xl">🚪</span> Logout</a>
             </div>
         </div>
 
