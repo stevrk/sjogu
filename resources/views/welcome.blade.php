@@ -1036,7 +1036,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
                     <!-- BSc in Psychotherapy (Generic - 4 Year Exit with Diploma) -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
-                        <img src="{{ asset('images/Psychotherapy_1.jpeg') }}" alt="Psychotherapy" class="w-full h-48 object-cover">
+                        <img src="{{ asset('images/psycho.jpeg')}}" alt="Psychotherapy" class="w-full h-48 object-cover">
                         <div class="p-5">
                             <div class="flex gap-2 mb-2">
                                 <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
@@ -1075,37 +1075,6 @@
             </div>
         </div>
 
-        <!-- Department: Public Health -->
-        <!--<div class="mb-12">
-            <div class="flex items-center gap-3 mb-6 border-b border-red-200 pb-3">
-                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-chart-line text-red-600 text-lg"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-800">Department of Public Health</h3>
-            </div>
-            <div class="flex justify-center">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-                    
-                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
-                        <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <div class="flex gap-2 mb-2">
-                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Generic</span>
-                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">4 Years</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Bachelor of Science in Public Health</h3>
-                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Comprehensive program focusing on community health, epidemiology, and health promotion.</p>
-                            <div class="flex items-center justify-between pt-3 border-t">
-                                <span class="text-sm text-gray-500">Full-time | 4 Years</span>
-                                <button onclick="openModal('modal6')" class="text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                                    Read More →
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
     </div>
 </section>
 
@@ -2047,7 +2016,7 @@
                 <!-- Partner 6 - Book Aid International -->
                 <div class="w-[120px] sm:w-[130px] md:w-[140px] bg-white rounded-xl shadow-md hover:shadow-lg transition p-3 text-center group hover:-translate-y-1 mx-auto">
                     <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 flex items-center justify-center bg-gray-50 rounded-lg p-2">
-                        <img src="{{ asset('images/parteners/Book_aid.jpeg') }}" 
+                        <img src="{{ asset('images/parteners/book_aid.jpeg') }}" 
                              alt="Book Aid International"
                              class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
                     </div>
