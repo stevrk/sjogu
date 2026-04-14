@@ -848,41 +848,39 @@
 <section id="programs" class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
        <div class="text-center mb-12">
-    <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Academic Programs</p>
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Courses & <span class="text-red-600">Programs</span></h2>
-    <p class="text-gray-600 max-w-2xl mx-auto">
-        Explore our diverse range of healthcare programs across four departments: Clinical Medicine, Nursing, Psycho-Social Counselling, and Public Health
-    </p>
-</div>
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">Our Academic Programs</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Courses & <span class="text-red-600">Programs</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Explore our diverse range of healthcare programs across four departments: Clinical Medicine, Nursing, Psycho-Social Counselling, and Public Health
+            </p>
+        </div>
 
-<!-- Entry Requirements -->
-<div class="bg-gray-50 rounded-lg p-6 mb-12 border border-gray-200">
-    <div class="flex items-center gap-3 mb-4">
-        <i class="fas fa-graduation-cap text-2xl text-red-600"></i>
-        <h3 class="text-xl font-bold text-gray-800">Entry Requirements Overview</h3>
-    </div>
-    <div class="grid md:grid-cols-2 gap-6">
-        <div>
-            <h4 class="font-semibold text-red-600 mb-2">Generic Programs</h4>
-            <ul class="space-y-1 text-gray-600 text-sm">
-                <li>• Full Malawi School Certificate of Education (MSCE) or equivalent with six (6) credits</li>
-                <li>• Credits must include: English, Mathematics, Biology, Physics, Chemistry</li>
-                <li>• For Psychotherapy: six (6) credits including English and Mathematics</li>
-            </ul>
+        <!-- Entry Requirements -->
+        <div class="bg-gray-50 rounded-lg p-6 mb-12 border border-gray-200">
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-graduation-cap text-2xl text-red-600"></i>
+                <h3 class="text-xl font-bold text-gray-800">Entry Requirements Overview</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-red-600 mb-2">Generic Programs</h4>
+                    <ul class="space-y-1 text-gray-600 text-sm">
+                        <li>• Full Malawi School Certificate of Education (MSCE) or equivalent with six (6) credits</li>
+                        <li>• Credits must include: English, Mathematics, Biology, Physics, Chemistry</li>
+                        <li>• For Psychotherapy: six (6) credits including English and Mathematics</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-red-600 mb-2">Upgrading Programs</h4>
+                    <ul class="space-y-1 text-gray-600 text-sm">
+                        <li>• Diploma in relevant field from accredited institution</li>
+                        <li>• Minimum two (2) years post-qualification clinical/work experience</li>
+                        <li>• Current registration with professional regulatory body (Medical Council of Malawi / Nurses and Midwives Council of Malawi)</li>
+                        <li>• Full MSCE with six (6) credits including English and relevant sciences</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-            <h4 class="font-semibold text-red-600 mb-2">Upgrading Programs</h4>
-            <ul class="space-y-1 text-gray-600 text-sm">
-                <li>• Diploma in relevant field from accredited institution</li>
-                <li>• Minimum two (2) years post-qualification clinical/work experience</li>
-                <li>• Current registration with professional regulatory body (Medical Council of Malawi / Nurses and Midwives Council of Malawi)</li>
-                <li>• Full MSCE with six (6) credits including English and relevant sciences</li>
-            </ul>
-        </div>
-    </div>
-  
-</div>
-        
 
         <!-- Department: Clinical Medicine -->
         <div class="mb-12">
@@ -950,7 +948,8 @@
                             </div>
                         </div>
                     </div>
-                    <!--BSC PUBLIC HEALTH-->
+                    
+                    <!-- BSC PUBLIC HEALTH -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
                         <img src="{{ asset('images/public health.jpg') }}" alt="Public Health" class="w-full h-48 object-cover">
                         <div class="p-5">
@@ -968,7 +967,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -979,7 +977,7 @@
                 <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                     <i class="fas fa-hand-holding-heart text-red-600 text-lg"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800">Department of Nursing and Midwifery </h3>
+                <h3 class="text-2xl font-bold text-gray-800">Department of Nursing and Midwifery</h3>
             </div>
             <div class="flex justify-center">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
@@ -1034,7 +1032,7 @@
             </div>
             <div class="flex justify-center">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-                    <!-- BSc in Psychotherapy (Generic - 4 Year Exit with Diploma) -->
+                    <!-- BSc in Psychotherapy (Generic) -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 w-80 md:w-auto">
                         <img src="{{ asset('images/psycho.jpeg')}}" alt="Psychotherapy" class="w-full h-48 object-cover">
                         <div class="p-5">
@@ -1074,9 +1072,488 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
+
+<!-- MODALS FOR EACH PROGRAM -->
+
+<!-- Modal 1: Diploma in Clinical Medicine (Generic) -->
+<div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-stethoscope text-xl"></i>
+                <h3 class="text-xl font-bold">Diploma in Clinical Medicine (Generic)</h3>
+            </div>
+            <button onclick="closeModal('modal1')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive training in clinical medicine preparing students for primary healthcare delivery. The program equips students with knowledge and skills to diagnose, treat, and manage common medical conditions.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">3 Years (6 Semesters) - Full Time</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-tasks text-red-600"></i> Program Structure</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Year 1: Basic Sciences (Anatomy, Physiology, Biochemistry)</li>
+                            <li>Year 2: Clinical Medicine, Pharmacology, Pathology</li>
+                            <li>Year 3: Clinical Rotations, Community Health, Internship</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>MSCE with 6 credits including English, Maths, Biology, Physics, Chemistry</li>
+                            <li>Minimum grade of C in each required subject</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Clinical Officer in public/private hospitals</li>
+                            <li>Rural Health Center Medical Officer</li>
+                            <li>NGO Health Program Coordinator</li>
+                            <li>Private Practice</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-check-circle text-red-600"></i> Accreditation</h4>
+                        <p class="text-gray-600 text-sm">Accredited by Medical Council of Malawi (MCM) and National Council for Higher Education (NCHE)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal1')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: BSc in Nursing and Midwifery (Generic) -->
+<div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-hand-holding-heart text-xl"></i>
+                <h3 class="text-xl font-bold">BSc in Nursing and Midwifery (Generic)</h3>
+            </div>
+            <button onclick="closeModal('modal2')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Professional nursing program combining theoretical knowledge with practical clinical skills. Students learn patient care, midwifery, community health nursing, and leadership skills.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">4 Years (8 Semesters) - Full Time</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-tasks text-red-600"></i> Program Structure</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Year 1: Nursing Fundamentals, Anatomy, Physiology</li>
+                            <li>Year 2: Medical-Surgical Nursing, Pharmacology</li>
+                            <li>Year 3: Midwifery, Pediatric Nursing, Mental Health</li>
+                            <li>Year 4: Community Health, Leadership, Research, Internship</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>MSCE with 6 credits including English, Maths, Biology, Physics, Chemistry</li>
+                            <li>Minimum grade of C in required subjects</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Registered Nurse/Midwife in hospitals</li>
+                            <li>Nurse Educator</li>
+                            <li>Community Health Nurse</li>
+                            <li>Nursing Administrator</li>
+                            <li>Clinical Nurse Specialist</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-check-circle text-red-600"></i> Accreditation</h4>
+                        <p class="text-gray-600 text-sm">Accredited by Nurses and Midwives Council of Malawi (NMCM) and NCHE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal2')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: BSc in Clinical Medicine (Mental Health) Upgrading -->
+<div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-brain text-xl"></i>
+                <h3 class="text-xl font-bold">BSc in Clinical Medicine (Mental Health) - Upgrading</h3>
+            </div>
+            <button onclick="closeModal('modal3')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Upgrading program for qualified Clinical Officers specializing in mental health. Focuses on psychiatric assessment, diagnosis, treatment, and mental health policy.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">2 Years (4 Semesters) - Full Time</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-tasks text-red-600"></i> Program Structure</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Advanced Psychiatric Assessment</li>
+                            <li>Psychopharmacology</li>
+                            <li>Mental Health Policy & Management</li>
+                            <li>Clinical Rotations in Psychiatric Units</li>
+                            <li>Research Project</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Diploma in Clinical Medicine or Mental Health</li>
+                            <li>Registered with Medical Council of Malawi</li>
+                            <li>2 years post-qualification experience</li>
+                            <li>MSCE with 6 credits</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Mental Health Clinical Officer</li>
+                            <li>Psychiatric Unit Supervisor</li>
+                            <li>Mental Health Program Coordinator</li>
+                            <li>Forensic Mental Health Officer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal3')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4: BSc in Mental Health Psychiatric Nursing Upgrading -->
+<div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-heartbeat text-xl"></i>
+                <h3 class="text-xl font-bold">BSc in Mental Health Psychiatric Nursing - Upgrading</h3>
+            </div>
+            <button onclick="closeModal('modal4')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Advanced nursing program for Registered Nurses specializing in psychiatric and mental health care. Focuses on therapeutic interventions, mental health assessment, and patient management.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">2 Years (4 Semesters) - Full Time</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Diploma in Nursing or Midwifery</li>
+                            <li>Registered with Nurses and Midwives Council of Malawi</li>
+                            <li>2 years clinical experience</li>
+                            <li>MSCE with 6 credits</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Psychiatric Nurse Specialist</li>
+                            <li>Mental Health Unit Manager</li>
+                            <li>Community Mental Health Nurse</li>
+                            <li>Nurse Educator in Psychiatry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal4')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 6: BSc in Public Health -->
+<div id="modal6" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-chart-line text-xl"></i>
+                <h3 class="text-xl font-bold">Bachelor of Science in Public Health</h3>
+            </div>
+            <button onclick="closeModal('modal6')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive program focusing on community health, epidemiology, health promotion, disease prevention, and health policy. Students learn to address public health challenges at local and global levels.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">4 Years (8 Semesters) - Full Time</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-tasks text-red-600"></i> Program Structure</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Epidemiology & Biostatistics</li>
+                            <li>Health Promotion & Education</li>
+                            <li>Environmental Health</li>
+                            <li>Health Policy & Management</li>
+                            <li>Research Methods & Community Projects</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>MSCE with 6 credits including English, Maths, Biology</li>
+                            <li>Minimum grade of C in required subjects</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Public Health Officer</li>
+                            <li>Epidemiologist</li>
+                            <li>Health Program Manager</li>
+                            <li>NGO Health Coordinator</li>
+                            <li>Health Policy Analyst</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal6')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 7: BSc in Psychotherapy (Generic) -->
+<div id="modal7" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-comments text-xl"></i>
+                <h3 class="text-xl font-bold">BSc in Psychotherapy (Psychosocial Counselling)</h3>
+            </div>
+            <button onclick="closeModal('modal7')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Two exit points: Diploma in Psychosocial Counselling after 4 semesters, BSc in Psychotherapy after 8 semesters. Prepares students for professional counselling and psychotherapy practice.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">4 Years (8 Semesters) - Full Time (Diploma exit after 2 years)</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>MSCE with 6 credits including English and Mathematics</li>
+                            <li>Minimum grade of C in English</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Psychosocial Counsellor</li>
+                            <li>Psychotherapist</li>
+                            <li>School Counsellor</li>
+                            <li>NGO Mental Health Coordinator</li>
+                            <li>Private Practice Therapist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal7')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 8: Diploma in Clinical Medicine (Upgrading) -->
+<div id="modal8" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-arrow-up text-xl"></i>
+                <h3 class="text-xl font-bold">Diploma in Clinical Medicine (Upgrading)</h3>
+            </div>
+            <button onclick="closeModal('modal8')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Upgrading program for qualified Medical Assistants with Certificate in Clinical Medicine. Bridges knowledge gaps and enhances clinical competencies to Diploma level.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">2 Years (4 Semesters) - Full Time</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Certificate in Clinical Medicine</li>
+                            <li>Registered with Medical Council of Malawi</li>
+                            <li>2 years work experience</li>
+                            <li>MSCE with 6 credits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal8')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 9: BSc in Psychotherapy (Upgrading) -->
+<div id="modal9" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-chalkboard-user text-xl"></i>
+                <h3 class="text-xl font-bold">BSc in Psychotherapy - Upgrading</h3>
+            </div>
+            <button onclick="closeModal('modal9')" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-info-circle text-red-600"></i> Program Overview</h4>
+                        <p class="text-gray-600 text-sm">Upgrading program for qualified Counsellors with Diploma in Psychosocial Counselling. Advanced training in psychotherapy techniques, mental health assessment, and therapeutic interventions.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-clock text-red-600"></i> Duration</h4>
+                        <p class="text-gray-600 text-sm">2 Years (4 Semesters) - Full Time</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-graduation-cap text-red-600"></i> Entry Requirements</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Diploma in Psychosocial Counselling</li>
+                            <li>2 years counselling experience</li>
+                            <li>MSCE with 6 credits including English</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2"><i class="fas fa-briefcase text-red-600"></i> Career Opportunities</h4>
+                        <ul class="text-gray-600 text-sm space-y-1 list-disc list-inside">
+                            <li>Senior Psychotherapist</li>
+                            <li>Counselling Supervisor</li>
+                            <li>Mental Health Program Manager</li>
+                            <li>Clinical Supervisor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t flex gap-3">
+                <button onclick="closeModal('modal9')" class="flex-1 bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        const modals = document.querySelectorAll('[id^="modal"]');
+        modals.forEach(modal => {
+            if (e.target === modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
 
 <!-- ADMISSIONS SECTION - Red Background -->
 <section id="Enroll" class="py-16 px-4 md:px-16 bg-red-700">
