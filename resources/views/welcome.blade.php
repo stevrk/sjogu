@@ -362,25 +362,32 @@
     <div class="container mx-auto relative z-10">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">500+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">
+                    <span class="counter" data-target="500">0</span>+
+                </div>
                 <p class="text-gray-600">Students</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">10+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">
+                    <span class="counter" data-target="10">0</span>+
+                </div>
                 <p class="text-gray-600">Programs</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">20+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">
+                    <span class="counter" data-target="20">0</span>+
+                </div>
                 <p class="text-gray-600">Lecturers</p>
             </div>
             <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition hover:transform hover:scale-105">
-                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">5+</div>
+                <div class="text-3xl md:text-4xl font-bold text-yellow-600 mb-2">
+                    <span class="counter" data-target="5">0</span>+
+                </div>
                 <p class="text-gray-600">Awards</p>
             </div>
         </div>
     </div>
 </section>
-
 
 
 
