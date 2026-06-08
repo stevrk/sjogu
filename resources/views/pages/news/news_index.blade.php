@@ -14,9 +14,10 @@
             </p>
         </div>
 
+        <!-- Two-Column Layout: Left = Main/Featured News, Right = Announcements & Dates -->
         <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Sidebar Left: Announcements & Important Dates -->
-            <div class="lg:col-span-1 order-1 lg:order-1">
+            <!-- RIGHT PANE: Announcements & Important Dates (Moved to Right) -->
+            <div class="lg:col-span-1 order-1 lg:order-2">
                 <!-- Important Dates -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
                     <div class="bg-red-600 text-white px-5 py-3">
@@ -130,9 +131,9 @@
                 </div>
             </div>
 
-            <!-- Main Content Right: News Articles List -->
-            <div class="lg:col-span-2 order-2 lg:order-2">
-                <!-- Featured News Banner -->
+            <!-- LEFT PANE: Featured/Main News Stories -->
+            <div class="lg:col-span-2 order-2 lg:order-1">
+                <!-- Featured News Banner (Top Story) -->
                 @if(isset($news[0]))
                 <div class="mb-8 bg-gradient-to-r from-red-600 to-red-700 rounded-xl overflow-hidden shadow-lg">
                     <div class="flex flex-col md:flex-row">
@@ -143,7 +144,7 @@
                         </div>
                         <div class="md:w-1/2 p-6 text-white">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">Featured</span>
+                                <span class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">Featured Story</span>
                                 <span class="text-white/80 text-xs">
                                     <i class="far fa-calendar-alt mr-1"></i> {{ $news[0]['date'] }}
                                 </span>
@@ -159,11 +160,11 @@
                 </div>
                 @endif
 
-                <!-- News Articles List -->
+                <!-- Main News Stories List (Remaining News) -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                         <i class="fas fa-newspaper text-red-600"></i>
-                        Latest News
+                        Latest News Stories
                     </h3>
                     
                     @forelse($news as $index => $item)
@@ -204,7 +205,18 @@
                     @endforelse
                 </div>
 
-                <!-- Pagination will be added when database is integrated -->
+                <!-- Pagination (will work when database is integrated) -->
+                @if(isset($news) && count($news) > 6)
+                <div class="mt-8 flex justify-center">
+                    <nav class="flex items-center gap-2">
+                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Previous</a>
+                        <a href="#" class="px-3 py-2 bg-red-600 text-white rounded-lg">1</a>
+                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">2</a>
+                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">3</a>
+                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Next</a>
+                    </nav>
+                </div>
+                @endif
             </div>
         </div>
     </div>
@@ -227,7 +239,7 @@
         overflow: hidden;
     }
     
-    /* Responsive order */
+    /* Responsive order: On mobile, Announcements appear below News */
     @media (max-width: 1024px) {
         .order-1 {
             order: 2;

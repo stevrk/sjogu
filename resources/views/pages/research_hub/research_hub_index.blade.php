@@ -17,32 +17,7 @@
     </div>
 </section>
 
-<!-- Research Message Banner -->
-<section class="py-8 px-4 md:px-16 bg-white">
-    <div class="container mx-auto max-w-4xl">
-        <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-6 border border-red-200">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-microscope text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800">Active Research Departments</h3>
-                        <p class="text-sm text-gray-600">Collaborative research initiatives across multiple disciplines</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-semibold text-red-600 shadow-sm">Clinical Medicine</span>
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-semibold text-red-600 shadow-sm">Nursing & Midwifery</span>
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-semibold text-red-600 shadow-sm">Psycho-Social Counselling</span>
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-semibold text-red-600 shadow-sm">Public Health</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Research Stats Highlights -->
+<!-- Research Impact Stats -->
 <section class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
         <div class="text-center mb-12">
@@ -98,6 +73,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Department 1: Clinical Medicine -->
             <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition border-l-4 border-red-600">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -115,6 +91,7 @@
                 </div>
             </div>
 
+            <!-- Department 2: Nursing and Midwifery -->
             <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition border-l-4 border-red-600">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -132,6 +109,7 @@
                 </div>
             </div>
 
+            <!-- Department 3: Psycho-Social Counselling -->
             <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition border-l-4 border-red-600">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -149,6 +127,7 @@
                 </div>
             </div>
 
+            <!-- Department 4: Public Health -->
             <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition border-l-4 border-red-600">
                 <div class="flex items-center gap-3 mb-3">
                     <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
@@ -169,8 +148,8 @@
     </div>
 </section>
 
-<!-- Featured Research Section -->
-<!--<section class="py-16 px-4 md:px-16 bg-white">
+<!-- Featured Research Projects -->
+<section class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Featured <span class="text-red-600">Research</span></h2>
@@ -219,34 +198,10 @@
             </div>
         </div>
     </div>
-</section>-->
-
-<!-- Publications Section - Coming Soon -->
-<section class="py-16 px-4 md:px-16 bg-gray-50">
-    <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Recent <span class="text-red-600">Publications</span></h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Latest research papers and publications from our faculty
-            </p>
-        </div>
-
-        <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-8 text-center max-w-2xl mx-auto">
-            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Publications Database Coming Soon</h3>
-            <p class="text-gray-600 mb-4">
-                Our publications database is being populated with research papers, journals, and conference proceedings.
-            </p>
-           
-        </div>
-    </div>
 </section>
 
-<!-- Research Partners 
-<section class="py-16 px-4 md:px-16 bg-white">
+<!-- Research Partners -->
+<section class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Research <span class="text-red-600">Partners</span></h2>
@@ -258,32 +213,32 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
             <div class="text-center p-4 grayscale hover:grayscale-0 transition">
-                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-university text-gray-400 text-3xl"></i>
+                <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-university text-gray-500 text-3xl"></i>
                 </div>
-                <p class="text-sm text-gray-600">University of Malawi</p>
+                <p class="text-sm text-gray-600 font-medium">University of Malawi</p>
             </div>
             <div class="text-center p-4 grayscale hover:grayscale-0 transition">
-                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-globe-africa text-gray-400 text-3xl"></i>
+                <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-globe-africa text-gray-500 text-3xl"></i>
                 </div>
-                <p class="text-sm text-gray-600">WHO Malawi</p>
+                <p class="text-sm text-gray-600 font-medium">WHO Malawi</p>
             </div>
             <div class="text-center p-4 grayscale hover:grayscale-0 transition">
-                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-heartbeat text-gray-400 text-3xl"></i>
+                <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-heartbeat text-gray-500 text-3xl"></i>
                 </div>
-                <p class="text-sm text-gray-600">Malawi Ministry of Health</p>
+                <p class="text-sm text-gray-600 font-medium">Malawi Ministry of Health</p>
             </div>
             <div class="text-center p-4 grayscale hover:grayscale-0 transition">
-                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-chart-line text-gray-400 text-3xl"></i>
+                <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-chart-line text-gray-500 text-3xl"></i>
                 </div>
-                <p class="text-sm text-gray-600">CDC Malawi</p>
+                <p class="text-sm text-gray-600 font-medium">CDC Malawi</p>
             </div>
         </div>
     </div>
-</section>-->
+</section>
 
 <!-- Call to Action -->
 <section class="py-16 px-4 md:px-16 bg-gradient-to-r from-red-700 to-red-800">
@@ -294,7 +249,7 @@
         </p>
         
         <div class="flex flex-wrap gap-4 justify-center mb-8">
-            <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <a href="mailto:research@sjog.mw" class="bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                 Contact Research Office
             </a>
         </div>

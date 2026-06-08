@@ -3,6 +3,78 @@
 @section('title', 'Academic Programs - St John of God University')
 
 @section('content')
+<!-- ADMISSIONS SECTION - Red Background -->
+<section id="Enroll" class="py-16 px-4 md:px-16 bg-red-700">
+
+    <div class="container mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <p class="text-red-200 font-semibold mb-2 uppercase tracking-wide">Join Us</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Admissions <span class="text-yellow-300">2026/2027</span></h2>
+            <p class="text-red-100 max-w-2xl mx-auto">
+                Take the first step towards your future career in healthcare. Apply now to join our community of excellence.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Online Application Card -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
+                <div class="bg-red-800 px-6 py-4">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fas fa-globe"></i> Apply Online
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-laptop text-3xl text-red-600"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 text-center mb-3">Online Application</h4>
+                    <p class="text-gray-600 text-sm text-center mb-4">
+                        Complete your application online in minutes. Upload required documents and submit digitally.
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                            <span>Easy step-by-step process</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                            <span>Upload documents directly</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                            <span>Track application status</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                            <span>Receive instant confirmation</span>
+                        </li>
+                    </ul>
+                    <a href="{{ route('enroll') }}" class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-arrow-right"></i> Apply Online Now
+                    </a>
+                </div>
+            </div>
+
+          
+</div>
+
+        <!-- Additional Info -->
+        <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+            <div class="flex items-start gap-3">
+                <i class="fas fa-info-circle text-yellow-600 mt-1"></i>
+                <div>
+                    <p class="text-sm text-gray-700">
+                        <strong class="font-semibold">Application Deadline:</strong> May 31st, 2026
+                    </p>
+                    <p class="text-sm text-gray-600 mt-1">
+                        For inquiries, contact admissions office: <strong>collegesh@sjog.mw</strong> or call <strong>+265 991 887 119</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- PROGRAMS SECTION -->
 <section class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">

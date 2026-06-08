@@ -3,8 +3,8 @@
 @section('title', 'Student Life - St John of God University')
 
 @section('content')
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-16">
+<!-- Hero Section with Interactive Slider -->
+<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-12">
     <div class="container mx-auto px-4 md:px-16 text-center">
         <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
             <i class="fas fa-users text-white text-2xl"></i>
@@ -17,208 +17,251 @@
     </div>
 </section>
 
-<!-- Small Gallery Section -->
-<!-- Small Gallery Section -->
-<section class="py-16 px-4 md:px-16 bg-white">
+<!-- Interactive Image Slider/Carousel for Campus Life -->
+<section class="py-12 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
-        <div class="text-center mb-10">
+        <div class="text-center mb-8">
             <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Campus <span class="text-red-600">Moments</span></h2>
             <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
             <p class="text-gray-600 max-w-2xl mx-auto">
-                A glimpse into student life at St John of God University
+                Take a visual tour of student life at St John of God University
             </p>
         </div>
 
-        <!-- Gallery Grid - All images -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <!-- Existing Image 1 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/carausel/carausel3.jpg') }}" alt="Campus Life 1" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
+        <!-- Interactive Slider/Carousel -->
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Main Slider Container -->
+            <div id="campusSlider" class="relative h-[400px] md:h-[500px] lg:h-[550px]">
+                <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out" id="sliderTrack">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/carausel1.jpg') }}" alt="Students on campus" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Vibrant Campus Life</h3>
+                            <p class="text-sm md:text-base text-white/90">Students enjoying the beautiful campus environment</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/carausel3.jpg') }}" alt="Graduation Ceremony" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Graduation Day</h3>
+                            <p class="text-sm md:text-base text-white/90">Celebrating academic achievements with pride</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/campus_life.jpg') }}" alt="Group Study" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Collaborative Learning</h3>
+                            <p class="text-sm md:text-base text-white/90">Students engaged in group study sessions</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/campus_life2.jpg') }}" alt="Sports Activities" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Sports & Recreation</h3>
+                            <p class="text-sm md:text-base text-white/90">Staying active and building teamwork skills</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/computer_lab.jpg') }}" alt="Computer Lab" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Modern Facilities</h3>
+                            <p class="text-sm md:text-base text-white/90">State-of-the-art computer labs for students</p>
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="w-full flex-shrink-0 relative">
+                        <img src="{{ asset('images/carausel/counsel.jpg') }}" alt="Student Council" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <h3 class="text-xl md:text-2xl font-bold">Student Leadership</h3>
+                            <p class="text-sm md:text-base text-white/90">Student Council representing student voices</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Existing Image 2 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/carausel/campus_life.jpg') }}" alt="Campus Life 2" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- Existing Image 3 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/carausel/campus_life2.jpg') }}" alt="Campus Life 3" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- Existing Image 4 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/carausel/computer_lab.jpg') }}" alt="Campus Life 4" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 5 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life1.jpg') }}" alt="Student Life 5" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 6 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life2.jpg') }}" alt="Student Life 6" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 7 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life3.jpg') }}" alt="Student Life 7" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 8 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life4.jpg') }}" alt="Student Life 8" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 9 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life5.jpg') }}" alt="Student Life 9" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 10 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life6.jpg') }}" alt="Student Life 10" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-            <!-- New Image 11 -->
-            <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
-                <img src="{{ asset('images/students/student_life7.jpg') }}" alt="Student Life 11" class="w-full h-48 object-cover transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <i class="fas fa-search-plus text-white text-2xl"></i>
-                </div>
-            </div>
-        </div>
 
-        <!-- Gallery Caption -->
-        <div class="text-center mt-6">
-            <p class="text-sm text-gray-500">Click on images to view full size • Hover to zoom</p>
-        </div>
-    </div>
-</section>
+                <!-- Slider Navigation Buttons -->
+                <button id="sliderPrev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all hover:scale-110">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button id="sliderNext" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all hover:scale-110">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
 
-<!-- Quick Access Section -->
-<section class="py-16 px-4 md:px-16 bg-gray-50">
-    <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Quick <span class="text-red-600">Access</span></h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Essential resources for current students
-            </p>
-        </div>
+                <!-- Slider Dots/Indicators -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2" id="sliderDots"></div>
 
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition border border-gray-100 group">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
-                    <i class="fas fa-user-graduate text-red-600 text-2xl group-hover:text-white transition"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Student Portal</h3>
-                <p class="text-sm text-gray-500 mt-1">Access your account</p>
-            </a>
-            <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition border border-gray-100 group">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
-                    <i class="fas fa-calendar-alt text-red-600 text-2xl group-hover:text-white transition"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Academic Calendar</h3>
-                <p class="text-sm text-gray-500 mt-1">Important dates</p>
-            </a>
-            <a href="#" class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition border border-gray-100 group">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 transition">
-                    <i class="fas fa-credit-card text-red-600 text-2xl group-hover:text-white transition"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Fee Payment</h3>
-                <p class="text-sm text-gray-500 mt-1">Pay online</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Student Services Section -->
-<section class="py-16 px-4 md:px-16 bg-white">
-    <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Student <span class="text-red-600">Services</span></h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Support services to help you succeed
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Health Services</h3>
-                <p class="text-gray-600 text-sm">On-campus clinic and counseling services available to all students.</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-chalkboard-user text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Academic Support</h3>
-                <p class="text-gray-600 text-sm">Tutoring, writing center, and academic advising services.</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-briefcase text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Career Services</h3>
-                <p class="text-gray-600 text-sm">Internship placement, job fairs, and career counseling.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Accommodation Section -->
-<section class="py-16 px-4 md:px-16 bg-gray-50">
-    <div class="container mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="{{ asset('images/carausel/accomodation.jpg') }}" alt="Student Accommodation" class="rounded-xl shadow-lg w-full h-80 object-cover">
-            </div>
-            <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Student <span class="text-red-600">Accommodation</span></h2>
-                <div class="w-20 h-1 bg-red-600 rounded-full mb-4"></div>
-                <p class="text-gray-600 mb-4">
-                    Comfortable and affordable on-campus housing with modern amenities. Safe and conducive environment for learning.
-                </p>
-                <ul class="space-y-2 text-gray-600 mb-6">
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Single & Shared Rooms</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> 24/7 Security</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Common Areas & Study Rooms</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Affordable Rates</li>
-                </ul>
-                <button onclick="openAccommodationModal()" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">
-                    Apply for Accommodation <i class="fas fa-arrow-right text-sm"></i>
+                <!-- Pause/Play Button -->
+                <button id="playPauseBtn" class="absolute bottom-6 right-6 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition">
+                    <i class="fas fa-pause text-sm"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Thumbnail Navigation -->
+        <div class="flex justify-center gap-2 mt-4 overflow-x-auto pb-2">
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="0">
+                <img src="{{ asset('images/carausel/carausel1.jpg') }}" alt="Thumb 1" class="w-full h-full object-cover">
+            </div>
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="1">
+                <img src="{{ asset('images/carausel/carausel3.jpg') }}" alt="Thumb 2" class="w-full h-full object-cover">
+            </div>
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="2">
+                <img src="{{ asset('images/carausel/campus_life.jpg') }}" alt="Thumb 3" class="w-full h-full object-cover">
+            </div>
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="3">
+                <img src="{{ asset('images/carausel/campus_life2.jpg') }}" alt="Thumb 4" class="w-full h-full object-cover">
+            </div>
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="4">
+                <img src="{{ asset('images/carausel/computer_lab.jpg') }}" alt="Thumb 5" class="w-full h-full object-cover">
+            </div>
+            <div class="thumbnail w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition" data-index="5">
+                <img src="{{ asset('images/carausel/counsel.jpg') }}" alt="Thumb 6" class="w-full h-full object-cover">
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Accommodation Application Modal - Coming Soon -->
+<!-- Students section - Quick Access -->
+<section id="students" class="py-16 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-red-600 font-semibold mb-2 uppercase tracking-wide">For Current Students</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Student <span class="text-red-600">Life</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Everything you need for a successful and enjoyable university experience
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+            <div class="relative">
+                <img src="{{ asset('images/carausel/carausel1.jpg') }}" alt="Students on campus" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                <div class="absolute -bottom-5 -left-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold">500+</p>
+                    <p class="text-sm">Active Students</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Quick Access</h3>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-user-graduate text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Student Portal</p>
+                    </a>
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-calendar-alt text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Academic Calendar</p>
+                    </a>
+                    <a href="#" class="bg-white rounded-lg p-4 text-center hover:shadow-md transition border border-gray-100">
+                        <i class="fas fa-credit-card text-red-600 text-2xl mb-2"></i>
+                        <p class="font-semibold text-gray-800 text-sm">Fee Payment</p>
+                    </a>
+                </div>
+                <div class="bg-white rounded-lg p-5 border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-headset text-red-600 text-xl"></i>
+                        <span class="font-semibold text-gray-800">Need Help?</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Contact Student Affairs Office: <strong>+265 991 887 119</strong></p>
+                    <p class="text-gray-600 text-sm mt-1">Email: <strong>collegehs@sjog.mw</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Main Sections: Accommodation, Student Council, Things to Do -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/carausel/accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-home text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Accommodation</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Comfortable and affordable on-campus housing with modern amenities. Safe and conducive environment for learning.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Single & Shared Rooms</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> 24/7 Security</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Common Areas & Study Rooms</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Affordable Rates</li>
+                    </ul>
+                    <button onclick="openAccommodationModal()" class="w-full bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition inline-flex items-center justify-center gap-2">
+                        Apply for Accommodation <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/carausel/counsel.jpg') }}" alt="Student Council" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-users text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Student Council</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Your voice matters! The Student Council represents student interests and organizes campus activities.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Representatives</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Monthly Meetings</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Event Planning</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Welfare</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <img src="{{ asset('images/sports.jpeg') }}" alt="Things to Do" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fas fa-calendar-week text-red-600 text-xl"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Things to Do</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Explore campus life beyond the classroom. Join clubs, attend events, and make lasting memories.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Sports & Recreation</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Cultural Events</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Student Clubs (20+)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Weekly Social Events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Student Resources -->
+        <div class="grid md:grid-cols-5 gap-4 mb-8">
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-futbol text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Sports</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-music text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Music & Arts</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-handshake text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Volunteer Programs</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-heart text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Psychosocial Support</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 text-center hover:shadow-md transition">
+                <i class="fas fa-church text-red-600 text-2xl mb-2"></i>
+                <p class="font-medium text-gray-800 text-sm">Chaplaincy</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Accommodation Application Modal -->
 <div id="accommodationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
@@ -232,93 +275,13 @@
         </div>
         
         <div class="p-6">
-            <!-- Coming Soon Banner -->
             <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-4 mb-4">
                 <div class="flex items-center gap-2 mb-2">
                     <i class="fas fa-info-circle text-yellow-600"></i>
                     <span class="font-semibold text-yellow-700">Online Application Coming Soon</span>
                 </div>
-                <p class="text-sm text-gray-600">
-                    The online accommodation application system is currently under development. Please check back soon.
-                </p>
+                <p class="text-sm text-gray-600">The online accommodation application system is currently under development. Please check back soon.</p>
             </div>
-            
-            <form id="accommodationForm" onsubmit="return false;">
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                    <input type="text" disabled 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
-                           placeholder="Form disabled - Coming soon">
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Student Registration Number</label>
-                    <input type="text" disabled 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
-                           placeholder="Form disabled - Coming soon">
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                    <input type="email" disabled 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
-                           placeholder="Form disabled - Coming soon">
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" disabled 
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
-                           placeholder="Form disabled - Coming soon">
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Program of Study</label>
-                    <select disabled class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
-                        <option>Select your program (Coming Soon)</option>
-                    </select>
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Year of Study</label>
-                    <select disabled class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
-                        <option>Select year (Coming Soon)</option>
-                    </select>
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Room Type</label>
-                    <div class="grid grid-cols-2 gap-3">
-                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
-                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
-                            <span class="text-sm text-gray-400">Single Room</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
-                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
-                            <span class="text-sm text-gray-400">Shared Room (2 persons)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
-                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
-                            <span class="text-sm text-gray-400">Shared Room (4 persons)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
-                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
-                            <span class="text-sm text-gray-400">Special Needs</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-4">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Special Requirements (Optional)</label>
-                    <textarea rows="2" disabled 
-                              class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
-                              placeholder="Form disabled - Coming soon"></textarea>
-                </div>
-                
-                <button type="button" disabled class="w-full bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed">
-                    Submit Application (Coming Soon)
-                </button>
-            </form>
             
             <div class="mt-4 p-3 bg-gray-50 rounded-lg">
                 <p class="text-xs text-center text-gray-500">
@@ -330,6 +293,149 @@
 </div>
 
 <script>
+    // Interactive Slider Functionality
+    const sliderTrack = document.getElementById('sliderTrack');
+    const slides = sliderTrack ? sliderTrack.children.length : 0;
+    let currentIndex = 0;
+    let autoSlideInterval;
+    let isPlaying = true;
+
+    function updateSlider() {
+        if (sliderTrack) {
+            sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+            updateThumbnails();
+        }
+    }
+
+    function nextSlide() {
+        if (currentIndex < slides - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateSlider();
+        resetAutoSlide();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = slides - 1;
+        }
+        updateSlider();
+        resetAutoSlide();
+    }
+
+    function createDots() {
+        const dotsContainer = document.getElementById('sliderDots');
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < slides; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-white w-6' : 'bg-white/50'}`;
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateSlider();
+                    resetAutoSlide();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+    }
+
+    function updateDots() {
+        const dots = document.querySelectorAll('#sliderDots button');
+        dots.forEach((dot, i) => {
+            if (i === currentIndex) {
+                dot.className = 'w-6 h-2 rounded-full bg-white transition-all';
+            } else {
+                dot.className = 'w-2 h-2 rounded-full bg-white/50 transition-all';
+            }
+        });
+    }
+
+    function updateThumbnails() {
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, i) => {
+            if (i === currentIndex) {
+                thumb.classList.add('ring-2', 'ring-red-500');
+                thumb.style.opacity = '1';
+            } else {
+                thumb.classList.remove('ring-2', 'ring-red-500');
+                thumb.style.opacity = '0.6';
+            }
+        });
+    }
+
+    function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            if (isPlaying) {
+                nextSlide();
+            }
+        }, 5000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    function togglePlayPause() {
+        isPlaying = !isPlaying;
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const icon = playPauseBtn.querySelector('i');
+        if (isPlaying) {
+            icon.className = 'fas fa-pause text-sm';
+            startAutoSlide();
+        } else {
+            icon.className = 'fas fa-play text-sm';
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    // Initialize slider
+    if (sliderTrack && slides > 0) {
+        createDots();
+        startAutoSlide();
+        
+        const prevBtn = document.getElementById('sliderPrev');
+        const nextBtn = document.getElementById('sliderNext');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
+        
+        // Thumbnail clicks
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+                resetAutoSlide();
+            });
+        });
+        
+        // Pause on hover
+        const sliderContainer = document.getElementById('campusSlider');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', () => {
+                if (isPlaying) {
+                    clearInterval(autoSlideInterval);
+                }
+            });
+            sliderContainer.addEventListener('mouseleave', () => {
+                if (isPlaying) {
+                    startAutoSlide();
+                }
+            });
+        }
+    }
+
+    // Modal functions
     function openAccommodationModal() {
         document.getElementById('accommodationModal').classList.remove('hidden');
         document.getElementById('accommodationModal').classList.add('flex');
@@ -342,140 +448,11 @@
         document.body.style.overflow = 'auto';
     }
     
-    // Close modal when clicking outside
     window.addEventListener('click', function(e) {
         const modal = document.getElementById('accommodationModal');
         if (e.target === modal) {
             closeAccommodationModal();
         }
-    });
-</script>
-
-
-
-<!-- Student Council Section -->
-<section class="py-16 px-4 md:px-16 bg-white">
-    <div class="container mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Student <span class="text-red-600">Council</span></h2>
-                <div class="w-20 h-1 bg-red-600 rounded-full mb-4"></div>
-                <p class="text-gray-600 mb-4">
-                    Your voice matters! The Student Council represents student interests and organizes campus activities.
-                </p>
-                <ul class="space-y-2 text-gray-600 mb-6">
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Student Representatives</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Monthly Meetings</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Event Planning</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Student Welfare</li>
-                </ul>
-                <a href="#" class="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">
-                    Meet Your Representatives <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="{{ asset('images/carausel/counsel.jpg') }}" alt="Student Council" class="rounded-xl shadow-lg w-full h-80 object-cover">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Activities & Clubs Section -->
-<section class="py-16 px-4 md:px-16 bg-gray-50">
-    <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Activities & <span class="text-red-600">Clubs</span></h2>
-            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                Explore campus life beyond the classroom
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-5 gap-6">
-            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-futbol text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Sports</h3>
-                <p class="text-sm text-gray-500">Football, basketball, volleyball, athletics</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-music text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Music & Arts</h3>
-                <p class="text-sm text-gray-500">Choir, drama, dance, traditional music</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-handshake text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Volunteer Programs</h3>
-                <p class="text-sm text-gray-500">Community outreach, health camps</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-heart text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Psychosocial Support</h3>
-                <p class="text-sm text-gray-500">Counseling, peer support, wellness programs</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-church text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800">Chaplaincy</h3>
-                <p class="text-sm text-gray-500">Spiritual support and guidance</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section class="py-16 px-4 md:px-16 bg-white">
-    <div class="container mx-auto max-w-2xl text-center">
-        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white">
-            <i class="fas fa-headset text-4xl mb-4"></i>
-            <h2 class="text-2xl font-bold mb-2">Need Help?</h2>
-            <p class="text-red-100 mb-4">Contact Student Affairs Office</p>
-            <div class="space-y-2">
-                <p><i class="fas fa-phone-alt mr-2"></i> +265 991 887 119</p>
-                <p><i class="fas fa-envelope mr-2"></i> collegehs@sjog.mw</p>
-                <p><i class="fas fa-clock mr-2"></i> Monday - Friday, 8:00 AM - 5:00 PM</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Lightbox Script for Gallery -->
-<script>
-    // Simple lightbox functionality for gallery images
-    document.querySelectorAll('.group.relative.overflow-hidden.rounded-lg').forEach(img => {
-        img.addEventListener('click', function() {
-            const imgSrc = this.querySelector('img').src;
-            const modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
-            modal.style.zIndex = '9999';
-            modal.style.display = 'flex';
-            modal.style.alignItems = 'center';
-            modal.style.justifyContent = 'center';
-            modal.style.cursor = 'pointer';
-            modal.innerHTML = `
-                <img src="${imgSrc}" style="max-width: 90%; max-height: 90%; object-fit: contain;">
-                <button style="position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; background: none; border: none; cursor: pointer;">&times;</button>
-            `;
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal || e.target.tagName === 'BUTTON') {
-                    modal.remove();
-                }
-            });
-            document.body.appendChild(modal);
-        });
     });
 </script>
 @endsection

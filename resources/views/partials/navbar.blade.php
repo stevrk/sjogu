@@ -19,18 +19,9 @@
         <!-- Scrollable Content Area -->
         <div class="flex-1 overflow-y-auto">
             <div class="p-6">
-                <!-- Login Options in Mobile Menu -->
-                <div class="mb-6 pb-6 border-b">
-                    <div class="flex gap-2 sm:gap-3">
-                        <a href="#" class="flex-1 bg-red-50 text-red-700 py-2 px-3 rounded-lg text-center font-medium text-sm hover:bg-red-700 hover:text-white transition">
-                            <i class="fas fa-sign-in-alt mr-2"></i>Portal Login
-                        </a>
-                    </div>
-                </div>
-                
                 <!-- Mobile Search Bar in Menu -->
                 <div class="mb-6 pb-6 border-b">
-                    <form action="#" method="GET" class="relative">
+                    <form action="{{ route('search') }}" method="GET" class="relative">
                         <div class="relative">
                             <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
                             <input type="text" 
@@ -44,17 +35,82 @@
                 
                 <!-- Navigation Links -->
                 <ul class="space-y-3 mb-6">
-                    <li><a href="/" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('/') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-home w-5 text-red-600"></i><span>Home</span>@if(request()->is('/'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/About" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('about') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-info-circle w-5 text-red-600"></i><span>About</span>@if(request()->is('About'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/news" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('news') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-newspaper w-5 text-red-600"></i><span>News</span>@if(request()->is('news'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/programs" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('programs') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-graduation-cap w-5 text-red-600"></i><span>Programs</span>@if(request()->is('programs'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/research" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('research') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-flask w-5 text-red-600"></i><span>Research Hub</span>@if(request()->is('research'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/students" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('students') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-users w-5 text-red-600"></i><span>Students</span>@if(request()->is('students'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/library" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('library') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-book w-5 text-red-600"></i><span>Library</span>@if(request()->is('library'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="/contact" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->is('contact') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-envelope w-5 text-red-600"></i><span>Contact</span>@if(request()->is('contact'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('home') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('home') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-home w-5 text-red-600"></i><span>Home</span>@if(request()->routeIs('home'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('about') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('about') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-info-circle w-5 text-red-600"></i><span>About</span>@if(request()->routeIs('about'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('news') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('news') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-newspaper w-5 text-red-600"></i><span>News</span>@if(request()->routeIs('news') || request()->routeIs('news.show'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    
+                    <!-- Programs Mega Dropdown (Mobile) - Unique Programs -->
+                    <li>
+                        <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-graduation-cap w-5 text-red-600"></i>
+                                <span>Programs</span>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </div>
+                        <ul class="mobile-dropdown-content ml-4 mt-2 space-y-3 hidden">
+                            <!-- Clinical Medicine Department -->
+                            <li>
+                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
+                                    <i class="fas fa-stethoscope text-red-600 text-xs"></i>
+                                    <span>Clinical Medicine</span>
+                                </div>
+                                <ul class="ml-4 mt-1 space-y-1">
+                                    <li><a href="{{ route('programs.show', 'diploma-in-clinical-medicine') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">Diploma in Clinical Medicine</a></li>
+                                    <li><a href="{{ route('programs.show', 'bsc-clinical-medicine-mental-health') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Clinical Medicine (Mental Health)</a></li>
+                                    <li><a href="{{ route('programs.show', 'bsc-public-health') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">Bachelor of Science in Public Health</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Nursing and Midwifery Department -->
+                            <li>
+                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
+                                    <i class="fas fa-hand-holding-heart text-red-600 text-xs"></i>
+                                    <span>Nursing and Midwifery</span>
+                                </div>
+                                <ul class="ml-4 mt-1 space-y-1">
+                                    <li><a href="{{ route('programs.show', 'bsc-nursing-midwifery') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Nursing and Midwifery</a></li>
+                                    <li><a href="{{ route('programs.show', 'bsc-psychiatric-nursing-upgrading') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Mental Health Psychiatric Nursing</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Psycho-Social Counselling Department -->
+                            <li>
+                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
+                                    <i class="fas fa-brain text-red-600 text-xs"></i>
+                                    <span>Psycho-Social Counselling</span>
+                                </div>
+                                <ul class="ml-4 mt-1 space-y-1">
+                                    <li><a href="{{ route('programs.show', 'bsc-psychotherapy') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Psychotherapy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="{{ route('students') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('students') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-users w-5 text-red-600"></i><span>Students</span>@if(request()->routeIs('students'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('library') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('library') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-book w-5 text-red-600"></i><span>Library</span>@if(request()->routeIs('library'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('research') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('research') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-flask w-5 text-red-600"></i><span>Research</span>@if(request()->routeIs('research'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    
+                    <!-- Administration Dropdown (Mobile) -->
+                    <li>
+                        <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-building w-5 text-red-600"></i>
+                                <span>Administration</span>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </div>
+                        <ul class="mobile-dropdown-content ml-8 mt-1 space-y-2 hidden">
+                            <li><a href="{{ route('executive-team') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">University Executive Team</a></li>
+                            <li><a href="{{ route('staff') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Staff Directory</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="{{ route('downloads') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('downloads') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-download w-5 text-red-600"></i><span>Resources</span>@if(request()->routeIs('downloads'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('contact') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('contact') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-envelope w-5 text-red-600"></i><span>Contact</span>@if(request()->routeIs('contact'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
                 </ul>
                 
-                <a href="/enroll" class="mobile-nav-link block bg-yellow-500 text-white w-full py-3 rounded-lg text-center font-semibold hover:bg-yellow-400 transition mt-4 {{ request()->is('enroll') ? 'bg-yellow-600 ring-2 ring-yellow-300' : '' }}" data-bypass="true">
+                <a href="{{ route('enroll') }}" class="mobile-nav-link block bg-yellow-500 text-white w-full py-3 rounded-lg text-center font-semibold hover:bg-yellow-400 transition mt-4 {{ request()->routeIs('enroll') ? 'bg-yellow-600 ring-2 ring-yellow-300' : '' }}" data-bypass="true">
                     <i class="fas fa-user-plus mr-2"></i>Apply Now
                 </a>
             </div>
@@ -65,56 +121,148 @@
 <!-- TOP BAR - Sticky on desktop only -->
 <div class="bg-gradient-to-r from-red-700 to-red-800 text-white text-sm py-2.5 px-4 md:px-6 hidden lg:flex items-center justify-between top-0 z-40 shadow-md" style="position: sticky; top: 0;">
     <div class="flex items-center gap-5">
-        <a href="tel:+265123456789" class="flex items-center gap-2 hover:text-red-200 transition"><i class="fas fa-phone-alt text-xs"></i><span>+265 991 887 119</span></a>
-        <a href="mailto:info@sjoguniversity.com" class="flex items-center gap-2 hover:text-red-200 transition"><i class="fas fa-envelope text-xs"></i><span>collegehs@sjog.mw</span></a>
+        <a href="tel:+265991887119" class="flex items-center gap-2 hover:text-red-200 transition"><i class="fas fa-phone-alt text-xs"></i><span>+265 991 887 119</span></a>
+        <a href="mailto:collegehs@sjog.mw" class="flex items-center gap-2 hover:text-red-200 transition"><i class="fas fa-envelope text-xs"></i><span>collegehs@sjog.mw</span></a>
         <div class="flex items-center gap-2"><i class="fas fa-clock text-xs"></i><span>08:00 - 17:00</span></div>
     </div>
     
     <div class="flex items-center gap-4">
-        <form action="#" method="GET" class="relative">
+        <form action="{{ route('search') }}" method="GET" class="relative">
             <div class="relative">
                 <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
                 <input type="text" name="q" placeholder="Search..." value="{{ request()->get('q') }}" class="w-64 px-10 py-2 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-red-400 bg-white/90 backdrop-blur-sm border-0">
             </div>
         </form>
-        <a href="/enroll" class="bg-yellow-500 text-white hover:bg-yellow-400 px-5 py-2 rounded-lg font-semibold transition flex items-center gap-2 shadow-md"><i class="fas fa-user-plus"></i><span>Apply Now</span><i class="fas fa-arrow-right text-xs"></i></a>
-        <a href="#" class="bg-white text-red-700 hover:bg-gray-100 px-4 py-2 rounded-lg font-semibold transition flex items-center gap-2 shadow-md"><i class="fas fa-user-graduate"></i><span>Portal Login</span><i class="fas fa-arrow-right text-xs"></i></a>
+        <a href="{{ route('enroll') }}" class="bg-yellow-500 text-white hover:bg-yellow-400 px-5 py-2 rounded-lg font-semibold transition flex items-center gap-2 shadow-md"><i class="fas fa-user-plus"></i><span>Apply Now</span><i class="fas fa-arrow-right text-xs"></i></a>
     </div>
 </div>
 
-<!-- MAIN NAVIGATION - Fixed Sticky -->
-<nav class="bg-white px-4 md:px-6 py-4 flex justify-between items-center shadow z-30" style="position: sticky; top: 0; width: 100%; background-color: white;">
-    <div class="flex items-center gap-3">
-        <div class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden shadow-md">
-            <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
+<!-- MAIN HEADER - Logo, Title, and Navigation in one row -->
+<div class="bg-white py-3 px-4 md:px-6 shadow z-30" style="position: sticky; top: 0; width: 100%; background-color: white;">
+    <div class="flex items-center justify-between gap-3">
+        <!-- Logo and Title -->
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-md flex-shrink-0">
+                <img src="{{ asset('images/logo_stjohn.png') }}" alt="St John of God University Logo" class="w-full h-full object-cover">
+            </div>
+            <a href="{{ route('home') }}" class="text-base sm:text-lg md:text-xl font-bold text-gray-800 hover:text-red-700 transition">
+                St John of God University
+            </a>
         </div>
-        <a href="/" class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold break-words whitespace-normal leading-tight text-gray-800 hover:text-red-700 transition">
-            St John of God University
-        </a>
-    </div>
-    
-    <div class="flex items-center gap-4">
-        <ul class="hidden lg:flex gap-4 xl:gap-8 font-medium items-center">
-            <li><a href="/" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('/') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Home</a></li>
-            <li><a href="/news" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('news') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">News</a></li>
-            <li><a href="/About" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('about') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">About</a></li>
-            <li><a href="/programs" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('programs') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Programs</a></li>
-            <li><a href="/research" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('research') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Research</a></li>
-            <li><a href="/students" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Students</a></li>
-            <li><a href="/library" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>
-            <li><a href="/contact" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->is('contact') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Contact</a></li>
-        </ul>
         
-        <div class="flex items-center gap-3 lg:hidden">
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-4 xl:gap-6">
+            <ul class="flex gap-4 xl:gap-6 font-medium items-center">
+                <li><a href="{{ route('home') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('home') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Home</a></li>
+                <li><a href="{{ route('about') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('about') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">About</a></li>
+                <li><a href="{{ route('news') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('news') || request()->routeIs('news.show') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">News</a></li>
+                
+                <!-- Programs Mega Dropdown (Desktop) - Unique Programs -->
+                <li class="dropdown relative">
+                    <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
+                        Programs <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                    </button>
+                    <div class="dropdown-content-desktop absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg min-w-[280px] z-50 hidden" style="width: 320px;">
+                        <!-- Clinical Medicine Department -->
+                        <div class="px-3 pt-3 pb-1">
+                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
+                                <i class="fas fa-stethoscope text-red-600 text-xs"></i>
+                                <span>Clinical Medicine</span>
+                            </div>
+                        </div>
+                        <a href="{{ route('programs.show', 'diploma-in-clinical-medicine') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            Diploma in Clinical Medicine
+                        </a>
+                        <a href="{{ route('programs.show', 'bsc-clinical-medicine-mental-health') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            BSc in Clinical Medicine (Mental Health)
+                        </a>
+                        <a href="{{ route('programs.show', 'bsc-public-health') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            Bachelor of Science in Public Health
+                        </a>
+                        
+                        <!-- Nursing and Midwifery Department -->
+                        <div class="px-3 pt-3 pb-1 border-t border-gray-100 mt-1">
+                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
+                                <i class="fas fa-hand-holding-heart text-red-600 text-xs"></i>
+                                <span>Nursing and Midwifery</span>
+                            </div>
+                        </div>
+                        <a href="{{ route('programs.show', 'bsc-nursing-midwifery') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            BSc in Nursing and Midwifery
+                        </a>
+                        <a href="{{ route('programs.show', 'bsc-psychiatric-nursing-upgrading') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            BSc in Mental Health Psychiatric Nursing
+                        </a>
+                        
+                        <!-- Psycho-Social Counselling Department -->
+                        <div class="px-3 pt-3 pb-1 border-t border-gray-100 mt-1">
+                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
+                                <i class="fas fa-brain text-red-600 text-xs"></i>
+                                <span>Psycho-Social Counselling</span>
+                            </div>
+                        </div>
+                        <a href="{{ route('programs.show', 'bsc-psychotherapy') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                            BSc in Psychotherapy
+                        </a>
+                    </div>
+                </li>
+                
+                <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Students</a></li>
+                <li><a href="{{ route('library') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>
+                <li><a href="{{ route('research') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('research') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Research</a></li>
+                
+                <!-- Administration Dropdown (Desktop) -->
+                <li class="dropdown relative">
+                    <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
+                        Administration <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                    </button>
+                    <div class="dropdown-content-desktop absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg min-w-[200px] z-50 hidden">
+                        <a href="{{ route('executive-team') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">University Executive Team</a>
+                        <a href="{{ route('staff') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Staff Directory</a>
+                    </div>
+                </li>
+                
+                <li><a href="{{ route('downloads') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('downloads') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Resources</a></li>
+                <li><a href="{{ route('contact') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('contact') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="flex lg:hidden items-center gap-3">
             <button id="mobileSearchBtn" class="text-gray-700 hover:text-red-600 transition"><i class="fas fa-search text-xl"></i></button>
             <button id="hamburgerBtn" class="text-gray-700"><i class="fas fa-bars text-2xl"></i></button>
         </div>
     </div>
-</nav>
+</div>
 
 <style>
+    /* Desktop Dropdown Styles - Click to open */
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown-content-desktop {
+        display: none;
+    }
+    
+    .dropdown-content-desktop.show {
+        display: block;
+        animation: fadeIn 0.2s ease;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
     /* Ensure sticky positioning works on all browsers */
-    nav {
+    .bg-white.py-3 {
         position: sticky !important;
         top: 0 !important;
         background-color: white !important;
@@ -123,19 +271,14 @@
     
     /* For desktop when top bar is visible */
     @media (min-width: 1024px) {
-        .top-bar-sticky {
-            position: sticky !important;
-            top: 0 !important;
-        }
-        
-        nav {
+        .bg-white.py-3 {
             top: 42px !important;
         }
     }
     
-    /* For tablet and mobile, nav stays at top */
+    /* For tablet and mobile, header stays at top */
     @media (max-width: 1023px) {
-        nav {
+        .bg-white.py-3 {
             top: 0 !important;
         }
     }
@@ -209,17 +352,6 @@
         }
     }
     
-    /* Tablet adjustments */
-    @media (min-width: 768px) and (max-width: 1023px) {
-        nav .flex.items-center.gap-3 a {
-            font-size: 1rem;
-        }
-        .w-10.h-10.md\:w-14.md\:h-14 {
-            width: 3rem;
-            height: 3rem;
-        }
-    }
-    
     /* Mobile adjustments */
     @media (max-width: 640px) {
         .mobile-menu {
@@ -228,10 +360,6 @@
         }
         .mobile-menu .p-6 {
             padding: 1.25rem;
-        }
-        nav .flex.items-center.gap-3 a {
-            font-size: 0.9rem;
-            line-height: 1.3;
         }
     }
     
@@ -307,6 +435,63 @@
 </style>
 
 <script>
+    // Desktop dropdown toggle function (click to open)
+    function toggleDesktopDropdown(button) {
+        const dropdownContent = button.nextElementSibling;
+        const isVisible = dropdownContent.classList.contains('show');
+        
+        // Close all other open dropdowns
+        document.querySelectorAll('.dropdown-content-desktop.show').forEach(content => {
+            if (content !== dropdownContent) {
+                content.classList.remove('show');
+                const parentBtn = content.previousElementSibling;
+                if (parentBtn) {
+                    const icon = parentBtn.querySelector('.fa-chevron-down');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+        
+        // Toggle current dropdown
+        dropdownContent.classList.toggle('show');
+        
+        // Rotate chevron icon
+        const icon = button.querySelector('.fa-chevron-down');
+        if (icon) {
+            icon.style.transform = dropdownContent.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const isDropdownButton = event.target.closest('.dropdown button');
+        const isDropdownContent = event.target.closest('.dropdown-content-desktop');
+        
+        if (!isDropdownButton && !isDropdownContent) {
+            document.querySelectorAll('.dropdown-content-desktop.show').forEach(content => {
+                content.classList.remove('show');
+                const parentBtn = content.previousElementSibling;
+                if (parentBtn) {
+                    const icon = parentBtn.querySelector('.fa-chevron-down');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+    });
+    
+    // Mobile dropdown toggle function
+    function toggleMobileDropdown(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.fa-chevron-down');
+        
+        content.classList.toggle('hidden');
+        if (content.classList.contains('hidden')) {
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+    
     const mobileMenu = document.getElementById('mobileMenu');
     const overlay = document.getElementById('overlay');
     const hamburgerBtn = document.getElementById('hamburgerBtn');
