@@ -207,7 +207,7 @@
                     </div>
                 </li>
                 
-                <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Students</a></li>
+                <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Student Life</a></li>
                 <li><a href="{{ route('library') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>
                 <li><a href="{{ route('research') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('research') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Research</a></li>
                 

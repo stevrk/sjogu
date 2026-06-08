@@ -66,7 +66,7 @@ Route::get('/staff', function () {
 
 // ==================== RESOURCES ROUTES ====================
 Route::get('/downloads', function () {
-    return view('pages.downloads');
+    return view('pages.downloads.resources');
 })->name('downloads');
 
 
