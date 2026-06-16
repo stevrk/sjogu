@@ -20,15 +20,16 @@ class ProgramsController extends Controller
     private function getAllPrograms()
     {
         return [
-            'diploma-in-clinical-medicine' => [
+            // Clinical Medicine - Generic Program (Separate)
+            'diploma-in-clinical-medicine-generic' => [
                 'title' => 'Diploma in Clinical Medicine',
-                'slug' => 'diploma-in-clinical-medicine',
+                'slug' => 'diploma-in-clinical-medicine-generic',
                 'department' => 'Clinical Medicine',
                 'image' => 'programs/clinical.jpg',
                 'overview' => 'Comprehensive training in clinical medicine preparing students for primary healthcare delivery. The program equips students with knowledge and skills to diagnose, treat, and manage common medical conditions.',
                 'accreditation' => 'Accredited by Medical Council of Malawi (MCM) and National Council for Higher Education (NCHE)',
                 'has_generic' => true,
-                'has_upgrading' => true,
+                'has_upgrading' => false,
                 'generic' => [
                     'type' => 'Generic',
                     'duration' => '3 Years',
@@ -51,6 +52,20 @@ class ProgramsController extends Controller
                         'Private Practice'
                     ]
                 ],
+                'upgrading' => null
+            ],
+
+            // Clinical Medicine - Upgrading Program (Separate)
+            'diploma-in-clinical-medicine-upgrading' => [
+                'title' => 'Diploma in Clinical Medicine (Upgrading)',
+                'slug' => 'diploma-in-clinical-medicine-upgrading',
+                'department' => 'Clinical Medicine',
+                'image' => 'programs/clinical1.jpg',
+                'overview' => 'Upgrading program for qualified Medical Assistants with Certificate in Clinical Medicine. Bridges knowledge gaps and enhances clinical competencies to Diploma level.',
+                'accreditation' => 'Accredited by Medical Council of Malawi (MCM) and National Council for Higher Education (NCHE)',
+                'has_generic' => false,
+                'has_upgrading' => true,
+                'generic' => null,
                 'upgrading' => [
                     'type' => 'Upgrading',
                     'duration' => '2 Years',
@@ -77,8 +92,10 @@ class ProgramsController extends Controller
                     ]
                 ]
             ],
+
+            // BSc Clinical Medicine Mental Health - Upgrading Only
             'bsc-clinical-medicine-mental-health' => [
-                'title' => 'BSc in Clinical Medicine (Mental Health)',
+                'title' => 'BSc in Clinical Medicine (Mental Health) - Upgrading',
                 'slug' => 'bsc-clinical-medicine-mental-health',
                 'department' => 'Clinical Medicine',
                 'image' => 'programs/clinical3.jpg',
@@ -113,15 +130,55 @@ class ProgramsController extends Controller
                     ]
                 ]
             ],
-            'bsc-nursing-midwifery' => [
+
+            // BSc Public Health - Generic Only
+            'bsc-public-health' => [
+                'title' => 'Bachelor of Science in Public Health',
+                'slug' => 'bsc-public-health',
+                'department' => 'Clinical Medicine',
+                'image' => 'public health.jpg',
+                'overview' => 'Comprehensive program focusing on community health, epidemiology, health promotion, disease prevention, and health policy. Students learn to address public health challenges at local and global levels.',
+                'accreditation' => 'Accredited by National Council for Higher Education (NCHE)',
+                'has_generic' => true,
+                'has_upgrading' => false,
+                'generic' => [
+                    'type' => 'Generic',
+                    'duration' => '4 Years',
+                    'duration_semesters' => '8 Semesters',
+                    'study_mode' => 'Full-time',
+                    'structure' => [
+                        'Epidemiology & Biostatistics',
+                        'Health Promotion & Education',
+                        'Environmental Health',
+                        'Health Policy & Management',
+                        'Research Methods & Community Projects'
+                    ],
+                    'entry_requirements' => [
+                        'Full Malawi School Certificate of Education (MSCE) with six (6) credits',
+                        'Credits must include: English, Mathematics, Biology',
+                        'Minimum grade of C in required subjects'
+                    ],
+                    'career_opportunities' => [
+                        'Public Health Officer',
+                        'Epidemiologist',
+                        'Health Program Manager',
+                        'NGO Health Coordinator',
+                        'Health Policy Analyst'
+                    ]
+                ],
+                'upgrading' => null
+            ],
+
+            // Nursing and Midwifery - BSc in Nursing and Midwifery (Generic Only)
+            'bsc-nursing-midwifery-generic' => [
                 'title' => 'BSc in Nursing and Midwifery',
-                'slug' => 'bsc-nursing-midwifery',
+                'slug' => 'bsc-nursing-midwifery-generic',
                 'department' => 'Nursing and Midwifery',
                 'image' => 'programs/nursing.jpg',
                 'overview' => 'Professional nursing program combining theoretical knowledge with practical clinical skills. Students learn patient care, midwifery, community health nursing, and leadership skills.',
                 'accreditation' => 'Accredited by Nurses and Midwives Council of Malawi (NMCM) and NCHE',
                 'has_generic' => true,
-                'has_upgrading' => true,
+                'has_upgrading' => false,
                 'generic' => [
                     'type' => 'Generic',
                     'duration' => '4 Years',
@@ -146,34 +203,12 @@ class ProgramsController extends Controller
                         'Clinical Nurse Specialist'
                     ]
                 ],
-                'upgrading' => [
-                    'type' => 'Upgrading',
-                    'duration' => '2 Years',
-                    'duration_semesters' => '4 Semesters',
-                    'study_mode' => 'Full-time',
-                    'structure' => [
-                        'Advanced Nursing Practice',
-                        'Leadership in Healthcare',
-                        'Evidence-Based Practice',
-                        'Clinical Specialization',
-                        'Research Project'
-                    ],
-                    'entry_requirements' => [
-                        'Diploma in Nursing or Midwifery from accredited institution',
-                        'Registered with Nurses and Midwives Council of Malawi',
-                        'Minimum two (2) years clinical experience',
-                        'Full MSCE with six (6) credits including English and relevant sciences'
-                    ],
-                    'career_opportunities' => [
-                        'Senior Registered Nurse',
-                        'Nurse Manager',
-                        'Nurse Educator',
-                        'Clinical Nurse Specialist'
-                    ]
-                ]
+                'upgrading' => null
             ],
+
+            // Nursing and Midwifery - BSc in Mental Health Psychiatric Nursing - Upgrading Only
             'bsc-psychiatric-nursing-upgrading' => [
-                'title' => 'BSc in Mental Health Psychiatric Nursing',
+                'title' => 'BSc in Mental Health Psychiatric Nursing - Upgrading',
                 'slug' => 'bsc-psychiatric-nursing-upgrading',
                 'department' => 'Nursing and Midwifery',
                 'image' => 'programs/nursing_up.jpg',
@@ -208,15 +243,17 @@ class ProgramsController extends Controller
                     ]
                 ]
             ],
-            'bsc-psychotherapy' => [
-                'title' => 'BSc in Psychotherapy',
-                'slug' => 'bsc-psychotherapy',
+
+            // Psycho-Social Counselling Programs
+            'bsc-psychotherapy-generic' => [
+                'title' => 'BSc in Psychotherapy (Psychosocial Counselling)',
+                'slug' => 'bsc-psychotherapy-generic',
                 'department' => 'Psycho-Social Counselling',
                 'image' => 'programs/psychotherapy.jpg',
                 'overview' => 'Two exit points: Diploma in Psychosocial Counselling after 4 semesters, BSc in Psychotherapy after 8 semesters. Prepares students for professional counselling and psychotherapy practice.',
                 'accreditation' => 'Accredited by National Council for Higher Education (NCHE)',
                 'has_generic' => true,
-                'has_upgrading' => true,
+                'has_upgrading' => false,
                 'generic' => [
                     'type' => 'Generic',
                     'duration' => '4 Years',
@@ -241,6 +278,19 @@ class ProgramsController extends Controller
                         'Private Practice Therapist'
                     ]
                 ],
+                'upgrading' => null
+            ],
+
+            'bsc-psychotherapy-upgrading' => [
+                'title' => 'BSc in Psychotherapy - Upgrading',
+                'slug' => 'bsc-psychotherapy-upgrading',
+                'department' => 'Psycho-Social Counselling',
+                'image' => 'programs/psychotherapy_up.jpg',
+                'overview' => 'Upgrading program for qualified Counsellors with Diploma in Psychosocial Counselling. Advanced training in psychotherapy techniques, mental health assessment, and therapeutic interventions.',
+                'accreditation' => 'Accredited by National Council for Higher Education (NCHE)',
+                'has_generic' => false,
+                'has_upgrading' => true,
+                'generic' => null,
                 'upgrading' => [
                     'type' => 'Upgrading',
                     'duration' => '2 Years',
@@ -266,43 +316,73 @@ class ProgramsController extends Controller
                     ]
                 ]
             ],
-            'bsc-public-health' => [
-                'title' => 'Bachelor of Science in Public Health',
-                'slug' => 'bsc-public-health',
-                'department' => 'Public Health',
-                'image' => 'public health.jpg',
-                'overview' => 'Comprehensive program focusing on community health, epidemiology, health promotion, disease prevention, and health policy. Students learn to address public health challenges at local and global levels.',
-                'accreditation' => 'Accredited by National Council for Higher Education (NCHE)',
-                'has_generic' => true,
-                'has_upgrading' => false,
-                'generic' => [
-                    'type' => 'Generic',
-                    'duration' => '4 Years',
-                    'duration_semesters' => '8 Semesters',
-                    'study_mode' => 'Full-time',
-                    'structure' => [
-                        'Epidemiology & Biostatistics',
-                        'Health Promotion & Education',
-                        'Environmental Health',
-                        'Health Policy & Management',
-                        'Research Methods & Community Projects'
-                    ],
-                    'entry_requirements' => [
-                        'Full Malawi School Certificate of Education (MSCE) with six (6) credits',
-                        'Credits must include: English, Mathematics, Biology',
-                        'Minimum grade of C in required subjects'
-                    ],
-                    'career_opportunities' => [
-                        'Public Health Officer',
-                        'Epidemiologist',
-                        'Health Program Manager',
-                        'NGO Health Coordinator',
-                        'Health Policy Analyst'
-                    ]
-                ],
-                'upgrading' => null
-            ]
         ];
+    }
+
+    /**
+     * Display Clinical Medicine department programs
+     */
+    public function clinicalMedicine()
+    {
+        $allPrograms = $this->getAllPrograms();
+        
+        $programs = [];
+        if (is_array($allPrograms)) {
+            foreach ($allPrograms as $slug => $program) {
+                if (isset($program['department']) && $program['department'] === 'Clinical Medicine') {
+                    $programs[$slug] = $program;
+                }
+            }
+        }
+        
+        return view('pages.programs.department_programs', [
+            'programs' => $programs,
+            'department' => 'Clinical Medicine'
+        ]);
+    }
+
+    /**
+     * Display Nursing and Midwifery department programs
+     */
+    public function nursingMidwifery()
+    {
+        $allPrograms = $this->getAllPrograms();
+        
+        $programs = [];
+        if (is_array($allPrograms)) {
+            foreach ($allPrograms as $slug => $program) {
+                if (isset($program['department']) && $program['department'] === 'Nursing and Midwifery') {
+                    $programs[$slug] = $program;
+                }
+            }
+        }
+        
+        return view('pages.programs.department_programs', [
+            'programs' => $programs,
+            'department' => 'Nursing and Midwifery'
+        ]);
+    }
+
+    /**
+     * Display Psycho-Social Counselling department programs
+     */
+    public function psychoSocialCounselling()
+    {
+        $allPrograms = $this->getAllPrograms();
+        
+        $programs = [];
+        if (is_array($allPrograms)) {
+            foreach ($allPrograms as $slug => $program) {
+                if (isset($program['department']) && $program['department'] === 'Psycho-Social Counselling') {
+                    $programs[$slug] = $program;
+                }
+            }
+        }
+        
+        return view('pages.programs.department_programs', [
+            'programs' => $programs,
+            'department' => 'Psycho-Social Counselling'
+        ]);
     }
 
     /**

@@ -111,7 +111,7 @@
                 </div>
 
                 <!-- Newsletter Subscription -->
-                <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-5 text-white">
+                <!--<div class="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-5 text-white">
                     <h3 class="font-bold text-lg mb-2 flex items-center gap-2">
                         <i class="fas fa-envelope"></i>
                         Newsletter
@@ -128,7 +128,7 @@
                             Subscribe Now
                         </button>
                     </form>
-                </div>
+                </div>-->
             </div>
 
             <!-- LEFT PANE: Featured/Main News Stories -->

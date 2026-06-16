@@ -147,7 +147,7 @@
                 <img src="{{ asset('images/carausel/carausel1.jpg') }}" alt="Students on campus" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
                 <div class="absolute -bottom-5 -left-5 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
                     <p class="text-2xl font-bold">500+</p>
-                    <p class="text-sm">Active Students</p>
+                    <p class="text-sm"> Students</p>
                 </div>
             </div>
 
@@ -194,9 +194,7 @@
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Common Areas & Study Rooms</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Affordable Rates</li>
                     </ul>
-                    <button onclick="openAccommodationModal()" class="w-full bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition inline-flex items-center justify-center gap-2">
-                        Apply for Accommodation <i class="fas fa-arrow-right text-xs"></i>
-                    </button>
+                    
                 </div>
             </div>
 
@@ -261,36 +259,315 @@
     </div>
 </section>
 
-<!-- Accommodation Application Modal -->
-<div id="accommodationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <i class="fas fa-home text-xl"></i>
-                <h3 class="text-xl font-bold">Accommodation Application</h3>
+<!--Allumin Section -->
+<section id="alumni" class="py-12 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+        <!-- Section Header - Compact -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-10 h-10 bg-red-50 rounded-xl mb-2">
+                <i class="fas fa-users text-red-600 text-lg"></i>
             </div>
-            <button onclick="closeAccommodationModal()" class="text-white hover:text-gray-200 transition">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
+            <p class="text-red-600 font-semibold mb-1 text-sm uppercase tracking-wide">Our Community</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Alumni <span class="text-red-600">Network</span></h2>
+            <div class="w-16 h-0.5 bg-red-600 mx-auto rounded-full"></div>
+            <p class="text-gray-500 text-sm max-w-2xl mx-auto mt-2">
+                Connecting graduates making a difference in healthcare across Malawi and beyond
+            </p>
         </div>
-        
-        <div class="p-6">
-            <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-4 mb-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-info-circle text-yellow-600"></i>
-                    <span class="font-semibold text-yellow-700">Online Application Coming Soon</span>
+
+        <!-- Stats Row - More Compact -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-user-graduate text-red-600 text-base"></i>
                 </div>
-                <p class="text-sm text-gray-600">The online accommodation application system is currently under development. Please check back soon.</p>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">3,000+</p>
+                <p class="text-gray-500 text-xs">Alumni Members</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-globe-africa text-red-600 text-base"></i>
+                </div>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">15+</p>
+                <p class="text-gray-500 text-xs">Countries</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-calendar-alt text-red-600 text-base"></i>
+                </div>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">20+</p>
+                <p class="text-gray-500 text-xs">Years</p>
+            </div>
+            <div class="text-center bg-gray-50 rounded-xl p-3 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-1">
+                    <i class="fas fa-chalkboard-user text-red-600 text-base"></i>
+                </div>
+                <p class="text-xl md:text-2xl font-bold text-gray-800">85%</p>
+                <p class="text-gray-500 text-xs">Employed</p>
+            </div>
+        </div>
+
+        <!-- Featured Alumni - 2 columns -->
+        <div class="mb-8">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Featured <span class="text-red-600">Alumni</span></h3>
+                <div class="w-12 h-0.5 bg-red-600 mx-auto mt-1 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <!-- Alumni 1: Frank Magagula -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
+                        <img src="{{ asset('images/alumni/frank_magagula.jpeg') }}" 
+                             alt="Frank Magagula"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
+                            <p class="text-gray-500 text-xs">Class of 2016</p>
+                        </div>
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Frank Magagula</h4>
+                        <p class="text-red-600 text-xs mb-1">Clinical Psychologist</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            St John of God Hospitaller Services
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 2: Raphael Nyirenda Jnr -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
+                        <img src="{{ asset('images/alumni/raphael_nyirenda.jpeg') }}" 
+                             alt="Raphael Nyirenda Jnr"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
+                            <p class="text-gray-500 text-xs">Class of 2016</p>
+                        </div>
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Raphael Nyirenda Jnr</h4>
+                        <p class="text-red-600 text-xs mb-1">Director</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            Mtendere Rehabilitation Center - Mzuzu
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 3: Mbawemi Nyasulu -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
+                        <img src="{{ asset('images/alumni/mbawemi_nyasulu.jpeg') }}" 
+                             alt="Mbawemi Nyasulu"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
+                            <p class="text-gray-500 text-xs">Class of 2015</p>
+                        </div>
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Mbawemi Nyasulu</h4>
+                        <p class="text-red-600 text-xs mb-1">Psychosocial Counsellor</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            Mental Health Professional
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alumni 4: Br. Louis Kuyokwa, OH -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex">
+                    <div class="w-28 h-28 flex-shrink-0">
+                        <img src="{{ asset('images/alumni/louis_kuyokwa.jpeg') }}" 
+                             alt="Br. Louis Kuyokwa"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fas fa-quote-left text-red-500 text-xs"></i>
+                            <p class="text-gray-500 text-xs">Class of 2023</p>
+                        </div>
+                        <h4 class="text-base font-bold text-gray-800 mb-0.5">Br. Louis Kuyokwa, OH</h4>
+                        <p class="text-red-600 text-xs mb-1">Registered Nurse</p>
+                        <p class="text-gray-600 text-xs leading-relaxed line-clamp-2">
+                            Saint John of God Lilongwe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alumni Benefits -->
+        <div class="mb-8">
+            <div class="text-center mb-5">
+                <h3 class="text-xl font-bold text-gray-800">Alumni <span class="text-red-600">Benefits</span></h3>
+                <div class="w-12 h-0.5 bg-red-600 mx-auto mt-1 rounded-full"></div>
             </div>
             
-            <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-handshake text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Networking</p>
+                </div>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-chalkboard-user text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Education</p>
+                </div>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-briefcase text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Career</p>
+                </div>
+                <div class="text-center p-2 bg-red-50 rounded-lg hover:bg-red-100 transition">
+                    <i class="fas fa-newspaper text-red-600 text-lg mb-1"></i>
+                    <p class="font-semibold text-gray-800 text-xs">Newsletter</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons - Compact -->
+        <div class="bg-red-700 rounded-xl p-5 text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Stay Connected</h3>
+            <p class="text-red-100 text-sm mb-4 max-w-xl mx-auto">
+                Join our growing alumni network and shape the future of healthcare
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button id="registerAlumniBtn" class="bg-white text-red-600 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2 text-sm">
+                    <i class="fas fa-user-plus"></i> Register
+                </button>
+                <button id="whatsappBtn" class="bg-gray-400 text-white px-5 py-2 rounded-lg font-semibold cursor-not-allowed flex items-center gap-2 text-sm">
+                    <i class="fab fa-whatsapp"></i> Join WhatsApp (Coming Soon)
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Alumni Registration Popup Modal - Coming Soon -->
+<div id="alumniModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl max-w-md w-full mx-4 transform transition-all duration-300">
+        <!-- Modal Header -->
+        <div class="bg-red-600 text-white rounded-t-xl px-5 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3 class="font-bold">Alumni Registration</h3>
+                </div>
+                <button id="closeModalBtn" class="text-white hover:text-gray-200 text-2xl leading-none">&times;</button>
+            </div>
+            <p class="text-red-100 text-xs mt-1">Coming Soon</p>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="p-5">
+            <!-- Coming Soon Banner -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-3 mb-4">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-info-circle text-yellow-600"></i>
+                    <span class="font-semibold text-yellow-700 text-sm">Registration Coming Soon</span>
+                </div>
+                <p class="text-xs text-gray-600 mt-1">
+                    The alumni registration portal is currently under development. Please check back soon.
+                </p>
+            </div>
+            
+            <form id="alumniForm" onsubmit="return false;">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="mb-3 col-span-2">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-user text-gray-400 text-xs mr-1"></i> Full Name
+                        </label>
+                        <input type="text" disabled placeholder="Coming Soon" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-envelope text-gray-400 text-xs mr-1"></i> Email
+                        </label>
+                        <input type="email" disabled placeholder="Coming Soon" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-phone text-gray-400 text-xs mr-1"></i> Phone
+                        </label>
+                        <input type="tel" disabled placeholder="Coming Soon" 
+                            class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-calendar-alt text-gray-400 text-xs mr-1"></i> Grad Year
+                        </label>
+                        <select disabled class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                            <option>Select year (Coming Soon)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="block text-xs font-medium text-gray-700 mb-1">
+                            <i class="fas fa-graduation-cap text-gray-400 text-xs mr-1"></i> Program
+                        </label>
+                        <select disabled class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                            <option>Select program (Coming Soon)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-xs font-medium text-gray-700 mb-1">
+                        <i class="fas fa-briefcase text-gray-400 text-xs mr-1"></i> Occupation
+                    </label>
+                    <input type="text" disabled placeholder="Coming Soon" 
+                        class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                </div>
+                
+                <button type="button" disabled class="w-full bg-gray-400 text-white py-2 rounded-lg font-semibold cursor-not-allowed flex items-center justify-center gap-2 text-sm">
+                    <i class="fas fa-paper-plane"></i> Register (Coming Soon)
+                </button>
+            </form>
+            
+            <div class="mt-4 p-2 bg-gray-50 rounded-lg">
                 <p class="text-xs text-center text-gray-500">
-                    <i class="fas fa-clock mr-1"></i> Online applications will be available soon
+                    <i class="fas fa-clock mr-1"></i> Online registration will be available soon
                 </p>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const modal = document.getElementById('alumniModal');
+    const registerBtn = document.getElementById('registerAlumniBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    
+    registerBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    });
+    
+    function closeModal() {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+    
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+    
+    // WhatsApp button - disabled with message
+    whatsappBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('The WhatsApp alumni group will be available soon. Please check back later.');
+    });
+</script>
 
 <script>
     // Interactive Slider Functionality

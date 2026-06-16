@@ -37,61 +37,7 @@
                 <ul class="space-y-3 mb-6">
                     <li><a href="{{ route('home') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('home') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-home w-5 text-red-600"></i><span>Home</span>@if(request()->routeIs('home'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
                     <li><a href="{{ route('about') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('about') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-info-circle w-5 text-red-600"></i><span>About</span>@if(request()->routeIs('about'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="{{ route('news') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('news') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-newspaper w-5 text-red-600"></i><span>News</span>@if(request()->routeIs('news') || request()->routeIs('news.show'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    
-                    <!-- Programs Mega Dropdown (Mobile) - Unique Programs -->
-                    <li>
-                        <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-graduation-cap w-5 text-red-600"></i>
-                                <span>Programs</span>
-                            </div>
-                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
-                        </div>
-                        <ul class="mobile-dropdown-content ml-4 mt-2 space-y-3 hidden">
-                            <!-- Clinical Medicine Department -->
-                            <li>
-                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
-                                    <i class="fas fa-stethoscope text-red-600 text-xs"></i>
-                                    <span>Clinical Medicine</span>
-                                </div>
-                                <ul class="ml-4 mt-1 space-y-1">
-                                    <li><a href="{{ route('programs.show', 'diploma-in-clinical-medicine') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">Diploma in Clinical Medicine</a></li>
-                                    <li><a href="{{ route('programs.show', 'bsc-clinical-medicine-mental-health') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Clinical Medicine (Mental Health)</a></li>
-                                    <li><a href="{{ route('programs.show', 'bsc-public-health') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">Bachelor of Science in Public Health</a></li>
-                                </ul>
-                            </li>
-                            
-                            <!-- Nursing and Midwifery Department -->
-                            <li>
-                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
-                                    <i class="fas fa-hand-holding-heart text-red-600 text-xs"></i>
-                                    <span>Nursing and Midwifery</span>
-                                </div>
-                                <ul class="ml-4 mt-1 space-y-1">
-                                    <li><a href="{{ route('programs.show', 'bsc-nursing-midwifery') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Nursing and Midwifery</a></li>
-                                    <li><a href="{{ route('programs.show', 'bsc-psychiatric-nursing-upgrading') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Mental Health Psychiatric Nursing</a></li>
-                                </ul>
-                            </li>
-                            
-                            <!-- Psycho-Social Counselling Department -->
-                            <li>
-                                <div class="font-semibold text-red-700 text-sm px-3 py-1.5 bg-red-50 rounded-lg flex items-center gap-2">
-                                    <i class="fas fa-brain text-red-600 text-xs"></i>
-                                    <span>Psycho-Social Counselling</span>
-                                </div>
-                                <ul class="ml-4 mt-1 space-y-1">
-                                    <li><a href="{{ route('programs.show', 'bsc-psychotherapy') }}" class="mobile-nav-link block py-1.5 px-3 rounded-lg transition text-gray-600 text-sm hover:bg-red-50 hover:text-red-700">BSc in Psychotherapy</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li><a href="{{ route('students') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('students') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-users w-5 text-red-600"></i><span>Students</span>@if(request()->routeIs('students'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="{{ route('library') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('library') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-book w-5 text-red-600"></i><span>Library</span>@if(request()->routeIs('library'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    <li><a href="{{ route('research') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('research') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-flask w-5 text-red-600"></i><span>Research</span>@if(request()->routeIs('research'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
-                    
-                    <!-- Administration Dropdown (Mobile) -->
+                      <!-- Administration Dropdown (Mobile) -->
                     <li>
                         <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
                             <div class="flex items-center gap-3">
@@ -105,6 +51,29 @@
                             <li><a href="{{ route('staff') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Staff Directory</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{ route('news') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('news') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-newspaper w-5 text-red-600"></i><span>News</span>@if(request()->routeIs('news') || request()->routeIs('news.show'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    
+                    <!-- Programs Dropdown (Mobile) - Showing Departments -->
+                    <li>
+                        <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-graduation-cap w-5 text-red-600"></i>
+                                <span>Programs</span>
+                            </div>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </div>
+                        <ul class="mobile-dropdown-content ml-4 mt-2 space-y-2 hidden">
+                            <li><a href="{{ route('programs.clinical-medicine') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Clinical Medicine</a></li>
+                            <li><a href="{{ route('programs.nursing-midwifery') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Nursing & Midwifery</a></li>
+                            <li><a href="{{ route('programs.psycho-social-counselling') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Psycho-Social Counselling</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="{{ route('students') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('students') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-users w-5 text-red-600"></i><span>Students</span>@if(request()->routeIs('students'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('library') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('library') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-book w-5 text-red-600"></i><span>Library</span>@if(request()->routeIs('library'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    <li><a href="{{ route('research') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('research') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-flask w-5 text-red-600"></i><span>Research</span>@if(request()->routeIs('research'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
+                    
+                  
                     
                     <li><a href="{{ route('downloads') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('downloads') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-download w-5 text-red-600"></i><span>Resources</span>@if(request()->routeIs('downloads'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
                     <li><a href="{{ route('contact') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('contact') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-envelope w-5 text-red-600"></i><span>Contact</span>@if(request()->routeIs('contact'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
@@ -155,62 +124,6 @@
             <ul class="flex gap-4 xl:gap-6 font-medium items-center">
                 <li><a href="{{ route('home') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('home') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Home</a></li>
                 <li><a href="{{ route('about') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('about') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">About</a></li>
-                <li><a href="{{ route('news') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('news') || request()->routeIs('news.show') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">News</a></li>
-                
-                <!-- Programs Mega Dropdown (Desktop) - Unique Programs -->
-                <li class="dropdown relative">
-                    <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
-                        Programs <i class="fas fa-chevron-down text-xs transition-transform"></i>
-                    </button>
-                    <div class="dropdown-content-desktop absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg min-w-[280px] z-50 hidden" style="width: 320px;">
-                        <!-- Clinical Medicine Department -->
-                        <div class="px-3 pt-3 pb-1">
-                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
-                                <i class="fas fa-stethoscope text-red-600 text-xs"></i>
-                                <span>Clinical Medicine</span>
-                            </div>
-                        </div>
-                        <a href="{{ route('programs.show', 'diploma-in-clinical-medicine') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            Diploma in Clinical Medicine
-                        </a>
-                        <a href="{{ route('programs.show', 'bsc-clinical-medicine-mental-health') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            BSc in Clinical Medicine (Mental Health)
-                        </a>
-                        <a href="{{ route('programs.show', 'bsc-public-health') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            Bachelor of Science in Public Health
-                        </a>
-                        
-                        <!-- Nursing and Midwifery Department -->
-                        <div class="px-3 pt-3 pb-1 border-t border-gray-100 mt-1">
-                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
-                                <i class="fas fa-hand-holding-heart text-red-600 text-xs"></i>
-                                <span>Nursing and Midwifery</span>
-                            </div>
-                        </div>
-                        <a href="{{ route('programs.show', 'bsc-nursing-midwifery') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            BSc in Nursing and Midwifery
-                        </a>
-                        <a href="{{ route('programs.show', 'bsc-psychiatric-nursing-upgrading') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            BSc in Mental Health Psychiatric Nursing
-                        </a>
-                        
-                        <!-- Psycho-Social Counselling Department -->
-                        <div class="px-3 pt-3 pb-1 border-t border-gray-100 mt-1">
-                            <div class="font-semibold text-red-700 text-sm px-2 py-1 bg-red-50 rounded-md flex items-center gap-2">
-                                <i class="fas fa-brain text-red-600 text-xs"></i>
-                                <span>Psycho-Social Counselling</span>
-                            </div>
-                        </div>
-                        <a href="{{ route('programs.show', 'bsc-psychotherapy') }}" class="block pl-10 pr-4 py-1.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
-                            BSc in Psychotherapy
-                        </a>
-                    </div>
-                </li>
-                
-                <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Student Life</a></li>
-                <li><a href="{{ route('library') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>
-                <li><a href="{{ route('research') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('research') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Research</a></li>
-                
                 <!-- Administration Dropdown (Desktop) -->
                 <li class="dropdown relative">
                     <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
@@ -221,6 +134,25 @@
                         <a href="{{ route('staff') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Staff Directory</a>
                     </div>
                 </li>
+                <li><a href="{{ route('news') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('news') || request()->routeIs('news.show') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">News</a></li>
+                
+                <!-- Programs Dropdown (Desktop) - Showing Departments -->
+                <li class="dropdown relative">
+                    <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
+                        Programs <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                    </button>
+                    <div class="dropdown-content-desktop absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg min-w-[220px] z-50 hidden">
+                        <a href="{{ route('programs.clinical-medicine') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Clinical Medicine</a>
+                        <a href="{{ route('programs.nursing-midwifery') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Nursing & Midwifery</a>
+                        <a href="{{ route('programs.psycho-social-counselling') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Psycho-Social Counselling</a>
+                    </div>
+                </li>
+                
+                <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Student Life</a></li>
+                <li><a href="{{ route('library') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>
+                <li><a href="{{ route('research') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('research') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Research</a></li>
+                
+                
                 
                 <li><a href="{{ route('downloads') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('downloads') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Resources</a></li>
                 <li><a href="{{ route('contact') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('contact') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Contact</a></li>

@@ -38,9 +38,14 @@ Route::get('/programs', [ProgramsController::class, 'index'])->name('programs');
 Route::get('/programs/clinical-medicine', [ProgramsController::class, 'clinicalMedicine'])->name('programs.clinical-medicine');
 Route::get('/programs/nursing-midwifery', [ProgramsController::class, 'nursingMidwifery'])->name('programs.nursing-midwifery');
 Route::get('/programs/psycho-social-counselling', [ProgramsController::class, 'psychoSocialCounselling'])->name('programs.psycho-social-counselling');
-
-// Individual program details (must be last to avoid conflict with department routes)
+// Programs Routes
+Route::get('/programs', [ProgramsController::class, 'index'])->name('programs');
+Route::get('/programs/clinical-medicine', [ProgramsController::class, 'clinicalMedicine'])->name('programs.clinical-medicine');
+Route::get('/programs/nursing-midwifery', [ProgramsController::class, 'nursingMidwifery'])->name('programs.nursing-midwifery');
+Route::get('/programs/psycho-social-counselling', [ProgramsController::class, 'psychoSocialCounselling'])->name('programs.psycho-social-counselling');
 Route::get('/programs/{slug}', [ProgramsController::class, 'show'])->name('programs.show');
+
+
 
 // ==================== OTHER MAIN PAGES ====================
 Route::get('/research', [ResearchController::class, 'index'])->name('research');

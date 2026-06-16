@@ -1,9 +1,101 @@
+<!-- Hybrid Chat Widget - Single Floating Button with WhatsApp & AI Chatbot -->
 <style>
-    /* Chatbot Floating Button */
-    .chatbot-btn {
+    /* Main Floating Widget */
+    .chat-float-widget {
         position: fixed;
         bottom: 30px;
         right: 30px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    /* Options Container */
+    .chat-options {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .chat-options.show {
+        display: flex;
+        animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Individual Option Buttons */
+    .chat-option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: white;
+        padding: 10px 18px 10px 14px;
+        border-radius: 50px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .chat-option:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-option .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 18px;
+    }
+
+    .chat-option .icon.whatsapp {
+        background: #25D366;
+        color: white;
+    }
+
+    .chat-option .icon.chatbot {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+    }
+
+    .chat-option .label {
+        font-size: 13px;
+        color: #333;
+    }
+
+    .chat-option .label small {
+        display: block;
+        font-size: 10px;
+        color: #999;
+        font-weight: 400;
+        margin-top: 1px;
+    }
+
+    /* Main Toggle Button */
+    .chat-main-btn {
         width: 60px;
         height: 60px;
         background: linear-gradient(135deg, #dc2626, #b91c1c);
@@ -12,60 +104,186 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25);
         transition: all 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .chatbot-btn:hover {
-        transform: scale(1.1);
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
-    }
-    
-    .chatbot-btn i {
-        font-size: 28px;
+        border: none;
         color: white;
+        position: relative;
     }
-    
-    /* Tooltip/Prompt */
-    .chatbot-prompt {
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        background: white;
-        padding: 12px 18px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-        font-size: 14px;
-        font-weight: 500;
-        color: #333;
-        white-space: nowrap;
-        z-index: 999;
-        animation: pulse 2s infinite;
-        border-left: 4px solid #dc2626;
+
+    .chat-main-btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.3);
     }
-    
-    .chatbot-prompt:after {
-        content: '';
+
+    .chat-main-btn i {
+        font-size: 28px;
+        transition: transform 0.3s ease;
+    }
+
+    .chat-main-btn.active i {
+        transform: rotate(90deg);
+    }
+
+    /* Badge/Pulse */
+    .chat-badge {
         position: absolute;
-        bottom: -10px;
-        right: 20px;
-        border-width: 10px 10px 0 10px;
-        border-style: solid;
-        border-color: white transparent transparent transparent;
+        top: -4px;
+        right: -4px;
+        width: 16px;
+        height: 16px;
+        background: #25D366;
+        border-radius: 50%;
+        border: 2px solid white;
+        animation: pulse-dot 2s infinite;
     }
-    
-    @keyframes pulse {
+
+    @keyframes pulse-dot {
         0%, 100% {
-            transform: translateY(0);
+            transform: scale(1);
             opacity: 1;
         }
         50% {
-            transform: translateY(-5px);
-            opacity: 0.9;
+            transform: scale(1.3);
+            opacity: 0.7;
         }
     }
-    
+
+    /* Tooltip/Prompt */
+    .chat-prompt {
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        background: white;
+        padding: 10px 16px;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        font-size: 13px;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        border-left: 4px solid #dc2626;
+        display: none;
+        animation: fadeInOut 3s ease;
+    }
+
+    .chat-prompt.show {
+        display: block;
+    }
+
+    .chat-prompt:after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        right: 20px;
+        border-width: 8px 8px 0 8px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .chat-prompt i {
+        color: #dc2626;
+        margin-right: 6px;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(10px); }
+        15% { opacity: 1; transform: translateY(0); }
+        85% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-10px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .chat-float-widget {
+            bottom: 20px;
+            right: 20px;
+        }
+        .chat-option {
+            padding: 8px 14px 8px 10px;
+            font-size: 13px;
+        }
+        .chat-option .icon {
+            width: 32px;
+            height: 32px;
+            font-size: 15px;
+        }
+        .chat-main-btn {
+            width: 52px;
+            height: 52px;
+        }
+        .chat-main-btn i {
+            font-size: 24px;
+        }
+        .chat-prompt {
+            font-size: 12px;
+            padding: 8px 14px;
+            bottom: 65px;
+        }
+        .chat-option .label small {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .chat-option {
+            padding: 6px 10px;
+        }
+        .chat-option .label {
+            font-size: 11px;
+        }
+        .chat-option .icon {
+            width: 28px;
+            height: 28px;
+            font-size: 13px;
+        }
+    }
+</style>
+
+<!-- Floating Widget -->
+<div class="chat-float-widget" id="chatWidget">
+    <!-- Options -->
+    <div class="chat-options" id="chatOptions">
+        <!-- WhatsApp Option -->
+        <a href="https://wa.me/265991887119?text=Hello%20SJOGU%2C%20I%20would%20like%20to%20know%20more%20about%20your%20programs" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="chat-option">
+            <div class="icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="label">
+                WhatsApp
+                <small>Chat with us</small>
+            </div>
+        </a>
+
+        <!-- AI Chatbot Option -->
+        <button class="chat-option" id="chatbotOption">
+            <div class="icon chatbot">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="label">
+                AI Chatbot
+                <small>Ask questions</small>
+            </div>
+        </button>
+    </div>
+
+    <!-- Main Button -->
+    <button class="chat-main-btn" id="chatMainBtn">
+        <i class="fas fa-comment-dots"></i>
+        <span class="chat-badge"></span>
+    </button>
+
+    <!-- Prompt -->
+    <div class="chat-prompt show" id="chatPrompt">
+        <i class="fas fa-robot"></i> How can we help you today?
+    </div>
+</div>
+
+<!-- Chatbot Modal -->
+<style>
     /* Chatbot Modal */
     .chatbot-modal {
         position: fixed;
@@ -181,29 +399,10 @@
         display: block;
     }
     
-    /* Chat Input Section */
     .chatbot-input-section {
         padding: 15px 20px 20px 20px;
         border-top: 1px solid #e5e7eb;
         background-color: #ffffff;
-    }
-    
-    .demo-notice {
-        background-color: #fef3c7;
-        border-left: 4px solid #f59e0b;
-        padding: 8px 12px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-    }
-    
-    .demo-notice p {
-        font-size: 11px;
-        color: #92400e;
-        margin: 0;
-    }
-    
-    .demo-notice i {
-        margin-right: 6px;
     }
     
     .chatbot-input-wrapper {
@@ -252,66 +451,17 @@
         background: linear-gradient(135deg, #b91c1c, #991b1b);
     }
     
-    .demo-hint {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 10px;
-        color: #9ca3af;
-    }
-    
-    .demo-hint i {
-        margin-right: 4px;
-    }
-    
-    .chatbot-footer {
-        padding: 15px 20px;
-        border-top: 1px solid #f0f0f0;
-        background: #fafafa;
-        font-size: 12px;
-        color: #999;
-        text-align: center;
-    }
-    
-    /* Overlay for mobile */
-    .chatbot-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 1000;
-        display: none;
-    }
-    
-    .chatbot-overlay.active {
-        display: block;
-    }
-    
     @media (max-width: 640px) {
         .chatbot-modal {
             width: calc(100vw - 40px);
             right: 20px;
             bottom: 90px;
         }
-        .chatbot-prompt {
-            display: none;
-        }
         .chatbot-body {
             max-height: 300px;
         }
     }
 </style>
-
-<!-- Floating Chatbot Button -->
-<div class="chatbot-btn" id="chatbotBtn">
-    <i class="fas fa-comment-dots"></i>
-</div>
-
-<!-- Chatbot Prompt/Tooltip -->
-<div class="chatbot-prompt" id="chatbotPrompt">
-    <i class="fas fa-robot text-red-600 mr-2"></i> How may I assist you today?
-</div>
 
 <!-- Chatbot Modal -->
 <div class="chatbot-modal" id="chatbotModal">
@@ -337,7 +487,7 @@
                 When are the application deadlines?
             </div>
             <div class="faq-answer" data-answer="1">
-                Applications for the 2025/2026 academic year close on <strong>May 31st, 2026</strong>. Late applications may be considered on a case-by-case basis.
+                Applications for the 2025/2026 academic year close on <strong>May 31st, 2026</strong>.
             </div>
         </div>
         
@@ -348,7 +498,7 @@
                 What programs are offered at SJOGU?
             </div>
             <div class="faq-answer" data-answer="2">
-                We offer programs in Clinical Medicine, Nursing and Midwifery, Psycho-Social Counselling, and Public Health. Both generic and upgrading programs are available.
+                We offer programs in Clinical Medicine, Nursing and Midwifery, Psycho-Social Counselling, and Public Health.
             </div>
         </div>
         
@@ -359,7 +509,7 @@
                 How do I apply for admission?
             </div>
             <div class="faq-answer" data-answer="3">
-                You can apply online through our Admissions section or download the application form and submit it to the admissions office along with required documents.
+                You can apply online through our Admissions section or download the application form.
             </div>
         </div>
         
@@ -370,7 +520,7 @@
                 What are the entry requirements?
             </div>
             <div class="faq-answer" data-answer="4">
-                Generic programs require MSCE with 6 credits including English, Mathematics, Biology, Physics, and Chemistry. Upgrading programs require a Diploma in a relevant field.
+                Generic programs require MSCE with 6 credits. Upgrading programs require a Diploma in a relevant field.
             </div>
         </div>
         
@@ -381,7 +531,7 @@
                 Is there accommodation available?
             </div>
             <div class="faq-answer" data-answer="5">
-                Yes, we offer comfortable on-campus accommodation with single and shared rooms, 24/7 security, and common study areas.
+                Yes, we offer comfortable on-campus accommodation with single and shared rooms.
             </div>
         </div>
         
@@ -389,87 +539,48 @@
         <div class="faq-item">
             <div class="faq-question" data-faq="6">
                 <i class="fas fa-chevron-right"></i>
-                How can I contact the admissions office?
-            </div>
-            <div class="faq-answer" data-answer="6">
-                You can email admissions@sjogu.edu or call +265 123 456 789. Our office hours are Monday-Friday, 8:00 AM - 5:00 PM.
-            </div>
-        </div>
-        
-        <!-- FAQ 7 -->
-        <div class="faq-item">
-            <div class="faq-question" data-faq="7">
-                <i class="fas fa-chevron-right"></i>
-                Are there scholarships available?
-            </div>
-            <div class="faq-answer" data-answer="7">
-                Yes, merit-based and need-based scholarships are available. Contact the financial aid office for more information.
-            </div>
-        </div>
-        
-        <!-- FAQ 8 -->
-        <div class="faq-item">
-            <div class="faq-question" data-faq="8">
-                <i class="fas fa-chevron-right"></i>
                 Is SJOGU accredited?
             </div>
-            <div class="faq-answer" data-answer="8">
-                Yes, SJOGU is accredited by the National Council for Higher Education (NCHE) and our programs are approved by NMCM and MCM.
+            <div class="faq-answer" data-answer="6">
+                Yes, SJOGU is accredited by NCHE and our programs are approved by NMCM and MCM.
             </div>
         </div>
     </div>
     
-    <!-- Chat Input Section - Demo -->
+    <!-- Chat Input Section -->
     <div class="chatbot-input-section">
-        <!--<div class="demo-notice">
-            <p><i class="fas fa-info-circle"></i> <strong>Demo Mode:</strong> This is a demonstration chatbot. No responses will be generated.</p>
-        </div>-->
-        
         <div class="chatbot-input-wrapper">
             <input type="text" 
                    id="chatbotInput" 
-                   placeholder="Type your question here (demo)..."
+                   placeholder="Type your question here..."
                    autocomplete="off">
             <button id="sendChatBtn" class="send-btn">
                 <i class="fas fa-paper-plane"></i>
                 Send
             </button>
         </div>
-        
-        <!--<div class="demo-hint">
-            <i class="fas fa-robot"></i> Demo chatbot - Ask anything about SJOGU (simulated responses)
-        </div>-->
     </div>
-    
-   
 </div>
 
 <!-- Chatbot JavaScript -->
 <script>
     // Chatbot elements
-    const chatbotBtn = document.getElementById('chatbotBtn');
     const chatbotModal = document.getElementById('chatbotModal');
     const chatbotCloseBtn = document.getElementById('chatbotCloseBtn');
-    const chatbotPrompt = document.getElementById('chatbotPrompt');
     const chatbotInput = document.getElementById('chatbotInput');
     const sendChatBtn = document.getElementById('sendChatBtn');
     
-    // Open chatbot modal
-    chatbotBtn?.addEventListener('click', () => {
+    // Open chatbot modal (exposed for hybrid widget)
+    function openChatbotModal() {
         chatbotModal.classList.add('active');
-        chatbotPrompt.style.display = 'none';
-        // Focus on input when modal opens
         setTimeout(() => {
             if (chatbotInput) chatbotInput.focus();
         }, 300);
-    });
+    }
     
     // Close chatbot modal
     function closeChatbotModal() {
         chatbotModal.classList.remove('active');
-        setTimeout(() => {
-            if (chatbotPrompt) chatbotPrompt.style.display = 'block';
-        }, 300);
     }
     
     chatbotCloseBtn?.addEventListener('click', closeChatbotModal);
@@ -477,7 +588,8 @@
     // Close modal when clicking outside
     document.addEventListener('click', (e) => {
         if (chatbotModal.classList.contains('active')) {
-            if (!chatbotModal.contains(e.target) && !chatbotBtn.contains(e.target)) {
+            const widget = document.getElementById('chatWidget');
+            if (!chatbotModal.contains(e.target) && !widget?.contains(e.target)) {
                 closeChatbotModal();
             }
         }
@@ -491,11 +603,9 @@
             const faqId = question.getAttribute('data-faq');
             const answer = document.querySelector(`.faq-answer[data-answer="${faqId}"]`);
             
-            // Toggle current answer
             answer.classList.toggle('show');
             question.classList.toggle('active');
             
-            // Rotate chevron
             const chevron = question.querySelector('i');
             if (answer.classList.contains('show')) {
                 chevron.style.transform = 'rotate(90deg)';
@@ -510,24 +620,17 @@
         const message = chatbotInput.value.trim();
         
         if (message === "") {
-            alert("💬 Demo Chatbot\n\nPlease type a question to see how the chatbot would respond.\n\n📢 This is a demonstration - no actual AI responses are generated.\n\n💡 Try asking about:\n• Application deadlines\n• Programs offered\n• Entry requirements\n• Scholarships");
+            alert("💬 Please type a question.\n\n💡 Try asking about:\n• Application deadlines\n• Programs offered\n• Entry requirements");
         } else {
-            alert(`💬 SJOGU Assistant - Demo Response\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n📝 You asked: "${message}"\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📢 This is a demonstration chatbot.\n\nFor real assistance, please:\n✓ Check our FAQ section above\n✓ Call: +265 123 456 789\n✓ Email: info@sjogu.edu\n✓ Visit our admissions office\n\nThank you for your interest in SJOGU! 🎓\n━━━━━━━━━━━━━━━━━━━━━━━━`);
+            alert(`💬 SJOGU Assistant - Demo Response\n\n📝 You asked: "${message}"\n\n📢 This is a demonstration.\n\nFor real assistance:\n✓ WhatsApp: +265 991 887 119\n✓ Email: collegehs@sjog.mw`);
         }
         
-        // Clear input after sending (optional - comment out if you want to keep the message)
-        // chatbotInput.value = "";
-        
-        // Keep focus on input for next question
         setTimeout(() => {
             chatbotInput.focus();
         }, 100);
     }
     
-    // Send button click event
     sendChatBtn?.addEventListener('click', showDemoResponse);
-    
-    // Enter key press event
     chatbotInput?.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -535,14 +638,76 @@
         }
     });
     
-    // Auto-hide prompt after 8 seconds
-    setTimeout(() => {
-        if (chatbotPrompt) {
-            chatbotPrompt.style.opacity = '0';
-            setTimeout(() => {
-                if (chatbotPrompt) chatbotPrompt.style.display = 'none';
-            }, 500);
-        }
-    }, 8000);
-</script>
+    // Hybrid Chat Widget JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatMainBtn = document.getElementById('chatMainBtn');
+        const chatOptions = document.getElementById('chatOptions');
+        const chatPrompt = document.getElementById('chatPrompt');
+        const chatbotOption = document.getElementById('chatbotOption');
+        let isOpen = false;
 
+        // Toggle options
+        chatMainBtn.addEventListener('click', function() {
+            isOpen = !isOpen;
+            chatOptions.classList.toggle('show');
+            this.classList.toggle('active');
+            
+            if (isOpen) {
+                chatPrompt.style.display = 'none';
+            } else {
+                setTimeout(() => {
+                    chatPrompt.style.display = 'block';
+                }, 400);
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            const widget = document.getElementById('chatWidget');
+            if (widget && !widget.contains(e.target)) {
+                if (isOpen) {
+                    isOpen = false;
+                    chatOptions.classList.remove('show');
+                    chatMainBtn.classList.remove('active');
+                    setTimeout(() => {
+                        chatPrompt.style.display = 'block';
+                    }, 400);
+                }
+            }
+        });
+
+        // Chatbot option - opens the chatbot modal
+        chatbotOption.addEventListener('click', function() {
+            isOpen = false;
+            chatOptions.classList.remove('show');
+            chatMainBtn.classList.remove('active');
+            openChatbotModal();
+        });
+
+        // Auto-hide prompt after 8 seconds
+        setTimeout(() => {
+            if (chatPrompt) {
+                chatPrompt.style.opacity = '0';
+                setTimeout(() => {
+                    if (chatPrompt) {
+                        chatPrompt.style.display = 'none';
+                        chatPrompt.style.opacity = '1';
+                    }
+                }, 500);
+            }
+        }, 8000);
+
+        // Show prompt again after 30 seconds
+        setTimeout(() => {
+            if (!isOpen && chatPrompt) {
+                chatPrompt.style.display = 'block';
+                chatPrompt.style.animation = 'fadeInOut 3s ease';
+                setTimeout(() => {
+                    if (chatPrompt) {
+                        chatPrompt.style.display = 'none';
+                    }
+                }, 4000);
+            }
+        }, 30000);
+    });
+</script>
