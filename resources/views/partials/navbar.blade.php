@@ -54,6 +54,7 @@
                     <li><a href="{{ route('news') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('news') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-newspaper w-5 text-red-600"></i><span>News</span>@if(request()->routeIs('news') || request()->routeIs('news.show'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
                     
                     <!-- Programs Dropdown (Mobile) - Showing Departments -->
+                    <!-- Mobile Menu -->
                     <li>
                         <div class="mobile-dropdown-header flex items-center justify-between py-2 px-3 rounded-lg cursor-pointer transition text-gray-800 hover:bg-red-50 hover:text-red-700" onclick="toggleMobileDropdown(this)">
                             <div class="flex items-center gap-3">
@@ -62,11 +63,26 @@
                             </div>
                             <i class="fas fa-chevron-down text-xs transition-transform"></i>
                         </div>
-                        <ul class="mobile-dropdown-content ml-4 mt-2 space-y-2 hidden">
-                            <li><a href="{{ route('programs.clinical-medicine') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Clinical Medicine</a></li>
-                            <li><a href="{{ route('programs.nursing-midwifery') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Nursing & Midwifery</a></li>
-                            <li><a href="{{ route('programs.psycho-social-counselling') }}" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">Psycho-Social Counselling</a></li>
-                        </ul>
+                    <ul class="mobile-dropdown-content ml-4 mt-2 space-y-2 hidden">
+                        @if(isset($departments) && $departments->count() > 0)
+                            @foreach($departments as $department)
+                                <li>
+                                    <a href="{{ route('programs.department', $department->id) }}" 
+                                    class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">
+                                        {{ $department->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        @else
+                            <li>
+                                <a href="#" class="mobile-nav-link block py-2 px-3 rounded-lg transition text-gray-600 hover:bg-red-50 hover:text-red-700">
+                                    No departments available
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                    
+                        
                     </li>
                     
                     <li><a href="{{ route('students') }}" class="mobile-nav-link flex items-center gap-3 py-2 px-3 rounded-lg transition {{ request()->routeIs('students') ? 'bg-red-50 text-red-700' : 'text-gray-800 hover:bg-red-50 hover:text-red-700' }}"><i class="fas fa-users w-5 text-red-600"></i><span>Students</span>@if(request()->routeIs('students'))<i class="fas fa-check ml-auto text-red-600 text-xs"></i>@endif</a></li>
@@ -136,17 +152,28 @@
                 </li>
                 <li><a href="{{ route('news') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('news') || request()->routeIs('news.show') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">News</a></li>
                 
-                <!-- Programs Dropdown (Desktop) - Showing Departments -->
+                
+                <!-- Programs Dropdown (Desktop) -->
                 <li class="dropdown relative">
                     <button onclick="toggleDesktopDropdown(this)" class="nav-link transition text-sm xl:text-base whitespace-nowrap text-gray-700 hover:text-red-600 flex items-center gap-1 bg-transparent cursor-pointer">
                         Programs <i class="fas fa-chevron-down text-xs transition-transform"></i>
                     </button>
                     <div class="dropdown-content-desktop absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg min-w-[220px] z-50 hidden">
-                        <a href="{{ route('programs.clinical-medicine') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Clinical Medicine</a>
-                        <a href="{{ route('programs.nursing-midwifery') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Nursing & Midwifery</a>
-                        <a href="{{ route('programs.psycho-social-counselling') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">Psycho-Social Counselling</a>
+                        @if(isset($departments) && $departments->count() > 0)
+                            @foreach($departments as $department)
+                                <a href="{{ route('programs.department', $department->id) }}" 
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                                    {{ $department->name }}
+                                </a>
+                            @endforeach
+                        @else
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                                No departments available
+                            </a>
+                        @endif
                     </div>
                 </li>
+               
                 
                 <li><a href="{{ route('students') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('students') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Student Life</a></li>
                 <li><a href="{{ route('library') }}" class="nav-link transition text-sm xl:text-base whitespace-nowrap {{ request()->routeIs('library') ? 'text-red-600 border-b-2 border-red-600 pb-1' : 'text-gray-700 hover:text-red-600' }}">Library</a></li>

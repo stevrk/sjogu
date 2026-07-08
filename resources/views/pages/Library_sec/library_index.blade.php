@@ -21,7 +21,7 @@
 <section class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">History of the <span class="text-red-600">Library</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">The Myles Crofton <span class="text-red-600">Library</span></h2>
             <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
             <p class="text-gray-600 max-w-2xl mx-auto">
                 A legacy of knowledge and learning at St John of God University
@@ -30,18 +30,32 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1">
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    The Myles Crofton Library was established in 2003 alongside the founding of St John of God University. Named in honor of a distinguished benefactor whose vision was to create a center of academic excellence, the library has grown from a small collection of textbooks to a comprehensive resource center serving the entire university community.
-                </p>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    Over the past two decades, the library has continuously evolved to meet the changing needs of students and faculty. From traditional print collections to digital resources, the Myles Crofton Library has remained at the forefront of academic support, providing access to thousands of books, journals, and online databases.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    Today, the library stands as a testament to the university's commitment to academic excellence, serving as the intellectual hub where students, researchers, and faculty come together to learn, discover, and innovate.
-                </p>
+                @if(isset($history) && $history->content)
+                    <div class="text-gray-600 leading-relaxed space-y-4">
+                        {!! $history->content !!}
+                    </div>
+                @else
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        The Myles Crofton Library was established in 2003 alongside the founding of St John of God University. Named in honor of a distinguished benefactor whose vision was to create a center of academic excellence, the library has grown from a small collection of textbooks to a comprehensive resource center serving the entire university community.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Over the past two decades, the library has continuously evolved to meet the changing needs of students and faculty. From traditional print collections to digital resources, the Myles Crofton Library has remained at the forefront of academic support, providing access to thousands of books, journals, and online databases.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Today, the library stands as a testament to the university's commitment to academic excellence, serving as the intellectual hub where students, researchers, and faculty come together to learn, discover, and innovate.
+                    </p>
+                @endif
             </div>
             <div class="order-1 md:order-2">
-                <img src="{{ asset('images/carausel/library1.jpg') }}" alt="Myles Crofton Library History" class="rounded-xl shadow-lg w-full h-[350px] object-cover">
+                @if(isset($history) && $history->image)
+                    <img src="{{ asset('storage/' . $history->image) }}" 
+                         alt="Myles Crofton Library History" 
+                         class="rounded-xl shadow-lg w-full h-[350px] object-cover">
+                @else
+                    <img src="{{ asset('images/carausel/library1.jpg') }}" 
+                         alt="Myles Crofton Library History" 
+                         class="rounded-xl shadow-lg w-full h-[350px] object-cover">
+                @endif
             </div>
         </div>
     </div>
@@ -61,30 +75,39 @@
                 </div>
                 <div class="p-6">
                     <div class="space-y-3">
-                        <div class="flex justify-between items-center py-2 border-b">
-                            <span class="text-gray-700 font-semibold">Monday - Thursday</span>
-                            <span class="text-gray-800">8:00 AM - 10:00 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b">
-                            <span class="text-gray-700 font-semibold">Friday</span>
-                            <span class="text-gray-800">8:00 AM - 6:00 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b">
-                            <span class="text-gray-700 font-semibold">Saturday</span>
-                            <span class="text-gray-800">9:00 AM - 6:00 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b">
-                            <span class="text-gray-700 font-semibold">Sunday</span>
-                            <span class="text-gray-800">2:00 PM - 8:00 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b">
-                            <span class="text-gray-700 font-semibold">Exam Week</span>
-                            <span class="text-red-600 font-semibold">Extended Hours</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2">
-                            <span class="text-gray-700 font-semibold">24/7 Study Area</span>
-                            <span class="text-green-600 font-semibold">Available</span>
-                        </div>
+                        @if(isset($hours) && $hours->count() > 0)
+                            @foreach($hours as $hour)
+                                <div class="flex justify-between items-center py-2 border-b last:border-b-0">
+                                    <span class="text-gray-700 font-semibold">{{ $hour->day }}</span>
+                                    <span class="text-gray-800">{{ $hour->full_hours }}</span>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="text-gray-700 font-semibold">Monday - Thursday</span>
+                                <span class="text-gray-800">8:00 AM - 10:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="text-gray-700 font-semibold">Friday</span>
+                                <span class="text-gray-800">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="text-gray-700 font-semibold">Saturday</span>
+                                <span class="text-gray-800">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="text-gray-700 font-semibold">Sunday</span>
+                                <span class="text-gray-800">2:00 PM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b">
+                                <span class="text-gray-700 font-semibold">Exam Week</span>
+                                <span class="text-red-600 font-semibold">Extended Hours</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-700 font-semibold">24/7 Study Area</span>
+                                <span class="text-green-600 font-semibold">Available</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -99,34 +122,45 @@
                 </div>
                 <div class="p-6">
                     <div class="space-y-4">
-                        <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <i class="fas fa-search text-red-600 text-lg mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-800">Catalogs & Search</h3>
-                                <p class="text-sm text-gray-600">Search our digital catalog for books, journals, and research materials</p>
+                        @if(isset($services) && $services->count() > 0)
+                            @foreach($services as $service)
+                                <div class="p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                    <h3 class="font-semibold text-gray-800">{{ $service->title }}</h3>
+                                    @if($service->description)
+                                        <p class="text-sm text-gray-600">{{ $service->description }}</p>
+                                    @endif
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <i class="fas fa-search text-red-600 text-lg mt-1"></i>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Catalogs & Search</h3>
+                                    <p class="text-sm text-gray-600">Search our digital catalog for books, journals, and research materials</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <i class="fas fa-database text-red-600 text-lg mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-800">Archives & Repositories</h3>
-                                <p class="text-sm text-gray-600">Access past exam papers, theses, and institutional repositories</p>
+                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <i class="fas fa-database text-red-600 text-lg mt-1"></i>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Archives & Repositories</h3>
+                                    <p class="text-sm text-gray-600">Access past exam papers, theses, and institutional repositories</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <i class="fas fa-chalkboard-user text-red-600 text-lg mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-800">Research Support</h3>
-                                <p class="text-sm text-gray-600">Get expert help from our librarians for your research projects</p>
+                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <i class="fas fa-chalkboard-user text-red-600 text-lg mt-1"></i>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Research Support</h3>
+                                    <p class="text-sm text-gray-600">Get expert help from our librarians for your research projects</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <i class="fas fa-wifi text-red-600 text-lg mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-800">Digital Resources</h3>
-                                <p class="text-sm text-gray-600">Free high-speed Wi-Fi and access to e-books, e-journals, and databases</p>
+                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <i class="fas fa-wifi text-red-600 text-lg mt-1"></i>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Digital Resources</h3>
+                                    <p class="text-sm text-gray-600">Free high-speed Wi-Fi and access to e-books, e-journals, and databases</p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -141,42 +175,56 @@
                 </div>
                 <div class="p-6">
                     <div class="space-y-4">
-                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-book text-red-600 text-xl"></i>
+                        @if(isset($resources) && $resources->count() > 0)
+                            @foreach($resources as $resource)
+                                <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-{{ $loop->index % 2 == 0 ? 'book' : ($loop->index % 3 == 0 ? 'laptop' : 'journal-whills') }} text-red-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-800">{{ $resource->count }}</p>
+                                        <p class="text-sm text-gray-600">{{ $resource->title }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-book text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-800">20,000+</p>
+                                    <p class="text-sm text-gray-600">Print Books</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-2xl font-bold text-gray-800">20,000+</p>
-                                <p class="text-sm text-gray-600">Print Books</p>
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-laptop text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-800">10,000+</p>
+                                    <p class="text-sm text-gray-600">E-Books</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-laptop text-red-600 text-xl"></i>
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-journal-whills text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-800">100+</p>
+                                    <p class="text-sm text-gray-600">Journal Subscriptions</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-2xl font-bold text-gray-800">10,000+</p>
-                                <p class="text-sm text-gray-600">E-Books</p>
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-database text-red-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-bold text-gray-800">15+</p>
+                                    <p class="text-sm text-gray-600">Online Databases</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-journal-whills text-red-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-gray-800">100+</p>
-                                <p class="text-sm text-gray-600">Journal Subscriptions</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-red-50 transition">
-                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-database text-red-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-gray-800">15+</p>
-                                <p class="text-sm text-gray-600">Online Databases</p>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -194,45 +242,98 @@
         </div>
 
         <div class="space-y-4">
-            <div class="bg-gray-50 rounded-lg p-5 border-l-4 border-red-600 hover:shadow-md transition">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="font-semibold text-gray-800">New E-Book Collection Added</h3>
-                        <p class="text-sm text-gray-600 mt-1">We've added 500+ new e-books to our digital collection in health sciences.</p>
+            @if(isset($announcements) && $announcements->count() > 0)
+                @foreach($announcements as $announcement)
+                    <div class="library-announcement bg-gray-50 rounded-lg border-l-4 border-red-600 hover:shadow-md transition">
+                        <!-- Click Area -->
+                        <div class="announcement-click-area p-5 cursor-pointer" onclick="toggleAnnouncement(this)">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-gray-800">{{ $announcement->title }}</h3>
+                                    <p class="text-xs text-gray-400 mt-1">
+                                        <i class="far fa-calendar-alt mr-1"></i> {{ $announcement->formatted_date }}
+                                    </p>
+                                </div>
+                                <div class="flex items-center gap-3 flex-shrink-0 ml-4">
+                                    <span class="text-xs text-gray-400">Tap to read</span>
+                                    <i class="fas fa-chevron-down text-gray-400 text-xs transition-transform duration-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Description (Hidden by default) -->
+                        @if($announcement->description)
+                            <div class="announcement-description px-5 pb-5 pt-1" style="display: none;">
+                                <div class="border-t border-gray-200 pt-3">
+                                    <p class="text-sm text-gray-600 leading-relaxed">{{ $announcement->description }}</p>
+                                </div>
+                            </div>
+                        @endif
                     </div>
-                    <span class="text-xs text-gray-400">March 15, 2026</span>
+                @endforeach
+            @else
+                <div class="text-center py-8">
+                    <i class="fas fa-bell-slash text-gray-300 text-4xl mb-3"></i>
+                    <p class="text-gray-500">No library announcements available</p>
                 </div>
-            </div>
-            <div class="bg-gray-50 rounded-lg p-5 border-l-4 border-red-600 hover:shadow-md transition">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="font-semibold text-gray-800">Extended Hours During Exam Week</h3>
-                        <p class="text-sm text-gray-600 mt-1">Library will remain open until midnight during exam period (May 5-20).</p>
-                    </div>
-                    <span class="text-xs text-gray-400">March 10, 2026</span>
-                </div>
-            </div>
-            <div class="bg-gray-50 rounded-lg p-5 border-l-4 border-red-600 hover:shadow-md transition">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="font-semibold text-gray-800">Research Skills Workshop</h3>
-                        <p class="text-sm text-gray-600 mt-1">Join our free workshop on academic research and citation management.</p>
-                    </div>
-                    <span class="text-xs text-gray-400">March 5, 2026</span>
-                </div>
-            </div>
-            <div class="bg-gray-50 rounded-lg p-5 border-l-4 border-red-600 hover:shadow-md transition">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="font-semibold text-gray-800">Library System Maintenance</h3>
-                        <p class="text-sm text-gray-600 mt-1">Scheduled maintenance on April 10, 2026. Online services may be temporarily unavailable.</p>
-                    </div>
-                    <span class="text-xs text-gray-400">March 1, 2026</span>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </section>
+
+<script>
+    function toggleAnnouncement(element) {
+        const item = element.closest('.library-announcement');
+        if (!item) return;
+        
+        const description = item.querySelector('.announcement-description');
+        const chevron = item.querySelector('.fa-chevron-down');
+        
+        if (description) {
+            if (description.style.display === 'none' || description.style.display === '') {
+                description.style.display = 'block';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                description.style.display = 'none';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .library-announcement .announcement-click-area {
+        transition: background-color 0.2s ease;
+    }
+    
+    .library-announcement .announcement-click-area:hover {
+        background-color: #f9fafb;
+    }
+    
+    .library-announcement .announcement-description {
+        animation: slideDown 0.3s ease;
+    }
+    
+    .library-announcement .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
 
 <!-- Talk to the Librarian Feature -->
 <section class="py-16 px-4 md:px-16 bg-gray-50">
@@ -242,52 +343,77 @@
                 <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-4">
                     <i class="fas fa-comments text-white text-3xl"></i>
                 </div>
-                <h2 class="text-3xl font-bold mb-3">Talk to the Librarian</h2>
-                <p class="text-red-100 mb-8 max-w-2xl mx-auto">Need help finding resources or have a question? Our librarians are here to assist you.</p>
+                <h2 class="text-3xl font-bold mb-3">{{ $contact->title ?? 'Talk to the Librarian' }}</h2>
+                <p class="text-red-100 mb-8 max-w-2xl mx-auto">{{ $contact->description ?? 'Need help finding resources or have a question? Our librarians are here to assist you.' }}</p>
+                
+                <!-- Success Message -->
+                @if(session('success'))
+                    <div class="mb-4 p-4 bg-green-100 border-l-4 border-green-500 text-green-700 rounded-lg text-left">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                <!-- Error Messages -->
+                @if($errors->any())
+                    <div class="mb-4 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-lg text-left">
+                        <ul class="list-disc list-inside text-sm">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 
                 <div class="grid md:grid-cols-3 gap-4 text-left">
                     <!-- WhatsApp -->
-                    <a href="https://wa.me/265991887119" target="_blank" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
+                    @if($contact && $contact->whatsapp_number)
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $contact->whatsapp_number) }}" target="_blank" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
                         <div class="flex items-center gap-3">
                             <i class="fab fa-whatsapp text-2xl text-green-300"></i>
                             <div>
                                 <p class="font-semibold text-sm">WhatsApp</p>
-                                <p class="text-xs text-red-100">+265 991 887 119</p>
+                                <p class="text-xs text-red-100">{{ $contact->whatsapp_number }}</p>
                             </div>
                         </div>
                     </a>
+                    @endif
                     
                     <!-- Email -->
-                    <a href="mailto:library@sjogu.edu" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
+                    @if($contact && $contact->email)
+                    <a href="mailto:{{ $contact->email }}" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
                         <div class="flex items-center gap-3">
                             <i class="fas fa-envelope text-2xl text-yellow-300"></i>
                             <div>
                                 <p class="font-semibold text-sm">Email</p>
-                                <p class="text-xs text-red-100">library@sjog.mw</p>
+                                <p class="text-xs text-red-100">{{ $contact->email }}</p>
                             </div>
                         </div>
                     </a>
+                    @endif
                     
                     <!-- Phone -->
-                    <a href="tel:+265991887119" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
+                    @if($contact && $contact->phone_number)
+                    <a href="tel:{{ $contact->phone_number }}" class="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition">
                         <div class="flex items-center gap-3">
                             <i class="fas fa-phone-alt text-2xl text-yellow-300"></i>
                             <div>
                                 <p class="font-semibold text-sm">Call Us</p>
-                                <p class="text-xs text-red-100">+265 991 887 119</p>
+                                <p class="text-xs text-red-100">{{ $contact->phone_number }}</p>
                             </div>
                         </div>
                     </a>
+                    @endif
                 </div>
                 
                 <!-- Enquiry Form -->
                 <div class="mt-8 pt-6 border-t border-white/20">
                     <p class="text-sm text-red-100 mb-4">Or send us a message and we'll get back to you:</p>
-                    <form action="#" method="POST" class="space-y-3 max-w-2xl mx-auto">
+                    <form action="{{ route('library.enquiry.store') }}" method="POST" class="space-y-3 max-w-2xl mx-auto">
                         @csrf
                         <div class="grid md:grid-cols-2 gap-3">
-                            <input type="text" name="name" placeholder="Your Name" class="px-4 py-2.5 rounded-lg text-gray-900 text-sm">
-                            <input type="email" name="email" placeholder="Your Email" class="px-4 py-2.5 rounded-lg text-gray-900 text-sm">
+                            <input type="text" name="name" placeholder="Your Name" required class="px-4 py-2.5 rounded-lg text-gray-900 text-sm w-full">
+                            <input type="email" name="email" placeholder="Your Email" required class="px-4 py-2.5 rounded-lg text-gray-900 text-sm w-full">
                         </div>
                         <select name="inquiry_type" class="w-full px-4 py-2.5 rounded-lg text-gray-900 text-sm">
                             <option value="">Select Inquiry Type</option>
@@ -296,7 +422,7 @@
                             <option value="announcement">Library Announcement</option>
                             <option value="other">Other</option>
                         </select>
-                        <textarea name="message" rows="3" placeholder="Your Message" class="w-full px-4 py-2.5 rounded-lg text-gray-900 text-sm"></textarea>
+                        <textarea name="message" rows="3" placeholder="Your Message" required class="w-full px-4 py-2.5 rounded-lg text-gray-900 text-sm"></textarea>
                         <button type="submit" class="w-full bg-yellow-500 text-gray-900 py-2.5 rounded-lg font-semibold hover:bg-yellow-400 transition">
                             Send Message
                         </button>
@@ -320,60 +446,52 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Staff Member 1 -->
-            <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition border border-gray-100">
-                <div class="h-56 overflow-hidden">
-                    <img src="{{ asset('images/staff/librarian1.jpg') }}" alt="Head Librarian" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-lg text-gray-800">Mrs. Jane Banda</h3>
-                    <p class="text-red-600 text-sm font-semibold">Head Librarian</p>
-                    <p class="text-gray-500 text-xs mt-1">MLIS, University of Malawi</p>
-                    <p class="text-gray-600 text-sm mt-2">15+ years of experience in library management and information services.</p>
-                    <div class="flex justify-center gap-3 mt-3">
-                        <a href="mailto:j.banda@sjogu.edu" class="text-red-600 hover:text-red-700"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700"><i class="fas fa-phone-alt"></i></a>
+            @if(isset($staff) && $staff->count() > 0)
+                @foreach($staff as $member)
+                    <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition border border-gray-100">
+                        <div class="h-56 overflow-hidden">
+                            @if($member->image)
+                                <img src="{{ asset('storage/' . $member->image) }}" 
+                                     alt="{{ $member->name }}" 
+                                     class="w-full h-full object-cover">
+                            @else
+                                <div class="w-full h-full bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
+                                    <i class="fas fa-user-circle text-red-400 text-6xl"></i>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-bold text-lg text-gray-800">{{ $member->name }}</h3>
+                            <p class="text-red-600 text-sm font-semibold">{{ $member->position }}</p>
+                            @if($member->description)
+                                <p class="text-gray-600 text-sm mt-2">{{ $member->description }}</p>
+                            @endif
+                            <div class="flex justify-center gap-3 mt-3">
+                                @if($member->email)
+                                    <a href="mailto:{{ $member->email }}" class="text-red-600 hover:text-red-700 transition">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                @endif
+                                @if($member->phone)
+                                    <a href="tel:{{ $member->phone }}" class="text-red-600 hover:text-red-700 transition">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
                     </div>
+                @endforeach
+            @else
+                <div class="col-span-full text-center py-8">
+                    <i class="fas fa-users text-gray-300 text-4xl mb-3"></i>
+                    <p class="text-gray-500">No library staff available</p>
                 </div>
-            </div>
-
-            <!-- Staff Member 2 -->
-            <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition border border-gray-100">
-                <div class="h-56 overflow-hidden">
-                    <img src="{{ asset('images/staff/librarian2.jpg') }}" alt="Assistant Librarian" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-lg text-gray-800">Mr. Michael Phiri</h3>
-                    <p class="text-red-600 text-sm font-semibold">Assistant Librarian</p>
-                    <p class="text-gray-500 text-xs mt-1">BSc in Library Science</p>
-                    <p class="text-gray-600 text-sm mt-2">Specializes in digital resources and research support services.</p>
-                    <div class="flex justify-center gap-3 mt-3">
-                        <a href="mailto:m.phiri@sjogu.edu" class="text-red-600 hover:text-red-700"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700"><i class="fas fa-phone-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Staff Member 3 -->
-            <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition border border-gray-100">
-                <div class="h-56 overflow-hidden">
-                    <img src="{{ asset('images/staff/librarian3.jpg') }}" alt="Library Assistant" class="w-full h-full object-cover">
-                </div>
-                <div class="p-5 text-center">
-                    <h3 class="font-bold text-lg text-gray-800">Ms. Grace Mwale</h3>
-                    <p class="text-red-600 text-sm font-semibold">Library Assistant</p>
-                    <p class="text-gray-500 text-xs mt-1">Diploma in Library Studies</p>
-                    <p class="text-gray-600 text-sm mt-2">Handles circulation desk and user support services.</p>
-                    <div class="flex justify-center gap-3 mt-3">
-                        <a href="mailto:g.mwale@sjogu.edu" class="text-red-600 hover:text-red-700"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700"><i class="fas fa-phone-alt"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 </section>
 
+<!-- Library Gallery Section -->
 <section class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
         <div class="text-center mb-12">
@@ -457,67 +575,55 @@
     const dots = document.querySelectorAll('.dot');
     const thumbnails = document.querySelectorAll('.thumbnail-item');
 
-    // Update slide
     function updateSlide(index) {
         currentSlide = index;
         carouselImage.src = galleryImages[index].src;
         carouselImage.alt = galleryImages[index].caption;
         carouselCaption.textContent = galleryImages[index].caption;
 
-        // Update dots
         dots.forEach((dot, i) => {
             dot.className = `dot w-3 h-3 rounded-full cursor-pointer ${i === currentSlide ? 'bg-white' : 'bg-white/50'}`;
         });
 
-        // Update thumbnails
         thumbnails.forEach((thumb, i) => {
             thumb.className = `thumbnail-item cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition hover:scale-105 ${i === currentSlide ? 'ring-2 ring-red-600 ring-offset-2' : ''}`;
         });
     }
 
-    // Next slide
     function nextSlide() {
         const next = (currentSlide + 1) % galleryImages.length;
         updateSlide(next);
     }
 
-    // Previous slide
     function prevSlide() {
         const prev = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
         updateSlide(prev);
     }
 
-    // Event Listeners
     document.getElementById('nextSlide').addEventListener('click', nextSlide);
     document.getElementById('prevSlide').addEventListener('click', prevSlide);
 
-    // Dot clicks
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => updateSlide(index));
     });
 
-    // Thumbnail clicks
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener('click', () => updateSlide(index));
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevSlide();
         if (e.key === 'ArrowRight') nextSlide();
     });
 
-    // Auto-slide
     let autoSlide = setInterval(nextSlide, 5000);
 
-    // Pause on hover
     const carousel = document.getElementById('galleryCarousel');
     carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
     carousel.addEventListener('mouseleave', () => {
         autoSlide = setInterval(nextSlide, 5000);
     });
 
-    // Initialize
     updateSlide(0);
 </script>
 

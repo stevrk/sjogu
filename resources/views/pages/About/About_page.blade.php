@@ -4,15 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-20">
-    <div class="container mx-auto px-4 md:px-16 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">About <span class="text-yellow-300">St John of God University</span></h1>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto rounded-full mb-6"></div>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto text-red-100">
-            Excellence in healthcare education since 2003
-        </p>
-    </div>
-</section>
+
 <!-- History Section -->
 <section id="history" class="py-16 px-4 md:px-16 bg-white">
     <div class="container mx-auto">
@@ -192,31 +184,41 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-university text-red-600 text-2xl"></i>
+            <!-- NCHE -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition group">
+                <div class="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                    <img src="{{ asset('images/nche.png') }}" 
+                         alt="NCHE Logo" 
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
                 </div>
                 <h3 class="text-lg font-bold text-gray-800 mb-2">NCHE Accredited</h3>
                 <p class="text-sm text-gray-600">National Council for Higher Education</p>
             </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-hand-holding-heart text-red-600 text-2xl"></i>
+
+            <!-- NMCM -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition group">
+                <div class="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                    <img src="{{ asset('images/NMCM.png') }}" 
+                         alt="NMCM Logo" 
+                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
                 </div>
                 <h3 class="text-lg font-bold text-gray-800 mb-2">NMCM Approved</h3>
                 <p class="text-sm text-gray-600">Nurses and Midwives Council of Malawi</p>
             </div>
-            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-stethoscope text-red-600 text-2xl"></i>
-                </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-2">MCM Recognized</h3>
-                <p class="text-sm text-gray-600">Medical Council of Malawi</p>
-            </div>
+
+            <!-- MCM -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition group">
+    <div class="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
+        <img src="{{ asset('images/MCM.png') }}" 
+             alt="MCM Logo" 
+             class="max-w-full max-h-full object-contain group-hover:scale-105 transition">
+    </div>
+    <h3 class="text-lg font-bold text-gray-800 mb-2">MCM Recognized</h3>
+    <p class="text-sm text-gray-600">Medical Council of Malawi</p>
+</div>
         </div>
     </div>
 </section>
-
 
 <!-- Vice Chancellor's Remarks Section -->
 <section id="welcome" class="py-16 px-4 md:px-16 bg-white">

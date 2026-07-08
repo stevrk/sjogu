@@ -4,15 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-16">
-    <div class="container mx-auto px-4 md:px-16 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Executive <span class="text-yellow-300">Team</span></h1>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto rounded-full mb-6"></div>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto text-red-100">
-            Meet our dedicated executive leadership team guiding the university towards excellence
-        </p>
-    </div>
-</section>
+
 
 <!-- Executive Leadership Section -->
 <section class="py-16 px-4 md:px-16 bg-white">
@@ -115,9 +107,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
 
+<!-- Administrative Leadership Section -->
+<section class="py-16 px-4 md:px-16 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Administrative <span class="text-red-600">Leadership</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Key administrative leaders supporting university operations
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- Registrar -->
-            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <div class="bg-red-600 px-6 py-4">
                     <h3 class="text-xl font-bold text-white">Registrar</h3>
                 </div>
@@ -147,7 +154,7 @@
             </div>
 
             <!-- Coordinator of Quality Assurance -->
-            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
                 <div class="bg-red-600 px-6 py-4">
                     <h3 class="text-xl font-bold text-white">Quality Assurance</h3>
                 </div>
@@ -167,6 +174,125 @@
                     <p class="text-gray-600 text-sm">Ensuring academic standards and institutional quality compliance.</p>
                     <div class="mt-4 flex justify-center gap-3">
                         <a href="mailto:qa@sjogu.edu" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Heads of Departments Section (HODs) -->
+<section class="py-16 px-4 md:px-16 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Department <span class="text-red-600">Heads</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Academic department leaders driving excellence in their respective fields
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <!-- HOD Clinical Medicine -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                <div class="bg-red-600 px-6 py-3">
+                    <h3 class="text-lg font-bold text-white">Clinical Medicine</h3>
+                </div>
+                <div class="p-6 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-full">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+                            <i class="fas fa-user-md text-4xl text-red-400"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800">Dr. John Banda</h4>
+                    <p class="text-red-600 text-sm mb-2">Head of Department</p>
+                    <p class="text-sm text-gray-500 mb-3">PhD, MMed</p>
+                    <p class="text-gray-600 text-sm">Leading the Clinical Medicine department with expertise in medical education.</p>
+                    <div class="mt-4 flex justify-center gap-3">
+                        <a href="mailto:hod.clinical@sjogu.edu" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOD Nursing and Midwifery -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                <div class="bg-red-600 px-6 py-3">
+                    <h3 class="text-lg font-bold text-white">Nursing &amp; Midwifery</h3>
+                </div>
+                <div class="p-6 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-full">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+                            <i class="fas fa-user-nurse text-4xl text-red-400"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800">Mrs. Grace Mwale</h4>
+                    <p class="text-red-600 text-sm mb-2">Head of Department</p>
+                    <p class="text-sm text-gray-500 mb-3">MSc, BSc</p>
+                    <p class="text-gray-600 text-sm">Leading the Nursing and Midwifery department with clinical excellence.</p>
+                    <div class="mt-4 flex justify-center gap-3">
+                        <a href="mailto:hod.nursing@sjogu.edu" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOD Psycho-Social Counselling -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                <div class="bg-red-600 px-6 py-3">
+                    <h3 class="text-lg font-bold text-white">Psycho-Social Counselling</h3>
+                </div>
+                <div class="p-6 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-full">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+                            <i class="fas fa-brain text-4xl text-red-400"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800">Dr. Tendai Machaya</h4>
+                    <p class="text-red-600 text-sm mb-2">Head of Department</p>
+                    <p class="text-sm text-gray-500 mb-3">PhD, MA</p>
+                    <p class="text-gray-600 text-sm">Leading the Psycho-Social Counselling department with expertise in mental health.</p>
+                    <div class="mt-4 flex justify-center gap-3">
+                        <a href="mailto:hod.counselling@sjogu.edu" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+265991887119" class="text-red-600 hover:text-red-700 transition">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOD Public Health -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                <div class="bg-red-600 px-6 py-3">
+                    <h3 class="text-lg font-bold text-white">Public Health</h3>
+                </div>
+                <div class="p-6 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden bg-gray-200 rounded-full">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+                            <i class="fas fa-chart-bar text-4xl text-red-400"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800">Dr. Andrew Msiska</h4>
+                    <p class="text-red-600 text-sm mb-2">Head of Department</p>
+                    <p class="text-sm text-gray-500 mb-3">PhD, MPH</p>
+                    <p class="text-gray-600 text-sm">Leading the Public Health department with expertise in epidemiology and health policy.</p>
+                    <div class="mt-4 flex justify-center gap-3">
+                        <a href="mailto:hod.publichealth@sjogu.edu" class="text-red-600 hover:text-red-700 transition">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="tel:+265991887119" class="text-red-600 hover:text-red-700 transition">

@@ -4,18 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-16">
-    <div class="container mx-auto px-4 md:px-16 text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
-            <i class="fas fa-envelope text-white text-2xl"></i>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Contact <span class="text-yellow-300">Us</span></h1>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto rounded-full mb-6"></div>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto text-red-100">
-            Get in touch with us. We're here to help!
-        </p>
-    </div>
-</section>
+
 
 <!-- Get in Touch Content (Moved from Home Page) -->
 <section class="py-16 px-4 md:px-16 bg-white">

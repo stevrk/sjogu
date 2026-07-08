@@ -13,12 +13,24 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ContactController;
 
-// ==================== MAIN WEBSITE ROUTES ====================
+use App\Http\Controllers\HomeController;
+
+
+
+use App\Filament\Pages\ChangePassword;
+
+
+use App\Http\Controllers\Auth\AdminLogoutController;
+
+Route::post('/admin/logout', function () {
+    auth()->logout();
+    session()->invalidate();
+    session()->regenerateToken();
+    return redirect('/admin/login');
+})->name('filament.admin.auth.logout');
 
 // Home page
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // About page
 Route::get('/about', [AboutController::class, 'about'])->name('about');
@@ -30,20 +42,14 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 
-// ==================== PROGRAMS ROUTES ====================
-// Main programs listing
-Route::get('/programs', [ProgramsController::class, 'index'])->name('programs');
 
-// Department program listings
-Route::get('/programs/clinical-medicine', [ProgramsController::class, 'clinicalMedicine'])->name('programs.clinical-medicine');
-Route::get('/programs/nursing-midwifery', [ProgramsController::class, 'nursingMidwifery'])->name('programs.nursing-midwifery');
-Route::get('/programs/psycho-social-counselling', [ProgramsController::class, 'psychoSocialCounselling'])->name('programs.psycho-social-counselling');
-// Programs Routes
-Route::get('/programs', [ProgramsController::class, 'index'])->name('programs');
-Route::get('/programs/clinical-medicine', [ProgramsController::class, 'clinicalMedicine'])->name('programs.clinical-medicine');
-Route::get('/programs/nursing-midwifery', [ProgramsController::class, 'nursingMidwifery'])->name('programs.nursing-midwifery');
-Route::get('/programs/psycho-social-counselling', [ProgramsController::class, 'psychoSocialCounselling'])->name('programs.psycho-social-counselling');
-Route::get('/programs/{slug}', [ProgramsController::class, 'show'])->name('programs.show');
+
+
+// Department programs route - using ID
+Route::get('/programs/department/{id}', [ProgramsController::class, 'byDepartment'])->name('programs.department');
+
+Route::get('/programs/{id}', [ProgramsController::class,'show'])->name('programs.show');
+
 
 
 
@@ -51,6 +57,7 @@ Route::get('/programs/{slug}', [ProgramsController::class, 'show'])->name('progr
 Route::get('/research', [ResearchController::class, 'index'])->name('research');
 Route::get('/students', [StudentsController::class, 'index'])->name('students');
 Route::get('/library', [LibraryController::class, 'index'])->name('library');
+Route::post('/library/enquiry', [LibraryController::class, 'storeEnquiry'])->name('library.enquiry.store');
 
 // ==================== ENROLLMENT ROUTES ====================
 Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
@@ -71,8 +78,10 @@ Route::get('/staff', function () {
 
 // ==================== RESOURCES ROUTES ====================
 Route::get('/downloads', function () {
-    return view('pages.downloads.resources');
+    return view('pages.resources.resources');
 })->name('downloads');
+
+
 
 
 
@@ -86,3 +95,11 @@ Route::get('/search', function () {
 Route::post('/newsletter/subscribe', function () {
     return redirect()->back()->with('success', 'Thank you for subscribing to our newsletter!');
 })->name('newsletter.subscribe');
+
+
+Route::delete('/admin/news/{record}/delete-image', function ($record) {
+    $news = News::findOrFail($record);
+    $news->image = null;
+    $news->save();
+    return response()->json(['success' => true]);
+})->name('filament.admin.resources.news.delete-image');

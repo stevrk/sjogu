@@ -4,18 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-16">
-    <div class="container mx-auto px-4 md:px-16 text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
-            <i class="fas fa-flask text-white text-2xl"></i>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Research <span class="text-yellow-300">Hub</span></h1>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto rounded-full mb-6"></div>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto text-red-100">
-            Advancing healthcare knowledge through innovative research and collaboration
-        </p>
-    </div>
-</section>
+
 
 <!-- Featured Research Projects - Moved to Top -->
 <section class="py-16 px-4 md:px-16 bg-white">

@@ -4,18 +4,6 @@
 
 @section('content')
 <!-- Hero Section with Interactive Slider -->
-<section class="relative bg-gradient-to-r from-red-700 to-red-800 text-white py-12">
-    <div class="container mx-auto px-4 md:px-16 text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
-            <i class="fas fa-users text-white text-2xl"></i>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Student <span class="text-yellow-300">Life</span></h1>
-        <div class="w-24 h-1 bg-yellow-300 mx-auto rounded-full mb-6"></div>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto text-red-100">
-            Everything you need for a successful and enjoyable university experience
-        </p>
-    </div>
-</section>
 
 <!-- Interactive Image Slider/Carousel for Campus Life -->
 <section class="py-12 px-4 md:px-16 bg-white">
@@ -181,22 +169,161 @@
         <!-- Three Main Sections: Accommodation, Student Council, Things to Do -->
         <div class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                <img src="{{ asset('images/carausel/accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <div class="flex items-center gap-2 mb-3">
-                        <i class="fas fa-home text-red-600 text-xl"></i>
-                        <h3 class="text-xl font-bold text-gray-800">Accommodation</h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">Comfortable and affordable on-campus housing with modern amenities. Safe and conducive environment for learning.</p>
-                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Single & Shared Rooms</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> 24/7 Security</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Common Areas & Study Rooms</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Affordable Rates</li>
-                    </ul>
-                    
-                </div>
+    <img src="{{ asset('images/carausel/accomodation.jpg') }}" alt="Student Accommodation" class="w-full h-48 object-cover">
+    <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-home text-red-600 text-xl"></i>
+            <h3 class="text-xl font-bold text-gray-800">Accommodation</h3>
+        </div>
+        <p class="text-gray-600 text-sm mb-4">Comfortable and affordable on-campus housing with modern amenities. Safe and conducive environment for learning.</p>
+        <ul class="space-y-2 text-sm text-gray-600 mb-4">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Single & Shared Rooms</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> 24/7 Security</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Common Areas & Study Rooms</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i> Affordable Rates</li>
+        </ul>
+        
+        <!-- Apply Button -->
+        <button onclick="openAccommodationModal()" class="w-full bg-red-600 text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-red-700 transition inline-flex items-center justify-center gap-2">
+            <i class="fas fa-home"></i> Apply for Accommodation
+            <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Accommodation Application Modal - All Fields Disabled -->
+<div id="accommodationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-t-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-home text-xl"></i>
+                <h3 class="text-xl font-bold">Accommodation Application</h3>
             </div>
+            <button onclick="closeAccommodationModal()" class="text-white hover:text-gray-200 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <div class="p-6">
+            <!-- Coming Soon Banner -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-4 mb-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <i class="fas fa-info-circle text-yellow-600"></i>
+                    <span class="font-semibold text-yellow-700">Online Application Coming Soon</span>
+                </div>
+                <p class="text-sm text-gray-600">
+                    The online accommodation application system is currently under development. 
+                    Please contact the admissions office for assistance.
+                </p>
+            </div>
+            
+            <form id="accommodationForm" onsubmit="return false;">
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                    <input type="text" disabled 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
+                           placeholder="Form disabled - Coming soon">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Student Registration Number</label>
+                    <input type="text" disabled 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
+                           placeholder="Form disabled - Coming soon">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                    <input type="email" disabled 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
+                           placeholder="Form disabled - Coming soon">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" disabled 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
+                           placeholder="Form disabled - Coming soon">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Program of Study</label>
+                    <select disabled class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                        <option>Select your program (Coming Soon)</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Year of Study</label>
+                    <select disabled class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed">
+                        <option>Select year (Coming Soon)</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Preferred Room Type</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
+                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
+                            <span class="text-sm text-gray-400">Single Room</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
+                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
+                            <span class="text-sm text-gray-400">Shared Room (2 persons)</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
+                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
+                            <span class="text-sm text-gray-400">Shared Room (4 persons)</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2 border border-gray-200 rounded-lg bg-gray-100 cursor-not-allowed">
+                            <input type="radio" name="room_type" disabled class="text-red-600 cursor-not-allowed">
+                            <span class="text-sm text-gray-400">Special Needs</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Special Requirements (Optional)</label>
+                    <textarea rows="2" disabled 
+                              class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-500 cursor-not-allowed"
+                              placeholder="Form disabled - Coming soon"></textarea>
+                </div>
+                
+                <button type="button" disabled class="w-full bg-gray-400 text-white py-3 rounded-lg font-semibold cursor-not-allowed">
+                    Submit Application (Coming Soon)
+                </button>
+            </form>
+            
+            <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+                <p class="text-xs text-center text-gray-500">
+                    <i class="fas fa-clock mr-1"></i> Online applications will be available soon
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openAccommodationModal() {
+        document.getElementById('accommodationModal').classList.remove('hidden');
+        document.getElementById('accommodationModal').classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeAccommodationModal() {
+        document.getElementById('accommodationModal').classList.add('hidden');
+        document.getElementById('accommodationModal').classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('accommodationModal');
+        if (e.target === modal) {
+            closeAccommodationModal();
+        }
+    });
+</script>
 
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
                 <img src="{{ asset('images/carausel/counsel.jpg') }}" alt="Student Council" class="w-full h-48 object-cover">

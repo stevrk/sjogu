@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Department;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Share departments with all views
+        View::composer('*', function ($view) {
+            $departments = Department::orderBy('name', 'asc')->get();
+            $view->with('departments', $departments);
+        });
     }
 }

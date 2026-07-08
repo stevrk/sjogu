@@ -4,6 +4,7 @@
 
 @section('content')
     <!-- HERO SECTION WITH CAROUSEL -->
+    
     <section id="Home" class="relative bg-black">
         <div class="relative h-[400px] md:h-[550px] lg:h-[600px] overflow-hidden">
             
@@ -32,7 +33,7 @@
                         </p>
                         <!-- Buttons -->
                         <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
-                            <a href="{{ route('programs') }}" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
+                            <a href="" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
                                 Explore Programs 
                                 <i class="fas fa-arrow-right text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
                             </a>
@@ -92,7 +93,7 @@
                             World-class education with experienced faculty and hands-on clinical training
                         </p>
                         <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
-                            <a href="{{ route('programs') }}" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
+                            <a href="" class="group inline-flex items-center justify-center gap-1 md:gap-2 bg-red-600 hover:bg-red-700 text-white px-3 md:px-8 py-1.5 md:py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-xl text-xs md:text-base">
                                 View Programs 
                                 <i class="fas fa-graduation-cap text-[10px] md:text-sm group-hover:translate-x-1 transition"></i>
                             </a>
@@ -156,141 +157,279 @@
 <!-- NEWS & ANNOUNCEMENTS SECTION -->
 <section id="News" class="py-16 px-4 md:px-16 bg-gray-50">
     <div class="container mx-auto">
-        <!-- Section Header - Simplified (no title, just the news grid) -->
-        
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">News & <span class="text-red-600">Announcements</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-sm">
+                Stay updated with the latest news and announcements from St John of God University
+            </p>
+        </div>
+
         <div class="grid md:grid-cols-12 gap-5">
             <!-- COLUMN 1: Important Dates & Announcements -->
             <div class="md:col-span-3">
-                <!-- Important Dates - Redesigned with red header -->
                 <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden mb-5">
-                    <div class="bg-red-600 text-white px-3 py-2">
-                        <h3 class="font-bold text-sm flex items-center gap-2">
-                            <i class="fas fa-calendar-alt text-xs"></i> Important Dates
-                        </h3>
+    <div class="bg-red-600 text-white px-3 py-2.5">
+        <h3 class="font-bold text-sm flex items-center gap-2">
+            <i class="fas fa-calendar-alt text-xs"></i> Important Dates
+        </h3>
+    </div>
+    <div class="p-3 space-y-2">
+        @if(isset($importantDates) && $importantDates->count() > 0)
+            @foreach($importantDates as $date)
+                <div class="important-date-item border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+                    <!-- Click Area -->
+                    <div class="date-click-area cursor-pointer" onclick="toggleDate(event, this)">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 flex-1 min-w-0">
+                                <!-- Event Date with Year -->
+                                <span class="event-date text-red-600 text-xs font-semibold whitespace-nowrap">
+                                    @php
+                                        $start = \Carbon\Carbon::parse($date->event_start_date ?? $date->display_start_date);
+                                    @endphp
+                                    
+                                    @if($date->event_end_date)
+                                        @php
+                                            $end = \Carbon\Carbon::parse($date->event_end_date);
+                                        @endphp
+                                        @if($start->isSameDay($end))
+                                            {{ $start->format('M d, Y') }}
+                                        @elseif($start->year === $end->year && $start->month === $end->month)
+                                            {{ $start->format('M d') }} - {{ $end->format('d, Y') }}
+                                        @elseif($start->year === $end->year)
+                                            {{ $start->format('M d') }} - {{ $end->format('M d, Y') }}
+                                        @else
+                                            {{ $start->format('M d, Y') }} - {{ $end->format('M d, Y') }}
+                                        @endif
+                                    @else
+                                        {{ $start->format('M d, Y') }}
+                                    @endif
+                                </span>
+                                
+                                <!-- Title -->
+                                <span class="title-text text-xs font-medium text-gray-700 truncate">{{ $date->title }}</span>
+                            </div>
+                            
+                            <!-- Chevron Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-[10px] flex-shrink-0 ml-2 transition-transform duration-300"></i>
+                        </div>
+                        
+                        <!-- Tap to read more hint -->
+                        <div class="text-[10px] text-gray-400 mt-0.5 ml-[77px]">
+                            Tap to read more
+                        </div>
                     </div>
-                    <div class="p-3 space-y-2">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-gray-600">Registration Deadline</span>
-                            <span class="font-semibold text-gray-800">April 15</span>
+                    
+                    <!-- Description (Hidden by default) -->
+                    @if($date->description)
+                        <div class="description-content pl-[77px] pr-2 text-xs text-gray-600 leading-relaxed" style="display: none;">
+                            {{ $date->description }}
                         </div>
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-gray-600">Mid-Semester Exams</span>
-                            <span class="font-semibold text-gray-800">May 5-10</span>
-                        </div>
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-gray-600">Graduation Ceremony</span>
-                            <span class="font-semibold text-gray-800">June 28</span>
-                        </div>
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-gray-600">Orientation</span>
-                            <span class="font-semibold text-gray-800">July 15-17</span>
-                        </div>
-                    </div>
+                    @endif
                 </div>
+            @endforeach
+        @else
+            <div class="text-center text-gray-500 text-xs py-2">
+                No upcoming important dates
+            </div>
+        @endif
+    </div>
+</div>
 
-                <!-- Announcements -->
-                <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">
-                    <div class="bg-red-600 text-white px-3 py-2">
-                        <h3 class="font-bold text-sm flex items-center gap-2">
-                            <i class="fas fa-bullhorn text-xs"></i> Announcements
-                        </h3>
+<script>
+    function toggleDate(event, element) {
+        // Get the parent item
+        const item = element.closest('.important-date-item');
+        if (!item) return;
+        
+        const description = item.querySelector('.description-content');
+        const chevron = item.querySelector('.fa-chevron-down');
+        
+        if (description) {
+            // Toggle the description
+            if (description.style.display === 'none' || description.style.display === '') {
+                description.style.display = 'block';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                description.style.display = 'none';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .important-date-item .date-click-area {
+        cursor: pointer;
+        padding: 4px 0;
+    }
+    
+    .important-date-item .date-click-area:hover {
+        background-color: #f9fafb;
+        border-radius: 8px;
+        margin: 0 -8px;
+        padding: 4px 8px;
+    }
+    
+    .important-date-item .description-content {
+        transition: all 0.3s ease;
+        padding-top: 4px;
+    }
+    
+    .important-date-item .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+</style>
+ <!-- Announcements -->
+ <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">
+    <div class="bg-red-600 text-white px-3 py-2.5">
+        <h3 class="font-bold text-sm flex items-center gap-2">
+            <i class="fas fa-bullhorn text-xs"></i> Announcements
+        </h3>
+    </div>
+    <div class="p-3 space-y-2">
+        @if(isset($announcements) && $announcements->count() > 0)
+            @foreach($announcements as $announcement)
+                <div class="announcement-item border-b border-gray-100 pb-2 last:border-0 last:pb-0">
+                    <!-- Click Area -->
+                    <div class="announcement-click-area cursor-pointer" onclick="toggleAnnouncement(event, this)">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2 flex-1 min-w-0">
+                                <!-- Title with limit -->
+                                <span class="announcement-title text-xs font-medium text-gray-700 truncate">
+                                    {{ Str::limit($announcement->title, 60) }}
+                                </span>
+                            </div>
+                            
+                            <!-- Chevron Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-[10px] flex-shrink-0 ml-2 transition-transform duration-300"></i>
+                        </div>
+                        
+                        <!-- Tap to read more hint -->
+                        <div class="text-[10px] text-gray-400 mt-0.5">
+                            Tap to read more
+                        </div>
                     </div>
-                    <div class="divide-y divide-gray-100">
-                        <div class="p-2 hover:bg-gray-50 transition">
-                            <div class="flex items-start gap-2">
-                                <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-calendar-check text-red-600 text-xs"></i>
+                    
+                    <!-- Description (Hidden by default) -->
+                    @if($announcement->description)
+                        <div class="announcement-description pl-2 pr-2 text-xs text-gray-600 leading-relaxed" style="display: none; padding-top: 4px;">
+                            {{ $announcement->description }}
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        @else
+            <div class="text-center text-gray-500 text-xs py-2">
+                No announcements available
+            </div>
+        @endif
+    </div>
+</div>
+
+<script>
+    function toggleAnnouncement(event, element) {
+        // Get the parent item
+        const item = element.closest('.announcement-item');
+        if (!item) return;
+        
+        const description = item.querySelector('.announcement-description');
+        const chevron = item.querySelector('.fa-chevron-down');
+        
+        if (description) {
+            // Toggle the description
+            if (description.style.display === 'none' || description.style.display === '') {
+                description.style.display = 'block';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                description.style.display = 'none';
+                if (chevron) {
+                    chevron.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .announcement-item .announcement-click-area {
+        cursor: pointer;
+        padding: 4px 0;
+    }
+    
+    .announcement-item .announcement-click-area:hover {
+        background-color: #f9fafb;
+        border-radius: 8px;
+        margin: 0 -8px;
+        padding: 4px 8px;
+    }
+    
+    .announcement-item .announcement-description {
+        transition: all 0.3s ease;
+        padding-top: 4px;
+    }
+    
+    .announcement-item .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+    
+    .announcement-item .announcement-title {
+        font-weight: 500;
+    }
+</style>
+
+
+</div>
+
+            <!-- COLUMN 2,3,4: News Articles (Dynamic) -->
+            @if(isset($latestNews) && $latestNews->count() > 0)
+                @foreach($latestNews as $index => $news)
+                    <div class="md:col-span-3">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 h-full">
+                            @if($news->image)
+                                <img src="{{ asset('storage/'. $news->image) }}" alt="{{ $news->title }}" class="w-full h-32 object-cover">
+                            @else
+                                <div class="w-full h-32 bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center">
+                                    <i class="fas fa-newspaper text-white text-2xl opacity-50"></i>
                                 </div>
-                                <div>
-                                    <p class="text-xs font-semibold text-gray-800">Mid-Semester Break</p>
-                                    <p class="text-xs text-gray-500">April 20-28</p>
+                            @endif
+                            <div class="p-3">
+                                <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> {{ $news->date->format('M d, Y') }}</span>
+                                    @if($news->is_featured)
+                                        <span class="bg-red-100 text-red-600 px-1.5 py-0.5 rounded text-xs">Featured</span>
+                                    @endif
+                                    @if($news->category)
+                                        <span class="bg-{{ $news->category_color ?? 'red' }}-100 text-{{ $news->category_color ?? 'red' }}-600 px-1.5 py-0.5 rounded text-xs">{{ $news->category }}</span>
+                                    @endif
                                 </div>
+                                <h3 class="text-sm font-bold text-gray-800 mb-1 hover:text-red-600 transition">
+                                    <a href="{{ route('news.show', $news->slug) }}">{{ $news->title }}</a>
+                                </h3>
+                                <p class="text-gray-600 text-xs mb-2">{{ $news->excerpt ?? Str::limit(strip_tags($news->content), 80) }}</p>
+                                <a href="{{ route('news.show', $news->slug) }}" class="text-red-600 text-xs font-semibold hover:text-red-700 transition inline-flex items-center gap-1">
+                                    Read More <i class="fas fa-arrow-right text-xs"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="p-2 hover:bg-gray-50 transition">
-                            <div class="flex items-start gap-2">
-                                <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-file-alt text-red-600 text-xs"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-semibold text-gray-800">Scholarship Open</p>
-                                    <p class="text-xs text-gray-500">Deadline: April 30</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-2 hover:bg-gray-50 transition">
-                            <div class="flex items-start gap-2">
-                                <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-chalkboard-teacher text-red-600 text-xs"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-semibold text-gray-800">Guest Lecture</p>
-                                    <p class="text-xs text-gray-500">April 12, 2024</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="p-2 border-t">
-                        <a href="{{ route('news') }}" class="block text-center text-red-600 font-semibold text-xs hover:text-red-700 transition">
-                            View All →
-                        </a>
+                @endforeach
+            @else
+                <!-- Fallback if no news in database -->
+                <div class="md:col-span-9">
+                    <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                        <i class="fas fa-newspaper text-gray-300 text-4xl mb-3"></i>
+                        <p class="text-gray-500 text-sm">No news articles found.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- COLUMN 2: News Article 1 -->
-            <div class="md:col-span-3">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 h-full">
-                    <img src="{{ asset('images/graduation.jpg') }}" alt="Graduation" class="w-full h-32 object-cover">
-                    <div class="p-3">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> March 15, 2026</span>
-                            <span class="bg-red-100 text-red-600 px-1.5 py-0.5 rounded text-xs">Featured</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-800 mb-1">18th Graduation Ceremony</h3>
-                        <p class="text-gray-600 text-xs mb-2">The university announces its 18th graduation ceremony scheduled for June 2024.</p>
-                        <a href="{{ route('news.show', '18th-graduation-ceremony') }}" class="text-red-600 text-xs font-semibold hover:text-red-700 transition inline-flex items-center gap-1">
-                            Read More <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COLUMN 3: News Article 2 -->
-            <div class="md:col-span-3">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 h-full">
-                    <img src="{{ asset('images/research.jpeg') }}" alt="Research" class="w-full h-32 object-cover">
-                    <div class="p-3">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> April 5, 2026</span>
-                            <span class="bg-green-100 text-green-600 px-1.5 py-0.5 rounded text-xs">Event</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-800 mb-1">Research Conference 2024</h3>
-                        <p class="text-gray-600 text-xs mb-2">Join us for the annual International Research Conference.</p>
-                        <a href="{{ route('news.show', 'research-conference-2024') }}" class="text-red-600 text-xs font-semibold hover:text-red-700 transition inline-flex items-center gap-1">
-                            Read More <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COLUMN 4: News Article 3 -->
-            <div class="md:col-span-3">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100 h-full">
-                    <img src="{{ asset('images/news2.jpg') }}" alt="Admissions" class="w-full h-32 object-cover">
-                    <div class="p-3">
-                        <div class="flex items-center gap-2 text-xs text-gray-500 mb-1">
-                            <span><i class="far fa-calendar-alt mr-1"></i> March 10, 2026</span>
-                            <span class="bg-blue-100 text-blue-600 px-1.5 py-0.5 rounded text-xs">Important</span>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-800 mb-1">Applications Open 2026/27</h3>
-                        <p class="text-gray-600 text-xs mb-2">Applications now open for the upcoming academic year.</p>
-                        <a href="{{ route('news.show', 'applications-open-2026-27') }}" class="text-red-600 text-xs font-semibold hover:text-red-700 transition inline-flex items-center gap-1">
-                            Read More <i class="fas fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
 
         <!-- View All Button -->

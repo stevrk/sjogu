@@ -16,7 +16,7 @@
 
         <!-- Two-Column Layout: Left = Main/Featured News, Right = Announcements & Dates -->
         <div class="grid lg:grid-cols-3 gap-8">
-            <!-- RIGHT PANE: Announcements & Important Dates (Moved to Right) -->
+            <!-- RIGHT PANE: Announcements & Important Dates -->
             <div class="lg:col-span-1 order-1 lg:order-2">
                 <!-- Important Dates -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
@@ -109,55 +109,44 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Newsletter Subscription -->
-                <!--<div class="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-5 text-white">
-                    <h3 class="font-bold text-lg mb-2 flex items-center gap-2">
-                        <i class="fas fa-envelope"></i>
-                        Newsletter
-                    </h3>
-                    <p class="text-sm text-white/90 mb-4">Subscribe to receive latest news and updates</p>
-                    <form action="{{ route('newsletter.subscribe') }}" method="POST" class="flex flex-col gap-3">
-                        @csrf
-                        <input type="email" 
-                               name="email" 
-                               placeholder="Your email address" 
-                               required 
-                               class="px-4 py-2 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-white">
-                        <button type="submit" class="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            Subscribe Now
-                        </button>
-                    </form>
-                </div>-->
             </div>
 
             <!-- LEFT PANE: Featured/Main News Stories -->
             <div class="lg:col-span-2 order-2 lg:order-1">
                 <!-- Featured News Banner (Top Story) -->
-                @if(isset($news[0]))
-                <div class="mb-8 bg-gradient-to-r from-red-600 to-red-700 rounded-xl overflow-hidden shadow-lg">
-                    <div class="flex flex-col md:flex-row">
-                        <div class="md:w-1/2 h-48 md:h-auto">
-                            <img src="{{ asset('images/' . $news[0]['image']) }}" 
-                                 alt="{{ $news[0]['title'] }}" 
-                                 class="w-full h-full object-cover">
-                        </div>
-                        <div class="md:w-1/2 p-6 text-white">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">Featured Story</span>
-                                <span class="text-white/80 text-xs">
-                                    <i class="far fa-calendar-alt mr-1"></i> {{ $news[0]['date'] }}
-                                </span>
+                @if(isset($news) && $news->count() > 0)
+                    @php
+                        $featured = $news->where('is_featured', true)->first() ?? $news->first();
+                    @endphp
+                    <div class="mb-8 bg-gradient-to-r from-red-600 to-red-700 rounded-xl overflow-hidden shadow-lg">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 h-48 md:h-auto">
+                                @if($featured->image)
+                                    <img src="{{ asset('storage/' . $featured->image) }}" 
+                                         alt="{{ $featured->title }}" 
+                                         class="w-full h-full object-cover">
+                                @else
+                                    <div class="w-full h-full bg-gradient-to-r from-red-800 to-red-900 flex items-center justify-center">
+                                        <i class="fas fa-newspaper text-white text-5xl opacity-50"></i>
+                                    </div>
+                                @endif
                             </div>
-                            <h2 class="text-xl md:text-2xl font-bold mb-3">{{ $news[0]['title'] }}</h2>
-                            <p class="text-white/90 text-sm mb-4 line-clamp-3">{{ $news[0]['excerpt'] }}</p>
-                            <a href="{{ route('news.show', $news[0]['slug']) }}" 
-                               class="inline-flex items-center gap-2 bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
-                                Read Full Article <i class="fas fa-arrow-right text-sm"></i>
-                            </a>
+                            <div class="md:w-1/2 p-6 text-white">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">Featured Story</span>
+                                    <span class="text-white/80 text-xs">
+                                        <i class="far fa-calendar-alt mr-1"></i> {{ $featured->date ? $featured->date->format('M d, Y') : 'Date TBA' }}
+                                    </span>
+                                </div>
+                                <h2 class="text-xl md:text-2xl font-bold mb-3">{{ $featured->title }}</h2>
+                                <p class="text-white/90 text-sm mb-4 line-clamp-3">{{ $featured->excerpt ?? Str::limit(strip_tags($featured->content), 120) }}</p>
+                                <a href="{{ route('news.show', $featured->slug) }}" 
+                                   class="inline-flex items-center gap-2 bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                    Read Full Article <i class="fas fa-arrow-right text-sm"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endif
 
                 <!-- Main News Stories List (Remaining News) -->
@@ -167,55 +156,64 @@
                         Latest News Stories
                     </h3>
                     
-                    @forelse($news as $index => $item)
-                        @if($index > 0) <!-- Skip first item as it's featured -->
-                        <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="md:w-48 h-48 md:h-auto">
-                                    <img src="{{ asset('images/' . $item['image']) }}" 
-                                         alt="{{ $item['title'] }}" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="flex-1 p-5">
-                                    <div class="flex flex-wrap items-center gap-3 mb-2">
-                                        <span class="bg-{{ $item['category_color'] == 'red' ? 'red' : ($item['category_color'] == 'green' ? 'green' : 'blue') }}-100 text-{{ $item['category_color'] == 'red' ? 'red' : ($item['category_color'] == 'green' ? 'green' : 'blue') }}-600 px-2 py-1 rounded text-xs font-semibold">
-                                            {{ $item['category'] }}
-                                        </span>
-                                        <span class="text-gray-500 text-xs">
-                                            <i class="far fa-calendar-alt mr-1"></i> {{ $item['date'] }}
-                                        </span>
+                    @if(isset($news) && $news->count() > 0)
+                        @foreach($news as $item)
+                            @if(!$item->is_featured || $item->id != $featured->id ?? null)
+                                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="md:w-48 h-48 md:h-auto">
+                                            @if($item->image)
+                                                <img src="{{ asset('storage/' . $item->image) }}" 
+                                                     alt="{{ $item->title }}" 
+                                                     class="w-full h-full object-cover">
+                                            @else
+                                                <div class="w-full h-full bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center">
+                                                    <i class="fas fa-newspaper text-white text-3xl opacity-50"></i>
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="flex-1 p-5">
+                                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                                @if($item->category)
+                                                    <span class="bg-{{ $item->category_color ?? 'red' }}-100 text-{{ $item->category_color ?? 'red' }}-600 px-2 py-1 rounded text-xs font-semibold">
+                                                        {{ $item->category }}
+                                                    </span>
+                                                @endif
+                                                <span class="text-gray-500 text-xs">
+                                                    <i class="far fa-calendar-alt mr-1"></i> {{ $item->date ? $item->date->format('M d, Y') : 'Date TBA' }}
+                                                </span>
+                                                @if($item->is_featured)
+                                                    <span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded text-xs font-semibold">
+                                                        <i class="fas fa-star mr-1"></i> Featured
+                                                    </span>
+                                                @endif
+                                            </div>
+                                            <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-red-600 transition">
+                                                <a href="{{ route('news.show', $item->slug) }}">{{ $item->title }}</a>
+                                            </h3>
+                                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ $item->excerpt ?? Str::limit(strip_tags($item->content), 100) }}</p>
+                                            <a href="{{ route('news.show', $item->slug) }}" 
+                                               class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold hover:text-red-700 transition">
+                                                Read More <i class="fas fa-arrow-right text-xs"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <h3 class="text-lg font-bold text-gray-800 mb-2 hover:text-red-600 transition">
-                                        <a href="{{ route('news.show', $item['slug']) }}">{{ $item['title'] }}</a>
-                                    </h3>
-                                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ $item['excerpt'] }}</p>
-                                    <a href="{{ route('news.show', $item['slug']) }}" 
-                                       class="inline-flex items-center gap-1 text-red-600 text-sm font-semibold hover:text-red-700 transition">
-                                        Read More <i class="fas fa-arrow-right text-xs"></i>
-                                    </a>
                                 </div>
-                            </div>
+                            @endif
+                        @endforeach
+                    @else
+                        <div class="bg-white rounded-xl p-8 text-center">
+                            <i class="fas fa-newspaper text-5xl text-gray-300 mb-3"></i>
+                            <p class="text-gray-500">No news articles found.</p>
                         </div>
-                        @endif
-                    @empty
-                    <div class="bg-white rounded-xl p-8 text-center">
-                        <i class="fas fa-newspaper text-5xl text-gray-300 mb-3"></i>
-                        <p class="text-gray-500">No news articles found.</p>
-                    </div>
-                    @endforelse
+                    @endif
                 </div>
 
-                <!-- Pagination (will work when database is integrated) -->
-                @if(isset($news) && count($news) > 6)
-                <div class="mt-8 flex justify-center">
-                    <nav class="flex items-center gap-2">
-                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Previous</a>
-                        <a href="#" class="px-3 py-2 bg-red-600 text-white rounded-lg">1</a>
-                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">2</a>
-                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">3</a>
-                        <a href="#" class="px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">Next</a>
-                    </nav>
-                </div>
+                <!-- Pagination -->
+                @if(isset($news) && method_exists($news, 'links'))
+                    <div class="mt-8">
+                        {{ $news->links() }}
+                    </div>
                 @endif
             </div>
         </div>
